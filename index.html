@@ -65,6 +65,7 @@
   .cat-man{background:var(--green-soft);color:var(--green);}
   .cat-par{background:var(--amber-soft);color:var(--amber);}
   .cat-aud{background:var(--gray-soft);color:#565A66;}
+  .cat-oper{background:#FDF0FA;color:#B0339A;}
   .equipo-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
   @media (max-width:900px){.equipo-grid{grid-template-columns:1fr;}}
   .equipo-box{border-radius:14px;padding:18px 20px;border:1px solid var(--border);background:var(--bg);}
@@ -471,11 +472,11 @@ Chart.register(ChartDataLabels);
 
 const CAT_COLORS = {
   'Mantenimiento':'#2F5FE0','Descanso':'#0E9C8A','Rabino/degüello':'#7B4FE0',
-  'Manejo animal':'#1E9E5A','Parada sin causa':'#E08A1E','Auditoria':'#8E93A0','Dotación/personal':'#8E93A0','Capacitacion':'#8E93A0'
+  'Manejo animal':'#1E9E5A','Parada sin causa':'#E08A1E','Auditoria':'#8E93A0','Dotación/personal':'#8E93A0','Capacitacion':'#8E93A0','Operativo':'#B0339A'
 };
 const EQUIPO_COLORS = {'Cajón 2':'#E0402F', 'Cajón 1':'#0E9C8A'};
 function barColor(d){ return d.equipo ? EQUIPO_COLORS[d.equipo] : CAT_COLORS[d.cat]; }
-const catClassMap = {'Mantenimiento':'cat-mant','Descanso':'cat-desc','Rabino/degüello':'cat-rab','Manejo animal':'cat-man','Parada sin causa':'cat-par','Auditoria':'cat-aud','Dotación/personal':'cat-aud','Capacitacion':'cat-aud'};
+const catClassMap = {'Mantenimiento':'cat-mant','Descanso':'cat-desc','Rabino/degüello':'cat-rab','Manejo animal':'cat-man','Parada sin causa':'cat-par','Auditoria':'cat-aud','Dotación/personal':'cat-aud','Capacitacion':'cat-aud','Operativo':'cat-oper'};
 
 function buildDashboard(data, chartId, tbodyId, equipoOrder){
   const sorted = [...data].sort((a,b)=>{
@@ -537,7 +538,7 @@ function buildDashboard(data, chartId, tbodyId, equipoOrder){
 // ---------- DATA W30 ----------
 const dataW30 = [
   {causa:'Descanso', cat:'Descanso', equipo:null, freq:8, dias:5, min:150},
-  {causa:'Cambio de hoja de sierra', cat:'Mantenimiento', equipo:null, freq:7, dias:5, min:38},
+  {causa:'Cambio de hoja de sierra', cat:'Operativo', equipo:null, freq:7, dias:5, min:38},
   {causa:'Cajón 2 · No funciona', cat:'Mantenimiento', equipo:'Cajón 2', freq:2, dias:1, min:60},
   {causa:'Cajón 2 · Empujador', cat:'Mantenimiento', equipo:'Cajón 2', freq:2, dias:2, min:9},
   {causa:'Cajón 2 · No gira', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:5},
@@ -571,10 +572,10 @@ const dataW30 = [
 // ---------- DATA W31 ----------
 const dataW31 = [
   {causa:'Descanso', cat:'Descanso', equipo:null, freq:11, dias:5, min:230},
-  {causa:'Cambio de hoja sierra (dividir)', cat:'Mantenimiento', equipo:null, freq:5, dias:4, min:29},
+  {causa:'Cambio de hoja sierra (dividir)', cat:'Operativo', equipo:null, freq:5, dias:4, min:29},
   {causa:'Fusible cinta de vísceras', cat:'Mantenimiento', equipo:null, freq:4, dias:1, min:18},
   {causa:'Problemas forzadores cámara 9', cat:'Mantenimiento', equipo:null, freq:2, dias:1, min:53},
-  {causa:'Cambio de hoja sierra (pecho)', cat:'Mantenimiento', equipo:null, freq:2, dias:2, min:11},
+  {causa:'Cambio de hoja sierra (pecho)', cat:'Operativo', equipo:null, freq:2, dias:2, min:11},
   {causa:'Se cayó un animal (down puller)', cat:'Manejo animal', equipo:null, freq:2, dias:2, min:15},
   {causa:'Cajón 2 · Sensor', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:5},
   {causa:'Cajón 2 · Sensor puerta lateral', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:5},
@@ -586,7 +587,7 @@ const dataW31 = [
   {causa:'Cajón 1 · Manguera del pistón', cat:'Mantenimiento', equipo:'Cajón 1', freq:1, dias:1, min:4},
   {causa:'Corte de energía (parados)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:6},
   {causa:'Capacitación bienestar animal', cat:'Capacitacion', equipo:null, freq:1, dias:1, min:10},
-  {causa:'Cambio de hoja sierra (bife ancho)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:12},
+  {causa:'Cambio de hoja sierra (bife ancho)', cat:'Operativo', equipo:null, freq:1, dias:1, min:12},
   {causa:'Desorden marcas de rechazo (judíos Israel)', cat:'Rabino/degüello', equipo:null, freq:1, dias:1, min:5},
   {causa:'Estimulador down puller', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:5},
   {causa:'Noria 2 fusible', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:6},
