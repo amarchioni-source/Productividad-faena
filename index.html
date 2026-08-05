@@ -192,6 +192,42 @@
     <div class="card">
       <div class="card-head">
         <div>
+          <p class="card-title">Tabla completa — frecuencia y minutos por causa</p>
+          <p class="card-sub">Ordenado por frecuencia. "Días" muestra en qué días distintos ocurrió (si se repite el mismo día, cuenta 1 solo día).</p>
+        </div>
+      </div>
+      <table>
+        <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días distintos</th><th>Minutos totales</th><th>Prom. min/evento</th></tr></thead>
+        <tbody id="tableBody-w30"></tbody>
+      </table>
+    </div>
+
+    <div class="insight-grid">
+      <div class="insight" style="border-left:4px solid var(--red);">
+        <span class="itag tag-red">Prioridad 1 — recurrente</span>
+        <h4>Cambio de hoja de sierra — 7 veces</h4>
+        <p>Es la causa más frecuente después de descansos: apareció en 4 de los 5 días. Individualmente son 5-6 min, pero sumado son 38 min/semana. Si se repite en W31 y W32, conviene revisar afilado/stock de hojas antes que tratarlo como "normal".</p>
+      </div>
+      <div class="insight" style="border-left:4px solid var(--blue);">
+        <span class="itag tag-blue">Prioridad 1 — recurrente + costoso</span>
+        <h4>Cajón 2 — 6 eventos, 4 síntomas distintos</h4>
+        <p>Falló en 4 de 5 días con problemas diferentes cada vez (no gira, no funciona, puerta, empujador). Esto sugiere desgaste general del equipo, no una falla puntual — es el candidato más claro a mantenimiento correctivo de fondo.</p>
+      </div>
+      <div class="insight" style="border-left:4px solid var(--amber);">
+        <span class="itag tag-amber">Vigilar — aislado pero costoso</span>
+        <h4>"Cajón 2 no funciona" — 60 min en un solo día</h4>
+        <p>Ocurrió solo el miércoles, 2 veces esa jornada (20 + 40 min). Es la mayor pérdida puntual de la semana. Si no vuelve a pasar, fue un evento aislado ya resuelto — pero está dentro del mismo cajón que ya es recurrente, así que no lo separaría del punto anterior.</p>
+      </div>
+      <div class="insight" style="border-left:4px solid var(--green);">
+        <span class="itag tag-green">Sin patrón claro aún</span>
+        <h4>Resto de causas — eventos únicos</h4>
+        <p>18 de las 31 causas distintas ocurrieron una sola vez en la semana (rabino, ingreso de animales, degüello). Con una sola semana de datos no se puede saber si son ruido normal o el inicio de un patrón.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div>
           <p class="card-title">Ranking de frecuencia — todas las causas</p>
           <p class="card-sub">Cuántas veces ocurrió cada problema en la semana (no importa cuántos minutos costó cada vez)</p>
         </div>
@@ -246,46 +282,9 @@
       <div class="note">⚠ Cajón 2 tuvo 4 síntomas distintos en 4 días distintos de la semana. Aunque el total (79 min) no es el mayor de la semana, la <b>recurrencia diaria en un solo equipo</b> es la señal más fuerte de que necesita revisión de fondo, no arreglos parche día a día.</div>
     </div>
 
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <p class="card-title">Tabla completa — frecuencia y minutos por causa</p>
-          <p class="card-sub">Ordenado por frecuencia. "Días" muestra en qué días distintos ocurrió (si se repite el mismo día, cuenta 1 solo día).</p>
-        </div>
-      </div>
-      <table>
-        <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días distintos</th><th>Minutos totales</th><th>Prom. min/evento</th></tr></thead>
-        <tbody id="tableBody-w30"></tbody>
-      </table>
-    </div>
-
-    <div class="insight-grid">
-      <div class="insight" style="border-left:4px solid var(--red);">
-        <span class="itag tag-red">Prioridad 1 — recurrente</span>
-        <h4>Cambio de hoja de sierra — 7 veces</h4>
-        <p>Es la causa más frecuente después de descansos: apareció en 4 de los 5 días. Individualmente son 5-6 min, pero sumado son 38 min/semana. Si se repite en W31 y W32, conviene revisar afilado/stock de hojas antes que tratarlo como "normal".</p>
-      </div>
-      <div class="insight" style="border-left:4px solid var(--blue);">
-        <span class="itag tag-blue">Prioridad 1 — recurrente + costoso</span>
-        <h4>Cajón 2 — 6 eventos, 4 síntomas distintos</h4>
-        <p>Falló en 4 de 5 días con problemas diferentes cada vez (no gira, no funciona, puerta, empujador). Esto sugiere desgaste general del equipo, no una falla puntual — es el candidato más claro a mantenimiento correctivo de fondo.</p>
-      </div>
-      <div class="insight" style="border-left:4px solid var(--amber);">
-        <span class="itag tag-amber">Vigilar — aislado pero costoso</span>
-        <h4>"Cajón 2 no funciona" — 60 min en un solo día</h4>
-        <p>Ocurrió solo el miércoles, 2 veces esa jornada (20 + 40 min). Es la mayor pérdida puntual de la semana. Si no vuelve a pasar, fue un evento aislado ya resuelto — pero está dentro del mismo cajón que ya es recurrente, así que no lo separaría del punto anterior.</p>
-      </div>
-      <div class="insight" style="border-left:4px solid var(--green);">
-        <span class="itag tag-green">Sin patrón claro aún</span>
-        <h4>Resto de causas — eventos únicos</h4>
-        <p>18 de las 31 causas distintas ocurrieron una sola vez en la semana (rabino, ingreso de animales, degüello). Con una sola semana de datos no se puede saber si son ruido normal o el inicio de un patrón.</p>
-      </div>
-    </div>
-
   </div>
   <!-- ===================== FIN TAB W30 ===================== -->
 
-  <!-- ===================== TAB W31 ===================== -->
   <div class="tab-panel" id="tab-w31">
 
     <div class="card">
@@ -349,6 +348,42 @@
         <p class="label">Alto impacto / baja frec.</p>
         <p class="value" style="font-size:22px;color:var(--blue);">Forz. cámara 9</p>
         <span class="delta delta-blue">2 veces · 53 min</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div>
+          <p class="card-title">Tabla completa — frecuencia y minutos por causa</p>
+          <p class="card-sub">Ordenado por frecuencia. "Días" muestra en qué días distintos ocurrió (si se repite el mismo día, cuenta 1 solo día).</p>
+        </div>
+      </div>
+      <table>
+        <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días distintos</th><th>Minutos totales</th><th>Prom. min/evento</th></tr></thead>
+        <tbody id="tableBody-w31"></tbody>
+      </table>
+    </div>
+
+    <div class="insight-grid">
+      <div class="insight" style="border-left:4px solid var(--red);">
+        <span class="itag tag-red">Confirmado — recurrente 2 semanas</span>
+        <h4>Cambio de hoja de sierra — 8 veces</h4>
+        <p>Subió de 7× (W30) a 8× esta semana, y ya suma 52 min. Con dos semanas seguidas mostrando el mismo patrón, dejó de ser "puede ser casualidad" — conviene revisar afilado o stock de hojas.</p>
+      </div>
+      <div class="insight" style="border-left:4px solid var(--amber);">
+        <span class="itag tag-amber">Empeora vs. semana pasada</span>
+        <h4>Cajón 1 — de 1 a 3 síntomas distintos</h4>
+        <p>En W30 solo tuvo problema de sensor. Esta semana aparecieron 3 fallas nuevas y distintas. Si sigue subiendo en W32, hay que tratarlo con la misma prioridad que Cajón 2.</p>
+      </div>
+      <div class="insight" style="border-left:4px solid var(--green);">
+        <span class="itag tag-green">Mejora real</span>
+        <h4>Cajón 2 — bajó de 79 a 25 minutos</h4>
+        <p>Sigue con casi la misma cantidad de eventos (6→5) pero ya no tiene fallas largas. Parece que se resolvió lo grave, aunque las fallas chicas siguen apareciendo casi todos los días.</p>
+      </div>
+      <div class="insight" style="border-left:4px solid var(--blue);">
+        <span class="itag tag-blue">Nuevo — evento puntual de alto impacto</span>
+        <h4>Problemas forzadores cámara 9 — 53 min en un solo día</h4>
+        <p>Ocurrió 2 veces el jueves (8 + 45 min), nada que ver con lo visto en W30. Si no vuelve a aparecer en W32, fue un evento aislado — pero por el volumen de minutos vale la pena confirmarlo.</p>
       </div>
     </div>
 
@@ -421,44 +456,9 @@
       <div class="note">⚠ Cajón 2 sigue fallando casi todos los días (4 de 5), pero ahora con fallas chicas y repuestas rápido — nada como el "no funciona" de 60 min de W30. Cajón 1 en cambio subió de 1 a 3 síntomas distintos: es el que hay que empezar a vigilar más de cerca.</div>
     </div>
 
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <p class="card-title">Tabla completa — frecuencia y minutos por causa</p>
-          <p class="card-sub">Ordenado por frecuencia. "Días" muestra en qué días distintos ocurrió (si se repite el mismo día, cuenta 1 solo día).</p>
-        </div>
-      </div>
-      <table>
-        <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días distintos</th><th>Minutos totales</th><th>Prom. min/evento</th></tr></thead>
-        <tbody id="tableBody-w31"></tbody>
-      </table>
-    </div>
-
-    <div class="insight-grid">
-      <div class="insight" style="border-left:4px solid var(--red);">
-        <span class="itag tag-red">Confirmado — recurrente 2 semanas</span>
-        <h4>Cambio de hoja de sierra — 8 veces</h4>
-        <p>Subió de 7× (W30) a 8× esta semana, y ya suma 52 min. Con dos semanas seguidas mostrando el mismo patrón, dejó de ser "puede ser casualidad" — conviene revisar afilado o stock de hojas.</p>
-      </div>
-      <div class="insight" style="border-left:4px solid var(--amber);">
-        <span class="itag tag-amber">Empeora vs. semana pasada</span>
-        <h4>Cajón 1 — de 1 a 3 síntomas distintos</h4>
-        <p>En W30 solo tuvo problema de sensor. Esta semana aparecieron 3 fallas nuevas y distintas. Si sigue subiendo en W32, hay que tratarlo con la misma prioridad que Cajón 2.</p>
-      </div>
-      <div class="insight" style="border-left:4px solid var(--green);">
-        <span class="itag tag-green">Mejora real</span>
-        <h4>Cajón 2 — bajó de 79 a 25 minutos</h4>
-        <p>Sigue con casi la misma cantidad de eventos (6→5) pero ya no tiene fallas largas. Parece que se resolvió lo grave, aunque las fallas chicas siguen apareciendo casi todos los días.</p>
-      </div>
-      <div class="insight" style="border-left:4px solid var(--blue);">
-        <span class="itag tag-blue">Nuevo — evento puntual de alto impacto</span>
-        <h4>Problemas forzadores cámara 9 — 53 min en un solo día</h4>
-        <p>Ocurrió 2 veces el jueves (8 + 45 min), nada que ver con lo visto en W30. Si no vuelve a aparecer en W32, fue un evento aislado — pero por el volumen de minutos vale la pena confirmarlo.</p>
-      </div>
-    </div>
-
   </div>
   <!-- ===================== FIN TAB W31 ===================== -->
+
 
 </div>
 
@@ -486,7 +486,11 @@ function buildDashboard(data, chartId, tbodyId, equipoOrder){
     return b.min - a.min;
   });
 
-  new Chart(document.getElementById(chartId), {
+  // Altura dinámica: ~26px por fila para que ninguna etiqueta se salte
+  const canvasEl = document.getElementById(chartId);
+  canvasEl.parentElement.style.height = Math.max(520, sorted.length * 26) + 'px';
+
+  new Chart(canvasEl, {
     type:'bar',
     data:{
       labels: sorted.map(d=>d.causa),
@@ -501,7 +505,7 @@ function buildDashboard(data, chartId, tbodyId, equipoOrder){
       },
       scales:{
         x:{grid:{color:'#EEEFF3'}, ticks:{stepSize:1}, title:{display:true,text:'Veces que ocurrió en la semana'}},
-        y:{grid:{display:false}, ticks:{font:{size:11}}}
+        y:{grid:{display:false}, ticks:{font:{size:11}, autoSkip:false}}
       }
     }
   });
