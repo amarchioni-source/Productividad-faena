@@ -305,8 +305,8 @@
         <p class="mn-pct" style="color:#565A66;">1% del total</p>
       </div>
     </div>
-    <div style="position:relative;width:100%;max-width:520px;height:340px;margin:0 auto;">
-      <canvas id="donutChart30" role="img" aria-label="Gráfico de dona con el porcentaje y minutos de cada macro categoría en la semana 30: mantenimiento y equipos 184 minutos 39%, descansos y pausas 150 minutos 32%, rabino y degüello 50 minutos 11%, manejo animal e ingreso 41 minutos 9%, parada sin causa 40 minutos 8%, auditoría 4 minutos 1%.">Peso por categoría semanal, semana 30.</canvas>
+    <div style="position:relative;width:100%;height:280px;">
+      <canvas id="donutChart30" role="img" aria-label="Ranking de minutos por macro categoría en la semana 30: mantenimiento y equipos 184 minutos 39%, descansos y pausas 150 minutos 32%, rabino y degüello 50 minutos 11%, manejo animal e ingreso 41 minutos 9%, parada sin causa 40 minutos 8%, auditoría 4 minutos 1%.">Ranking de macro categorías, semana 30.</canvas>
     </div>
   </div>
 
@@ -580,8 +580,8 @@
         <p class="mn-pct" style="color:var(--pink);">2% del total</p>
       </div>
     </div>
-    <div style="position:relative;width:100%;max-width:520px;height:340px;margin:0 auto;">
-      <canvas id="donutChart31" role="img" aria-label="Gráfico de dona con el porcentaje y minutos de cada macro categoría en la semana 31: descansos 230 minutos 45%, mantenimiento 193 minutos 38%, cambio de hoja de sierra 52 minutos 10%, manejo animal 15 minutos 3%, rabino y degüello 12 minutos 2%, capacitación 10 minutos 2%.">Peso por categoría semanal, semana 31.</canvas>
+    <div style="position:relative;width:100%;height:240px;">
+      <canvas id="donutChart31" role="img" aria-label="Ranking de minutos por macro categoría en la semana 31: descansos 230 minutos 45%, mantenimiento 193 minutos 38%, cambio de hoja de sierra 52 minutos 10%, manejo animal 15 minutos 3%, rabino y degüello 12 minutos 2%, capacitación 10 minutos 2%.">Ranking de macro categorías, semana 31.</canvas>
     </div>
   </div>
 
@@ -787,8 +787,8 @@
         <p class="mn-pct" style="color:#565A66;">3 hs afectadas, sin minutos</p>
       </div>
     </div>
-    <div style="position:relative;width:100%;max-width:520px;height:340px;margin:0 auto;">
-      <canvas id="donutChart32" role="img" aria-label="Gráfico de dona con el porcentaje y minutos de cada macro categoría en la semana 32 acumulado a la fecha: mantenimiento y equipos 238 minutos 62%, descansos y pausas 119 minutos 31%, paro gremial 15 minutos 4%, capacitación 7 minutos 2%, manejo animal 7 minutos 2%.">Peso por categoría semanal, semana 32.</canvas>
+    <div style="position:relative;width:100%;height:220px;">
+      <canvas id="donutChart32" role="img" aria-label="Ranking de minutos por macro categoría en la semana 32 acumulado a la fecha: mantenimiento y equipos 238 minutos 62%, descansos y pausas 119 minutos 31%, paro gremial 15 minutos 4%, capacitación 7 minutos 2%, manejo animal 7 minutos 2%.">Ranking de macro categorías, semana 32.</canvas>
     </div>
   </div>
 
@@ -939,24 +939,24 @@ allCharts.push(new Chart(document.getElementById('mantChart30'), {
 }));
 
 allCharts.push(new Chart(document.getElementById('donutChart30'), {
-  type:'doughnut',
+  type:'bar',
   data:{
-    labels:['Mantenimiento','Descansos','Rabino/degüello','Manejo animal','Parada sin causa','Auditoría'],
-    datasets:[{data:[184,150,50,41,40,4], backgroundColor:[C_MANT,C_DESC,C_RAB,C_MAN,C_PAR,C_AUD], borderWidth:3, borderColor:'#FFFFFF'}]
+    labels:['Mantenimiento y equipos','Descansos y pausas','Rabino / degüello','Manejo animal / ingreso','Parada sin causa','Auditoría'],
+    datasets:[{data:[184,150,50,41,40,4], backgroundColor:[C_MANT,C_DESC,C_RAB,C_MAN,C_PAR,C_AUD], borderRadius:6, barThickness:22}]
   },
   options:{
-    responsive:true, maintainAspectRatio:false, cutout:'58%',
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
     plugins:{
       legend:{display:false},
       datalabels:{
-        color:'#fff', font:{weight:800, size:11.5}, textAlign:'center',
-        formatter:(v,ctx)=>{
-          const total = ctx.chart.data.datasets[0].data.reduce((a,b)=>a+b,0);
-          const pct = Math.round(v/total*100);
-          const label = ctx.chart.data.labels[ctx.dataIndex];
-          return label + '\n' + v + ' min · ' + pct + '%';
-        }
+        color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12},
+        formatter:(v)=>{ const total=469; return v+' min · '+Math.round(v/total*100)+'%'; }
       }
+    },
+    layout:{padding:{right:70}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}},
+      y:{grid:{display:false}, ticks:{font:{size:12,weight:600}, color:'#12141C'}}
     }
   }
 }));
@@ -983,24 +983,24 @@ allCharts.push(new Chart(document.getElementById('mantChart31'), {
 }));
 
 allCharts.push(new Chart(document.getElementById('donutChart31'), {
-  type:'doughnut',
+  type:'bar',
   data:{
-    labels:['Descansos','Mantenimiento','Hoja de sierra','Manejo animal','Rabino/degüello','Capacitación'],
-    datasets:[{data:[230,193,52,15,12,10], backgroundColor:[C_DESC,C_MANT,'#B0339A',C_MAN,C_RAB,C_CAP], borderWidth:3, borderColor:'#FFFFFF'}]
+    labels:['Descansos','Mantenimiento y equipos','Cambio de hoja de sierra','Manejo animal','Rabino / degüello','Capacitación'],
+    datasets:[{data:[230,193,52,15,12,10], backgroundColor:[C_DESC,C_MANT,'#B0339A',C_MAN,C_RAB,C_CAP], borderRadius:6, barThickness:22}]
   },
   options:{
-    responsive:true, maintainAspectRatio:false, cutout:'58%',
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
     plugins:{
       legend:{display:false},
       datalabels:{
-        color:'#fff', font:{weight:800, size:11.5}, textAlign:'center',
-        formatter:(v,ctx)=>{
-          const total = ctx.chart.data.datasets[0].data.reduce((a,b)=>a+b,0);
-          const pct = Math.round(v/total*100);
-          const label = ctx.chart.data.labels[ctx.dataIndex];
-          return label + '\n' + v + ' min · ' + pct + '%';
-        }
+        color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12},
+        formatter:(v)=>{ const total=512; return v+' min · '+Math.round(v/total*100)+'%'; }
       }
+    },
+    layout:{padding:{right:70}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}},
+      y:{grid:{display:false}, ticks:{font:{size:12,weight:600}, color:'#12141C'}}
     }
   }
 }));
@@ -1185,24 +1185,24 @@ allCharts.push(new Chart(document.getElementById('mantChart32'), {
 }));
 
 allCharts.push(new Chart(document.getElementById('donutChart32'), {
-  type:'doughnut',
+  type:'bar',
   data:{
-    labels:['Mantenimiento','Descansos','Paro gremial','Capacitación','Manejo animal'],
-    datasets:[{data:[238,119,15,7,7], backgroundColor:[C_MANT,C_DESC,C_GRE,C_CAP,C_MAN], borderWidth:3, borderColor:'#FFFFFF'}]
+    labels:['Mantenimiento y equipos','Descansos y pausas','Paro gremial','Capacitación','Manejo animal'],
+    datasets:[{data:[238,119,15,7,7], backgroundColor:[C_MANT,C_DESC,C_GRE,C_CAP,C_MAN], borderRadius:6, barThickness:22}]
   },
   options:{
-    responsive:true, maintainAspectRatio:false, cutout:'58%',
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
     plugins:{
       legend:{display:false},
       datalabels:{
-        color:'#fff', font:{weight:800, size:11.5}, textAlign:'center',
-        formatter:(v,ctx)=>{
-          const total = ctx.chart.data.datasets[0].data.reduce((a,b)=>a+b,0);
-          const pct = Math.round(v/total*100);
-          const label = ctx.chart.data.labels[ctx.dataIndex];
-          return label + '\n' + v + ' min · ' + pct + '%';
-        }
+        color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12},
+        formatter:(v)=>{ const total=386; return v+' min · '+Math.round(v/total*100)+'%'; }
       }
+    },
+    layout:{padding:{right:70}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}},
+      y:{grid:{display:false}, ticks:{font:{size:12,weight:600}, color:'#12141C'}}
     }
   }
 }));
