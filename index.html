@@ -142,6 +142,13 @@
   .cat-gre{background:var(--red-soft);color:var(--red);}
   .cat-cap{background:var(--pink-soft);color:var(--pink);}
   .cat-prod{background:var(--cyan-soft);color:var(--cyan);}
+  @media print{
+    .tabs{display:none !important;}
+    body{padding:0;}
+    .card{break-inside:avoid;}
+    .day-card{break-inside:avoid;}
+    .insight{break-inside:avoid;}
+  }
   .equipo-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
   @media (max-width:900px){.equipo-grid{grid-template-columns:1fr;}}
   .equipo-box{border-radius:14px;padding:18px 20px;border:1px solid var(--border);background:var(--bg);}
@@ -684,28 +691,28 @@
 <div class="tab-panel active" id="w32">
 <div class="wrap">
 
-  <div class="banner">⏳ Semana en curso: cargados lunes 03/08, martes 04/08 y miércoles 05/08. Faltan jueves 06/08 y viernes 07/08 — los totales de abajo son parciales y se actualizan cuando lleguen esos días.</div>
+  <div class="banner">⏳ Semana en curso: cargados lunes 03/08, martes 04/08, miércoles 05/08 y jueves 06/08. Falta viernes 07/08 — los totales de abajo son parciales y se actualizan cuando llegue ese día.</div>
 
   <div class="kpis">
     <div class="kpi">
       <p class="label">Cumplimiento acumulado</p>
-      <p class="value">91,2%</p>
-      <span class="delta delta-blue">2.097 / 2.300 cab. (3 días)</span>
+      <p class="value">88,6%</p>
+      <span class="delta delta-blue">2.774 / 3.130 cab. (4 días)</span>
     </div>
     <div class="kpi">
       <p class="label">Déficit acumulado</p>
-      <p class="value" style="color:var(--red);">-203</p>
-      <span class="delta delta-red">cabezas (3 días)</span>
+      <p class="value" style="color:var(--red);">-356</p>
+      <span class="delta delta-red">cabezas (4 días)</span>
     </div>
     <div class="kpi">
       <p class="label">Minutos perdidos</p>
-      <p class="value" style="color:var(--amber);">386</p>
-      <span class="delta delta-amber">≈ 6,4 hs (3 días)</span>
+      <p class="value" style="color:var(--amber);">526</p>
+      <span class="delta delta-amber">≈ 8,8 hs (4 días)</span>
     </div>
     <div class="kpi">
       <p class="label">Principal causa</p>
       <p class="value" style="font-size:24px;color:var(--blue);">Mantenim.</p>
-      <span class="delta delta-blue">234 min · 61%</span>
+      <span class="delta delta-blue">306 min · 58%</span>
     </div>
   </div>
 
@@ -732,10 +739,10 @@
         <div class="cbar-track"><div class="cbar-fill" style="width:85%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red-soft);color:var(--red);">-103</span>
       </div>
-      <div class="compl-card pending">
-        <p class="cday">Jueves 06/08</p>
-        <div class="pend-icon">···</div>
-        <p class="pend-txt">Pendiente de carga</p>
+      <div class="compl-card">
+        <p class="cday">Jueves 06/08</p><p class="creal">677</p><p class="cplan">plan 830</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:82%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-153</span>
       </div>
       <div class="compl-card pending">
         <p class="cday">Viernes 07/08</p>
@@ -743,9 +750,9 @@
         <p class="pend-txt">Pendiente de carga</p>
       </div>
       <div class="compl-card total">
-        <p class="cday">Acumulado (3 días)</p><p class="creal">2.097</p><p class="cplan">plan 2.300</p>
-        <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:91%;background:var(--red);"></div></div>
-        <span class="cdif" style="background:var(--red);color:#fff;">-203</span>
+        <p class="cday">Acumulado (4 días)</p><p class="creal">2.774</p><p class="cplan">plan 3.130</p>
+        <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:89%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red);color:#fff;">-356</span>
       </div>
     </div>
   </div>
@@ -754,48 +761,53 @@
     <div class="card-head">
       <div>
         <p class="card-title">Acumulado a la fecha — macro-categoría</p>
-        <p class="card-sub">386 min perdidos en 3 días cargados (faltan jueves y viernes)</p>
+        <p class="card-sub">526 min perdidos en 4 días cargados (falta viernes)</p>
       </div>
     </div>
     <div class="macro-num-grid">
       <div class="macro-num" style="background:var(--blue-soft);">
         <p class="mn-label" style="color:var(--blue);">Mantenimiento y equipos</p>
-        <p class="mn-val" style="color:var(--blue);">234</p>
-        <p class="mn-pct" style="color:var(--blue);">61% del total</p>
+        <p class="mn-val" style="color:var(--blue);">306</p>
+        <p class="mn-pct" style="color:var(--blue);">58% del total</p>
       </div>
       <div class="macro-num" style="background:var(--teal-soft);">
         <p class="mn-label" style="color:var(--teal);">Descansos y pausas</p>
-        <p class="mn-val" style="color:var(--teal);">119</p>
-        <p class="mn-pct" style="color:var(--teal);">31% del total</p>
+        <p class="mn-val" style="color:var(--teal);">159</p>
+        <p class="mn-pct" style="color:var(--teal);">30% del total</p>
       </div>
       <div class="macro-num" style="background:var(--red-soft);">
         <p class="mn-label" style="color:var(--red);">Paro gremial / externo</p>
         <p class="mn-val" style="color:var(--red);">15</p>
-        <p class="mn-pct" style="color:var(--red);">4% del total</p>
+        <p class="mn-pct" style="color:var(--red);">3% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--purple-soft);">
+        <p class="mn-label" style="color:var(--purple);">Rabino / degüello</p>
+        <p class="mn-val" style="color:var(--purple);">11</p>
+        <p class="mn-pct" style="color:var(--purple);">2% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--cyan-soft);">
+        <p class="mn-label" style="color:var(--cyan);">Producción</p>
+        <p class="mn-val" style="color:var(--cyan);">11</p>
+        <p class="mn-pct" style="color:var(--cyan);">2% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--gray-soft);">
+        <p class="mn-label" style="color:#565A66;">Auditoría</p>
+        <p class="mn-val" style="color:#565A66;">10</p>
+        <p class="mn-pct" style="color:#565A66;">2% del total (+4 hs sin cuantificar)</p>
       </div>
       <div class="macro-num" style="background:var(--pink-soft);">
         <p class="mn-label" style="color:var(--pink);">Capacitación</p>
         <p class="mn-val" style="color:var(--pink);">7</p>
-        <p class="mn-pct" style="color:var(--pink);">2% del total</p>
+        <p class="mn-pct" style="color:var(--pink);">1% del total</p>
       </div>
       <div class="macro-num" style="background:var(--green-soft);">
         <p class="mn-label" style="color:var(--green);">Manejo animal / ingreso</p>
         <p class="mn-val" style="color:var(--green);">7</p>
-        <p class="mn-pct" style="color:var(--green);">2% del total</p>
-      </div>
-      <div class="macro-num" style="background:var(--cyan-soft);">
-        <p class="mn-label" style="color:var(--cyan);">Producción</p>
-        <p class="mn-val" style="color:var(--cyan);">4</p>
-        <p class="mn-pct" style="color:var(--cyan);">1% del total</p>
-      </div>
-      <div class="macro-num" style="background:var(--gray-soft);">
-        <p class="mn-label" style="color:#565A66;">Auditoría</p>
-        <p class="mn-val" style="color:#565A66;">s/d</p>
-        <p class="mn-pct" style="color:#565A66;">3 hs afectadas, sin minutos</p>
+        <p class="mn-pct" style="color:var(--green);">1% del total</p>
       </div>
     </div>
-    <div style="position:relative;width:100%;height:240px;">
-      <canvas id="donutChart32" role="img" aria-label="Ranking de minutos por macro categoría en la semana 32 acumulado a la fecha: mantenimiento y equipos 234 minutos 61%, descansos y pausas 119 minutos 31%, paro gremial 15 minutos 4%, capacitación 7 minutos 2%, manejo animal 7 minutos 2%, producción 4 minutos 1%.">Ranking de macro categorías, semana 32.</canvas>
+    <div style="position:relative;width:100%;height:280px;">
+      <canvas id="donutChart32" role="img" aria-label="Ranking de minutos por macro categoría en la semana 32 acumulado a la fecha: mantenimiento y equipos 306 minutos 58%, descansos y pausas 159 minutos 30%, paro gremial 15 minutos 3%, rabino y degüello 11 minutos 2%, producción 11 minutos 2%, auditoría 10 minutos 2%, capacitación 7 minutos 1%, manejo animal 7 minutos 1%.">Ranking de macro categorías, semana 32.</canvas>
     </div>
   </div>
 
@@ -803,7 +815,7 @@
     <div class="card-head">
       <div>
         <p class="card-title">Ranking de frecuencia — todas las causas</p>
-        <p class="card-sub">Cuántas veces ocurrió cada problema en los 3 días cargados (faltan jueves y viernes)</p>
+        <p class="card-sub">Cuántas veces ocurrió cada problema en los 4 días cargados (falta viernes)</p>
       </div>
     </div>
     <table class="freq">
@@ -822,7 +834,7 @@
         <p class="card-sub">Valor real junto a cada barra. Color = macro-categoría.</p>
       </div>
     </div>
-    <div class="day-grid cols3">
+    <div class="day-grid">
       <div class="day-card">
         <p class="dname">Lunes 03/08</p><p class="dsub">121 min totales</p>
         <div class="prow"><span class="plabel">Descanso (35')</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">35</span></div>
@@ -857,6 +869,23 @@
         <div class="prow"><span class="plabel">Numeración/tropa (producción)</span><div class="ptrack"><div class="pfill" style="width:8%;background:var(--cyan);"></div></div><span class="pval">4</span></div>
         <div class="prow"><span class="plabel">Manguera pinchada</span><div class="ptrack"><div class="pfill" style="width:6%;background:var(--blue);"></div></div><span class="pval">3</span></div>
       </div>
+
+      <div class="day-card">
+        <p class="dname">Jueves 06/08</p><p class="dsub">140 min totales</p>
+        <div class="prow"><span class="plabel">Retrainer 2 (13h, guinche roto)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--blue);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:75%;background:var(--teal);"></div></div><span class="pval">30</span></div>
+        <div class="prow"><span class="plabel">Limpieza previa a auditoría</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--gray);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Noria 5 (fusible)</span><div class="ptrack"><div class="pfill" style="width:20%;background:var(--blue);"></div></div><span class="pval">8</span></div>
+        <div class="prow"><span class="plabel">Rabino llegó tarde (degüello)</span><div class="ptrack"><div class="pfill" style="width:18%;background:var(--purple);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Faena cortó antes (producción)</span><div class="ptrack"><div class="pfill" style="width:18%;background:var(--cyan);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 empujador (sensor)</span><div class="ptrack"><div class="pfill" style="width:15%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 puerta lateral (sensor)</span><div class="ptrack"><div class="pfill" style="width:15%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Retrainer 2 (14h, guinche roto)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Sierra dividir (cambio hoja)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Rabino - mesa pulmones tarde</span><div class="ptrack"><div class="pfill" style="width:10%;background:var(--purple);"></div></div><span class="pval">4</span></div>
+        <div class="prow"><span class="plabel">Calesita cámaras (sensor)</span><div class="ptrack"><div class="pfill" style="width:5%;background:var(--blue);"></div></div><span class="pval">2</span></div>
+      </div>
     </div>
     <div class="legend">
       <span><span class="dot" style="background:var(--blue)"></span>Mantenimiento y equipos</span>
@@ -864,7 +893,8 @@
       <span><span class="dot" style="background:var(--green)"></span>Manejo de animales / ingreso</span>
       <span><span class="dot" style="background:var(--pink)"></span>Capacitación / actividades internas</span>
       <span><span class="dot" style="background:var(--red)"></span>Paro gremial / externo</span>
-      <span><span class="dot" style="background:var(--gray)"></span>Auditoría (sin cuantificar aún)</span>
+      <span><span class="dot" style="background:var(--purple)"></span>Rabino / degüello</span>
+      <span><span class="dot" style="background:var(--gray)"></span>Auditoría</span>
       <span><span class="dot" style="background:var(--cyan)"></span>Producción</span>
     </div>
   </div>
@@ -877,20 +907,20 @@
   <div class="card">
     <div class="card-head">
       <div>
-        <p class="card-title">Detalle de mantenimiento — 234 min</p>
-        <p class="card-sub">Cajón 2 lidera (101 min) por la falla de "aprieta nuca" del martes; Cajón 1 sigue firme en segundo lugar (78 min)</p>
+        <p class="card-title">Detalle de mantenimiento — 306 min</p>
+        <p class="card-sub">Cajón 2 lidera (113 min); irrumpe Retrainer 2 con 45 min por dos fallas de guinche el jueves</p>
       </div>
     </div>
-    <div style="position:relative;width:100%;height:280px;">
-      <canvas id="mantChart32" role="img" aria-label="Ranking de minutos de mantenimiento por equipo, semana 32 acumulado a la fecha: cajón 2, 101 minutos. Cajón 1, 78 minutos. Sierra de pecho, 15 minutos. Noria 2, 12 minutos. Guillotina, 8 minutos. Sierra dividir, 6 minutos. Pistón up puller, 6 minutos. Fresadora, 5 minutos. Manguera, 3 minutos.">Ranking de minutos de mantenimiento por equipo, semana 32.</canvas>
+    <div style="position:relative;width:100%;height:340px;">
+      <canvas id="mantChart32" role="img" aria-label="Ranking de minutos de mantenimiento por equipo, semana 32 acumulado a la fecha: cajón 2, 113 minutos. Cajón 1, 78 minutos. Retrainer 2, 45 minutos. Sierra de pecho, 15 minutos. Noria 2, 12 minutos. Sierra dividir, 11 minutos. Noria 5, 8 minutos. Guillotina, 8 minutos. Pistón up puller, 6 minutos. Fresadora, 5 minutos. Manguera, 3 minutos. Calesita cámaras, 2 minutos.">Ranking de minutos de mantenimiento por equipo, semana 32.</canvas>
     </div>
   </div>
 
   <div class="insight-grid">
     <div class="insight" style="border-left:4px solid var(--blue);">
       <span class="itag tag-blue">A seguir</span>
-      <h4>Mantenimiento sube a 61% del tiempo perdido</h4>
-      <p>234 de 386 min. El martes "aprieta nuca" dejó a cajón 2 sin funcionar 2 horas seguidas (85'), el evento más costoso de la semana hasta ahora. Sumado a los 78' de cajón 1, ambos cajones ya explican la mayoría del mantenimiento.</p>
+      <h4>Mantenimiento se mantiene arriba de 55%</h4>
+      <p>306 de 526 min (58%). Cajón 2 ya acumula 113 min en 3 de los 4 días. El jueves sumó un problema nuevo: Retrainer 2 (guinche) rompió 2 veces y perdió 45 min — vale confirmar si es un caso aislado o empieza a repetirse como cajón 1/2.</p>
     </div>
     <div class="insight" style="border-left:4px solid var(--red);">
       <span class="itag tag-red">Evento puntual</span>
@@ -899,13 +929,13 @@
     </div>
     <div class="insight" style="border-left:4px solid var(--amber);">
       <span class="itag tag-amber">Zona gris</span>
-      <h4>Auditoría sin cuantificar — miércoles 09-11h</h4>
-      <p>Tres horas seguidas afectadas por la auditoría sin minutos asignados. Coincide con horas de ingreso bajo (59, 38, 42) — probablemente hay costo oculto real ahí.</p>
+      <h4>Auditoría — ya son 4 horas sin cuantificar</h4>
+      <p>Miércoles (09-11h) y jueves (10h) suman 4 horas afectadas por la auditoría sin minutos asignados, más 10' ya cuantificados de limpieza previa. El costo oculto real probablemente sea mayor a esos 10 minutos.</p>
     </div>
     <div class="insight" style="border-left:4px solid var(--gray);">
       <span class="itag tag-blue">Pendiente</span>
-      <h4>Faltan jueves y viernes para cerrar la semana</h4>
-      <p>Los acumulados de esta vista son parciales (3 de 5 días) y el déficit ya llegó a -203 cabezas. En cuanto lleguen los últimos 2 días, se recalculan todos los totales, porcentajes y gráficos.</p>
+      <h4>Falta viernes para cerrar la semana</h4>
+      <p>Los acumulados de esta vista son parciales (4 de 5 días) y el déficit ya llegó a -356 cabezas. En cuanto llegue el último día, se recalculan todos los totales, porcentajes y gráficos.</p>
     </div>
   </div>
 
@@ -1148,25 +1178,34 @@ const dataW31 = [
 buildFreqSection(dataW31, 'freqChart31', 'tableBody-w31', {'Cajón 2':0, 'Cajón 1':1});
 
 const dataW32 = [
-  {causa:'Descanso', cat:'Descanso', equipo:null, freq:6, dias:3, min:119},
+  {causa:'Descanso', cat:'Descanso', equipo:null, freq:8, dias:4, min:159},
   {causa:'Cambio sierra de pecho', cat:'Operativo', equipo:null, freq:3, dias:1, min:15},
-  {causa:'Auditoría (acomodo sector / gancho por medio)', cat:'Auditoria', equipo:null, freq:3, dias:1, min:0},
+  {causa:'Auditoría (acomodo sector / gancho por medio / halal)', cat:'Auditoria', equipo:null, freq:4, dias:2, min:0},
   {causa:'Cajón 2 · Aprieta nuca / no funciona (2 hs)', cat:'Mantenimiento', equipo:'Cajón 2', freq:2, dias:1, min:85},
+  {causa:'Retrainer 2 (guinche no levanta, roto)', cat:'Mantenimiento', equipo:null, freq:2, dias:1, min:45},
   {causa:'Cajón 1 · Techo/sensor (2 hs seguidas)', cat:'Mantenimiento', equipo:'Cajón 1', freq:2, dias:1, min:52},
   {causa:'Cajón 1 · Sensor + pata trabada', cat:'Mantenimiento', equipo:'Cajón 1', freq:1, dias:1, min:20},
   {causa:'Cajón 2 · Puerta lateral', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:16},
   {causa:'Paro gremial (ruedas/ventiladores)', cat:'Paro gremial', equipo:null, freq:1, dias:1, min:15},
+  {causa:'Limpieza previa a auditoría', cat:'Auditoria', equipo:null, freq:1, dias:1, min:10},
+  {causa:'Rabino llegaron tarde (degüello)', cat:'Rabino/degüello', equipo:null, freq:1, dias:1, min:7},
+  {causa:'Faena cortó antes (producción)', cat:'Producción', equipo:null, freq:1, dias:1, min:7},
+  {causa:'Noria 5 (fusible cortado)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:8},
   {causa:'Capacitación material de riesgo', cat:'Capacitacion', equipo:null, freq:1, dias:1, min:7},
   {causa:'Noria 2 · Trabada', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:7},
   {causa:'Guillotina (colocaron teflón)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:8},
   {causa:'Down puller (animal, tendones cortados)', cat:'Manejo animal', equipo:null, freq:1, dias:1, min:7},
   {causa:'Cajón 1 · Puerta lateral (de nuevo)', cat:'Mantenimiento', equipo:'Cajón 1', freq:1, dias:1, min:6},
+  {causa:'Cajón 2 · Empujador (sensor)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:6},
+  {causa:'Cajón 2 · Puerta lateral (sensor, de nuevo)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:6},
   {causa:'Pistón up puller', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:6},
-  {causa:'Cambio hoja sierra (dividir)', cat:'Operativo', equipo:null, freq:1, dias:1, min:6},
+  {causa:'Cambio hoja sierra (dividir)', cat:'Operativo', equipo:null, freq:2, dias:2, min:11},
+  {causa:'Rabino - mesa pulmones tarde', cat:'Rabino/degüello', equipo:null, freq:1, dias:1, min:4},
   {causa:'Fresadora (canal médula)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:5},
   {causa:'Noria 2 · Fusible', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:5},
   {causa:'Numeración/tropa (corrección producción)', cat:'Producción', equipo:null, freq:1, dias:1, min:4},
   {causa:'Manguera de agua pinchada', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:3},
+  {causa:'Calesita cámaras (sensor)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:2},
 ];
 
 buildFreqSection(dataW32, 'freqChart32', 'tableBody-w32', {'Cajón 2':0, 'Cajón 1':1});
@@ -1174,11 +1213,11 @@ buildFreqSection(dataW32, 'freqChart32', 'tableBody-w32', {'Cajón 2':0, 'Cajón
 allCharts.push(new Chart(document.getElementById('mantChart32'), {
   type:'bar',
   data:{
-    labels:['Cajón 2','Cajón 1','Sierra de pecho','Noria 2','Guillotina','Sierra dividir','Pistón up puller','Fresadora','Manguera'],
+    labels:['Cajón 2','Cajón 1','Retrainer 2','Sierra de pecho','Noria 2','Sierra dividir','Noria 5','Guillotina','Pistón up puller','Fresadora','Manguera','Calesita cámaras'],
     datasets:[{
-      data:[101,78,15,12,8,6,6,5,3],
+      data:[113,78,45,15,12,11,8,8,6,5,3,2],
       backgroundColor:'#2F5FE0',
-      borderRadius:6, barThickness:20
+      borderRadius:6, barThickness:18
     }]
   },
   options:{
@@ -1195,8 +1234,8 @@ allCharts.push(new Chart(document.getElementById('mantChart32'), {
 allCharts.push(new Chart(document.getElementById('donutChart32'), {
   type:'bar',
   data:{
-    labels:['Mantenimiento y equipos','Descansos y pausas','Paro gremial','Capacitación','Manejo animal','Producción'],
-    datasets:[{data:[234,119,15,7,7,4], backgroundColor:[C_MANT,C_DESC,C_GRE,C_CAP,C_MAN,C_PROD], borderRadius:6, barThickness:22}]
+    labels:['Mantenimiento y equipos','Descansos y pausas','Paro gremial','Rabino / degüello','Producción','Auditoría','Capacitación','Manejo animal'],
+    datasets:[{data:[306,159,15,11,11,10,7,7], backgroundColor:[C_MANT,C_DESC,C_GRE,C_RAB,C_PROD,C_AUD,C_CAP,C_MAN], borderRadius:6, barThickness:22}]
   },
   options:{
     indexAxis:'y', responsive:true, maintainAspectRatio:false,
@@ -1204,7 +1243,7 @@ allCharts.push(new Chart(document.getElementById('donutChart32'), {
       legend:{display:false},
       datalabels:{
         color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12},
-        formatter:(v)=>{ const total=386; return v+' min · '+Math.round(v/total*100)+'%'; }
+        formatter:(v)=>{ const total=526; return v+' min · '+Math.round(v/total*100)+'%'; }
       }
     },
     layout:{padding:{right:70}},
