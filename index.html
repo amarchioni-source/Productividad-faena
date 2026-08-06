@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Dashboard de Frecuencia — Semanal</title>
+<title>Dashboard Ejecutivo — Productividad de Faena</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -16,23 +16,38 @@
     --amber:#E08A1E; --amber-soft:#FCF1E0;
     --gray:#8E93A0; --gray-soft:#EEEFF2;
     --red:#E0402F; --red-soft:#FCEAE8;
+    --pink:#C24D7C; --pink-soft:#FBEAF0;
   }
   *{box-sizing:border-box;}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-variant-numeric:tabular-nums;padding:0 0 60px;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Inter',sans-serif; font-variant-numeric:tabular-nums;
+    padding:0 0 60px;
+  }
   .wrap{max-width:1220px;margin:0 auto;padding:0 32px;}
-  header{padding:36px 0 0;}
+
+  header{padding:36px 0 16px;}
   header .wrap{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;}
   .eyebrow{font-size:13px;font-weight:600;color:var(--mute);margin:0 0 6px;}
   h1{font-size:28px;font-weight:800;margin:0;letter-spacing:-0.02em;}
   .period{font-size:14px;font-weight:600;color:var(--blue);text-align:right;}
   .period span{display:block;font-size:12px;font-weight:500;color:var(--mute);margin-top:2px;}
 
-  .tabs{display:flex;gap:6px;margin:24px 0 28px;border-bottom:1px solid var(--border);}
-  .tab-btn{background:none;border:none;padding:12px 20px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;color:var(--mute);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;transition:color .15s;}
-  .tab-btn:hover{color:var(--text);}
+  .tabs{display:flex;gap:8px;margin:20px 0 28px;border-bottom:1px solid var(--border);}
+  .tab-btn{
+    appearance:none;border:none;background:none;cursor:pointer;
+    font-family:'Inter',sans-serif;font-size:14px;font-weight:700;color:var(--mute);
+    padding:10px 4px;margin-right:20px;border-bottom:3px solid transparent;
+  }
   .tab-btn.active{color:var(--blue);border-bottom-color:var(--blue);}
+  .tab-btn .pill{
+    display:inline-block;font-size:10.5px;font-weight:800;text-transform:uppercase;
+    background:var(--amber-soft);color:var(--amber);border-radius:20px;padding:1px 8px;margin-left:7px;
+  }
   .tab-panel{display:none;}
   .tab-panel.active{display:block;}
+
+  .banner{background:var(--amber-soft);border:1px solid #F0D9B5;color:#8A5A0E;border-radius:12px;padding:12px 18px;font-size:13.5px;font-weight:600;margin-bottom:24px;}
 
   .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;}
   .kpi{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 22px;}
@@ -43,16 +58,73 @@
   .delta-green{background:var(--green-soft);color:var(--green);}
   .delta-blue{background:var(--blue-soft);color:var(--blue);}
   .delta-amber{background:var(--amber-soft);color:var(--amber);}
+
   .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px 26px;margin-bottom:20px;}
   .card-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
   .card-title{font-size:17px;font-weight:700;margin:0;}
   .card-sub{font-size:13px;color:var(--mute);margin:3px 0 0;}
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+
+  .compl-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
+  @media (max-width:1050px){.compl-grid{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:600px){.compl-grid{grid-template-columns:repeat(2,1fr);}}
+  .compl-card{background:var(--bg);border-radius:14px;padding:16px 16px 18px;border:1px solid var(--border);}
+  .compl-card.total{background:var(--text);border-color:var(--text);}
+  .compl-card.total .cday,.compl-card.total .cplan{color:#C7CAD3;}
+  .compl-card.total .creal{color:#FFFFFF;}
+  .compl-card.pending{background:#EFF0F3;border:1px dashed #C7CAD3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:150px;}
+  .compl-card.pending .pend-icon{font-size:20px;color:#A8ACB8;margin-bottom:6px;letter-spacing:2px;}
+  .compl-card.pending .pend-txt{font-size:12px;color:#8B90A0;font-weight:600;}
+  .cday{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--mute);margin:0 0 12px;}
+  .creal{font-size:34px;font-weight:900;letter-spacing:-0.02em;line-height:1;margin:0;}
+  .cplan{font-size:13px;color:var(--mute);font-weight:600;margin:4px 0 10px;}
+  .cbar-track{height:8px;border-radius:6px;background:#E3E5EA;overflow:hidden;margin-bottom:10px;}
+  .cbar-fill{height:100%;border-radius:6px;}
+  .cdif{font-size:16px;font-weight:800;padding:3px 10px;border-radius:20px;display:inline-block;}
+
+  .day-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+  @media (max-width:1050px){.day-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.day-grid{grid-template-columns:1fr;}}
+  .day-grid.cols3{grid-template-columns:repeat(3,1fr);}
+  @media (max-width:900px){.day-grid.cols3{grid-template-columns:repeat(2,1fr);}}
+  .day-card{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:16px 16px;}
+  .day-card.pending{border:1px dashed #C7CAD3;display:flex;align-items:center;justify-content:center;min-height:150px;color:#8B90A0;font-size:13px;font-weight:600;text-align:center;}
+  .day-card .dname{font-size:13.5px;font-weight:700;margin:0 0 2px;}
+  .day-card .dsub{font-size:11.5px;color:var(--mute);margin:0 0 14px;font-weight:600;}
+  .prow{display:flex;align-items:center;gap:8px;margin-bottom:9px;}
+  .plabel{flex:0 0 122px;font-size:11.5px;color:var(--text);font-weight:600;line-height:1.25;}
+  .ptrack{flex:1;height:16px;background:#E9EAEE;border-radius:4px;position:relative;overflow:hidden;}
+  .pfill{height:100%;border-radius:4px;}
+  .pval{flex:0 0 30px;text-align:right;font-size:13px;font-weight:800;}
+
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--mute);margin-top:14px;}
+  .legend span{display:flex;align-items:center;gap:6px;font-weight:500;}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+
+  .macro-num-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;}
+  @media (max-width:700px){.macro-num-grid{grid-template-columns:repeat(2,1fr);}}
+  .macro-num{border-radius:14px;padding:16px 18px;}
+  .macro-num .mn-label{font-size:12.5px;font-weight:700;margin:0 0 6px;}
+  .macro-num .mn-val{font-size:28px;font-weight:900;letter-spacing:-0.02em;margin:0;line-height:1;}
+  .macro-num .mn-pct{font-size:12px;font-weight:600;opacity:.75;margin-top:4px;}
+
+  .grid2{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;}
   @media (max-width:900px){.grid2{grid-template-columns:1fr;} .kpis{grid-template-columns:1fr 1fr;}}
-  table{width:100%;border-collapse:collapse;font-size:13.5px;}
-  th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.03em;color:var(--mute);font-weight:700;padding:8px 10px;border-bottom:2px solid var(--border);}
-  td{padding:9px 10px;border-bottom:1px solid var(--border);}
-  tr:last-child td{border-bottom:none;}
+
+  .insight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  @media (max-width:900px){.insight-grid{grid-template-columns:1fr;}}
+  .insight{border-radius:14px;padding:16px 18px;border:1px solid var(--border);}
+  .insight .itag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:2px 9px;border-radius:20px;display:inline-block;margin-bottom:8px;}
+  .insight p{margin:0;font-size:13.5px;color:var(--mute);line-height:1.6;}
+  .insight h4{margin:0 0 6px;font-size:14.5px;font-weight:700;}
+  .tag-red{background:var(--red-soft);color:var(--red);}
+  .tag-amber{background:var(--amber-soft);color:var(--amber);}
+  .tag-blue{background:var(--blue-soft);color:var(--blue);}
+  .tag-green{background:var(--green-soft);color:var(--green);}
+
+  table.freq{width:100%;border-collapse:collapse;font-size:13.5px;}
+  table.freq th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.03em;color:var(--mute);font-weight:700;padding:8px 10px;border-bottom:2px solid var(--border);}
+  table.freq td{padding:9px 10px;border-bottom:1px solid var(--border);}
+  table.freq tr:last-child td{border-bottom:none;}
   .badge{font-size:11.5px;font-weight:800;padding:2px 9px;border-radius:20px;display:inline-block;}
   .badge-red{background:var(--red-soft);color:var(--red);}
   .badge-amber{background:var(--amber-soft);color:var(--amber);}
@@ -66,6 +138,8 @@
   .cat-par{background:var(--amber-soft);color:var(--amber);}
   .cat-aud{background:var(--gray-soft);color:#565A66;}
   .cat-oper{background:#FDF0FA;color:#B0339A;}
+  .cat-gre{background:var(--red-soft);color:var(--red);}
+  .cat-cap{background:var(--pink-soft);color:var(--pink);}
   .equipo-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
   @media (max-width:900px){.equipo-grid{grid-template-columns:1fr;}}
   .equipo-box{border-radius:14px;padding:18px 20px;border:1px solid var(--border);background:var(--bg);}
@@ -78,31 +152,7 @@
   .erow .eright{text-align:right;}
   .erow .efreq{font-size:16px;font-weight:800;color:var(--blue);}
   .erow .emin{font-size:11.5px;color:var(--mute);font-weight:600;}
-  .insight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-  @media (max-width:900px){.insight-grid{grid-template-columns:1fr;}}
-  .insight{border-radius:14px;padding:16px 18px;border:1px solid var(--border);}
-  .insight .itag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:2px 9px;border-radius:20px;display:inline-block;margin-bottom:8px;}
-  .insight p{margin:0;font-size:13.5px;color:var(--mute);line-height:1.6;}
-  .insight h4{margin:0 0 6px;font-size:14.5px;font-weight:700;}
-  .tag-red{background:var(--red-soft);color:var(--red);}
-  .tag-amber{background:var(--amber-soft);color:var(--amber);}
-  .tag-blue{background:var(--blue-soft);color:var(--blue);}
-  .tag-green{background:var(--green-soft);color:var(--green);}
   .note{background:var(--amber-soft);border-radius:12px;padding:12px 16px;font-size:13px;color:#8a5a12;margin-top:14px;}
-
-  .compl-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
-  @media (max-width:1050px){.compl-grid{grid-template-columns:repeat(3,1fr);}}
-  @media (max-width:600px){.compl-grid{grid-template-columns:repeat(2,1fr);}}
-  .compl-card{background:var(--bg);border-radius:14px;padding:16px 16px 18px;border:1px solid var(--border);}
-  .compl-card.total{background:var(--text);border-color:var(--text);}
-  .compl-card.total .cday,.compl-card.total .cplan{color:#C7CAD3;}
-  .compl-card.total .creal{color:#FFFFFF;}
-  .cday{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--mute);margin:0 0 12px;}
-  .creal{font-size:34px;font-weight:900;letter-spacing:-0.02em;line-height:1;margin:0;}
-  .cplan{font-size:13px;color:var(--mute);font-weight:600;margin:4px 0 10px;}
-  .cbar-track{height:8px;border-radius:6px;background:#E3E5EA;overflow:hidden;margin-bottom:10px;}
-  .cbar-fill{height:100%;border-radius:6px;}
-  .cdif{font-size:16px;font-weight:800;padding:3px 10px;border-radius:20px;display:inline-block;}
 </style>
 </head>
 <body>
@@ -111,357 +161,749 @@
   <div class="wrap">
     <div>
       <p class="eyebrow">Devesa · Azul Natural Beef S.A. — Planta de faena</p>
-      <h1>Dashboard de frecuencia de problemas</h1>
+      <h1>Dashboard ejecutivo de productividad</h1>
     </div>
-    <div class="period">2 de 3 semanas cargadas<span>Falta W32</span></div>
+    <div class="period" id="periodLabel">Semana 30 · 20—24 jul<span>Meta: 100 cab/h</span></div>
   </div>
 </header>
 
 <div class="wrap">
   <div class="tabs">
-    <button class="tab-btn active" data-tab="w30">Semana 30</button>
-    <button class="tab-btn" data-tab="w31">Semana 31</button>
+    <button class="tab-btn active" id="btn-w30" onclick="showTab('w30')">Semana 30</button>
+    <button class="tab-btn" id="btn-w31" onclick="showTab('w31')">Semana 31</button>
+    <button class="tab-btn" id="btn-w32" onclick="showTab('w32')">Semana 32 <span class="pill">en curso</span></button>
+  </div>
+</div>
+
+<!-- ============ SEMANA 30 ============ -->
+<div class="tab-panel active" id="w30">
+<div class="wrap">
+
+  <div class="kpis">
+    <div class="kpi">
+      <p class="label">Cumplimiento semanal</p>
+      <p class="value">96,8%</p>
+      <span class="delta delta-blue">3.784 / 3.910 cab.</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Déficit vs. plan</p>
+      <p class="value" style="color:var(--red);">-126</p>
+      <span class="delta delta-red">cabezas</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Minutos perdidos</p>
+      <p class="value" style="color:var(--amber);">469</p>
+      <span class="delta delta-amber">≈ 7,8 hs</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Principal causa</p>
+      <p class="value" style="font-size:24px;color:var(--blue);">Mantenim.</p>
+      <span class="delta delta-blue">184 min · 39%</span>
+    </div>
   </div>
 
-  <!-- ===================== TAB W30 ===================== -->
-  <div class="tab-panel active" id="tab-w30">
-
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <p class="card-title">Cumplimiento por día — plan vs. real</p>
-          <p class="card-sub">Número grande = real. Debajo, plan y diferencia.</p>
-        </div>
-      </div>
-      <div class="compl-grid">
-        <div class="compl-card">
-          <p class="cday">Lunes</p><p class="creal">715</p><p class="cplan">plan 800</p>
-          <div class="cbar-track"><div class="cbar-fill" style="width:89%;background:var(--red);"></div></div>
-          <span class="cdif" style="background:var(--red-soft);color:var(--red);">-85</span>
-        </div>
-        <div class="compl-card">
-          <p class="cday">Martes</p><p class="creal">783</p><p class="cplan">plan 820</p>
-          <div class="cbar-track"><div class="cbar-fill" style="width:95%;background:var(--red);"></div></div>
-          <span class="cdif" style="background:var(--red-soft);color:var(--red);">-37</span>
-        </div>
-        <div class="compl-card">
-          <p class="cday">Miércoles</p><p class="creal">767</p><p class="cplan">plan 820</p>
-          <div class="cbar-track"><div class="cbar-fill" style="width:94%;background:var(--red);"></div></div>
-          <span class="cdif" style="background:var(--red-soft);color:var(--red);">-53</span>
-        </div>
-        <div class="compl-card">
-          <p class="cday">Jueves</p><p class="creal">768</p><p class="cplan">plan 730</p>
-          <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
-          <span class="cdif" style="background:var(--green-soft);color:var(--green);">+38</span>
-        </div>
-        <div class="compl-card">
-          <p class="cday">Viernes</p><p class="creal">751</p><p class="cplan">plan 740</p>
-          <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
-          <span class="cdif" style="background:var(--green-soft);color:var(--green);">+11</span>
-        </div>
-        <div class="compl-card total">
-          <p class="cday">Total semana</p><p class="creal">3.784</p><p class="cplan">plan 3.910</p>
-          <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:97%;background:var(--red);"></div></div>
-          <span class="cdif" style="background:var(--red);color:#fff;">-126</span>
-        </div>
-      </div>
+  <div class="kpis">
+    <div class="kpi">
+      <p class="label">Eventos totales</p>
+      <p class="value">48</p>
+      <span class="delta delta-blue">en 5 días</span>
     </div>
-
-    <div class="kpis">
-      <div class="kpi">
-        <p class="label">Eventos totales</p>
-        <p class="value">48</p>
-        <span class="delta delta-blue">en 5 días</span>
-      </div>
-      <div class="kpi">
-        <p class="label">Causas distintas</p>
-        <p class="value">31</p>
-        <span class="delta delta-amber">17 se repitieron ≥2 veces</span>
-      </div>
-      <div class="kpi">
-        <p class="label">Más frecuente (fuera desc.)</p>
-        <p class="value" style="font-size:22px;color:var(--red);">Hoja sierra</p>
-        <span class="delta delta-red">7 veces · 38 min</span>
-      </div>
-      <div class="kpi">
-        <p class="label">Alto impacto / baja frec.</p>
-        <p class="value" style="font-size:22px;color:var(--blue);">Cajón 2</p>
-        <span class="delta delta-blue">"no funciona": 2x · 60 min</span>
-      </div>
+    <div class="kpi">
+      <p class="label">Causas distintas</p>
+      <p class="value">31</p>
+      <span class="delta delta-amber">17 se repitieron ≥2 veces</span>
     </div>
-
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <p class="card-title">Tabla completa — frecuencia y minutos por causa</p>
-          <p class="card-sub">Ordenado por frecuencia. "Días" muestra en qué días distintos ocurrió (si se repite el mismo día, cuenta 1 solo día).</p>
-        </div>
-      </div>
-      <table>
-        <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días distintos</th><th>Minutos totales</th><th>Prom. min/evento</th></tr></thead>
-        <tbody id="tableBody-w30"></tbody>
-      </table>
+    <div class="kpi">
+      <p class="label">Más frecuente (fuera desc.)</p>
+      <p class="value" style="font-size:22px;color:var(--red);">Hoja sierra</p>
+      <span class="delta delta-red">7 veces · 38 min</span>
     </div>
-
-    <div class="insight-grid">
-      <div class="insight" style="border-left:4px solid var(--red);">
-        <span class="itag tag-red">Prioridad 1 — recurrente</span>
-        <h4>Cambio de hoja de sierra — 7 veces</h4>
-        <p>Es la causa más frecuente después de descansos: apareció en 4 de los 5 días. Individualmente son 5-6 min, pero sumado son 38 min/semana. Si se repite en W31 y W32, conviene revisar afilado/stock de hojas antes que tratarlo como "normal".</p>
-      </div>
-      <div class="insight" style="border-left:4px solid var(--blue);">
-        <span class="itag tag-blue">Prioridad 1 — recurrente + costoso</span>
-        <h4>Cajón 2 — 6 eventos, 4 síntomas distintos</h4>
-        <p>Falló en 4 de 5 días con problemas diferentes cada vez (no gira, no funciona, puerta, empujador). Esto sugiere desgaste general del equipo, no una falla puntual — es el candidato más claro a mantenimiento correctivo de fondo.</p>
-      </div>
-      <div class="insight" style="border-left:4px solid var(--amber);">
-        <span class="itag tag-amber">Vigilar — aislado pero costoso</span>
-        <h4>"Cajón 2 no funciona" — 60 min en un solo día</h4>
-        <p>Ocurrió solo el miércoles, 2 veces esa jornada (20 + 40 min). Es la mayor pérdida puntual de la semana. Si no vuelve a pasar, fue un evento aislado ya resuelto — pero está dentro del mismo cajón que ya es recurrente, así que no lo separaría del punto anterior.</p>
-      </div>
-      <div class="insight" style="border-left:4px solid var(--green);">
-        <span class="itag tag-green">Sin patrón claro aún</span>
-        <h4>Resto de causas — eventos únicos</h4>
-        <p>18 de las 31 causas distintas ocurrieron una sola vez en la semana (rabino, ingreso de animales, degüello). Con una sola semana de datos no se puede saber si son ruido normal o el inicio de un patrón.</p>
-      </div>
+    <div class="kpi">
+      <p class="label">Alto impacto / baja frec.</p>
+      <p class="value" style="font-size:22px;color:var(--blue);">Cajón 2</p>
+      <span class="delta delta-blue">"no funciona": 2× · 60 min</span>
     </div>
-
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <p class="card-title">Ranking de frecuencia — todas las causas</p>
-          <p class="card-sub">Cuántas veces ocurrió cada problema en la semana (no importa cuántos minutos costó cada vez)</p>
-        </div>
-      </div>
-      <div style="position:relative;width:100%;height:520px;">
-        <canvas id="freqChart-w30"></canvas>
-      </div>
-      <div class="legend" style="display:flex;gap:16px;margin-top:12px;font-size:12.5px;color:var(--mute);">
-        <span style="display:flex;align-items:center;gap:6px;"><span class="dot" style="width:9px;height:9px;border-radius:50%;display:inline-block;background:#E0402F;"></span>Cajón 2 (agrupado)</span>
-        <span style="display:flex;align-items:center;gap:6px;"><span class="dot" style="width:9px;height:9px;border-radius:50%;display:inline-block;background:#0E9C8A;"></span>Cajón 1 (agrupado)</span>
-        <span style="display:flex;align-items:center;gap:6px;"><span class="dot" style="width:9px;height:9px;border-radius:50%;display:inline-block;background:#8E93A0;"></span>Resto de categorías (color normal)</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <p class="card-title">Apertura por cajón</p>
-          <p class="card-sub">Mismo equipo, distintos síntomas — clave para saber si es un problema puntual o el cajón está fallando en general</p>
-        </div>
-      </div>
-      <div class="equipo-grid">
-        <div class="equipo-box" style="border-left:4px solid var(--teal);">
-          <h3>Cajón 1</h3>
-          <p class="esub">2 eventos · 10 min · falló 1 de 5 días</p>
-          <div class="erow">
-            <div><div class="ename">Sensor del techo</div><div class="edays">Martes</div></div>
-            <div class="eright"><div class="efreq">2×</div><div class="emin">10 min</div></div>
-          </div>
-        </div>
-        <div class="equipo-box" style="border-left:4px solid var(--red);">
-          <h3>Cajón 2</h3>
-          <p class="esub">6 eventos · 79 min · falló 4 de 5 días</p>
-          <div class="erow">
-            <div><div class="ename">No funciona</div><div class="edays">Miércoles</div></div>
-            <div class="eright"><div class="efreq">2×</div><div class="emin">60 min</div></div>
-          </div>
-          <div class="erow">
-            <div><div class="ename">Empujador</div><div class="edays">Jueves, Viernes</div></div>
-            <div class="eright"><div class="efreq">2×</div><div class="emin">9 min</div></div>
-          </div>
-          <div class="erow">
-            <div><div class="ename">No gira</div><div class="edays">Lunes</div></div>
-            <div class="eright"><div class="efreq">1×</div><div class="emin">5 min</div></div>
-          </div>
-          <div class="erow">
-            <div><div class="ename">Puerta lateral</div><div class="edays">Miércoles</div></div>
-            <div class="eright"><div class="efreq">1×</div><div class="emin">5 min</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="note">⚠ Cajón 2 tuvo 4 síntomas distintos en 4 días distintos de la semana. Aunque el total (79 min) no es el mayor de la semana, la <b>recurrencia diaria en un solo equipo</b> es la señal más fuerte de que necesita revisión de fondo, no arreglos parche día a día.</div>
-    </div>
-
   </div>
-  <!-- ===================== FIN TAB W30 ===================== -->
 
-  <div class="tab-panel" id="tab-w31">
-
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <p class="card-title">Cumplimiento por día — plan vs. real</p>
-          <p class="card-sub">Número grande = real. Debajo, plan y diferencia.</p>
-        </div>
-      </div>
-      <div class="compl-grid">
-        <div class="compl-card">
-          <p class="cday">Lunes</p><p class="creal">804</p><p class="cplan">plan 850</p>
-          <div class="cbar-track"><div class="cbar-fill" style="width:95%;background:var(--red);"></div></div>
-          <span class="cdif" style="background:var(--red-soft);color:var(--red);">-46</span>
-        </div>
-        <div class="compl-card">
-          <p class="cday">Martes</p><p class="creal">840</p><p class="cplan">plan 850</p>
-          <div class="cbar-track"><div class="cbar-fill" style="width:99%;background:var(--red);"></div></div>
-          <span class="cdif" style="background:var(--red-soft);color:var(--red);">-10</span>
-        </div>
-        <div class="compl-card">
-          <p class="cday">Miércoles</p><p class="creal">865</p><p class="cplan">plan 850</p>
-          <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
-          <span class="cdif" style="background:var(--green-soft);color:var(--green);">+15</span>
-        </div>
-        <div class="compl-card">
-          <p class="cday">Jueves</p><p class="creal">732</p><p class="cplan">plan 730</p>
-          <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
-          <span class="cdif" style="background:var(--green-soft);color:var(--green);">+2</span>
-        </div>
-        <div class="compl-card">
-          <p class="cday">Viernes</p><p class="creal">728</p><p class="cplan">plan 750</p>
-          <div class="cbar-track"><div class="cbar-fill" style="width:97%;background:var(--red);"></div></div>
-          <span class="cdif" style="background:var(--red-soft);color:var(--red);">-22</span>
-        </div>
-        <div class="compl-card total">
-          <p class="cday">Total semana</p><p class="creal">3.969</p><p class="cplan">plan 4.030</p>
-          <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:98%;background:var(--red);"></div></div>
-          <span class="cdif" style="background:var(--red);color:#fff;">-61</span>
-        </div>
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Cumplimiento por día — plan vs. real</p>
+        <p class="card-sub">Número grande = real. Debajo, plan y diferencia.</p>
       </div>
     </div>
-
-    <div class="kpis">
-      <div class="kpi">
-        <p class="label">Eventos totales</p>
-        <p class="value">46</p>
-        <span class="delta delta-blue">en 5 días</span>
+    <div class="compl-grid">
+      <div class="compl-card">
+        <p class="cday">Lunes</p><p class="creal">715</p><p class="cplan">plan 800</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:89%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-85</span>
       </div>
-      <div class="kpi">
-        <p class="label">Causas distintas</p>
-        <p class="value">26</p>
-        <span class="delta delta-amber">6 se repitieron ≥2 veces</span>
+      <div class="compl-card">
+        <p class="cday">Martes</p><p class="creal">783</p><p class="cplan">plan 820</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:95%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-37</span>
       </div>
-      <div class="kpi">
-        <p class="label">Más frecuente (fuera desc.)</p>
-        <p class="value" style="font-size:22px;color:var(--red);">Hoja sierra</p>
-        <span class="delta delta-red">8 veces · 52 min</span>
+      <div class="compl-card">
+        <p class="cday">Miércoles</p><p class="creal">767</p><p class="cplan">plan 820</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:94%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-53</span>
       </div>
-      <div class="kpi">
-        <p class="label">Alto impacto / baja frec.</p>
-        <p class="value" style="font-size:22px;color:var(--blue);">Forz. cámara 9</p>
-        <span class="delta delta-blue">2 veces · 53 min</span>
+      <div class="compl-card">
+        <p class="cday">Jueves</p><p class="creal">768</p><p class="cplan">plan 730</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">+38</span>
       </div>
-    </div>
-
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <p class="card-title">Tabla completa — frecuencia y minutos por causa</p>
-          <p class="card-sub">Ordenado por frecuencia. "Días" muestra en qué días distintos ocurrió (si se repite el mismo día, cuenta 1 solo día).</p>
-        </div>
+      <div class="compl-card">
+        <p class="cday">Viernes</p><p class="creal">751</p><p class="cplan">plan 740</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">+11</span>
       </div>
-      <table>
-        <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días distintos</th><th>Minutos totales</th><th>Prom. min/evento</th></tr></thead>
-        <tbody id="tableBody-w31"></tbody>
-      </table>
-    </div>
-
-    <div class="insight-grid">
-      <div class="insight" style="border-left:4px solid var(--red);">
-        <span class="itag tag-red">Confirmado — recurrente 2 semanas</span>
-        <h4>Cambio de hoja de sierra — 8 veces</h4>
-        <p>Subió de 7× (W30) a 8× esta semana, y ya suma 52 min. Con dos semanas seguidas mostrando el mismo patrón, dejó de ser "puede ser casualidad" — conviene revisar afilado o stock de hojas.</p>
-      </div>
-      <div class="insight" style="border-left:4px solid var(--amber);">
-        <span class="itag tag-amber">Empeora vs. semana pasada</span>
-        <h4>Cajón 1 — de 1 a 3 síntomas distintos</h4>
-        <p>En W30 solo tuvo problema de sensor. Esta semana aparecieron 3 fallas nuevas y distintas. Si sigue subiendo en W32, hay que tratarlo con la misma prioridad que Cajón 2.</p>
-      </div>
-      <div class="insight" style="border-left:4px solid var(--green);">
-        <span class="itag tag-green">Mejora real</span>
-        <h4>Cajón 2 — bajó de 79 a 25 minutos</h4>
-        <p>Sigue con casi la misma cantidad de eventos (6→5) pero ya no tiene fallas largas. Parece que se resolvió lo grave, aunque las fallas chicas siguen apareciendo casi todos los días.</p>
-      </div>
-      <div class="insight" style="border-left:4px solid var(--blue);">
-        <span class="itag tag-blue">Nuevo — evento puntual de alto impacto</span>
-        <h4>Problemas forzadores cámara 9 — 53 min en un solo día</h4>
-        <p>Ocurrió 2 veces el jueves (8 + 45 min), nada que ver con lo visto en W30. Si no vuelve a aparecer en W32, fue un evento aislado — pero por el volumen de minutos vale la pena confirmarlo.</p>
+      <div class="compl-card total">
+        <p class="cday">Total semana</p><p class="creal">3.784</p><p class="cplan">plan 3.910</p>
+        <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:97%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red);color:#fff;">-126</span>
       </div>
     </div>
-
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <p class="card-title">Ranking de frecuencia — todas las causas</p>
-          <p class="card-sub">Cuántas veces ocurrió cada problema en la semana (no importa cuántos minutos costó cada vez)</p>
-        </div>
-      </div>
-      <div style="position:relative;width:100%;height:520px;">
-        <canvas id="freqChart-w31"></canvas>
-      </div>
-      <div class="legend" style="display:flex;gap:16px;margin-top:12px;font-size:12.5px;color:var(--mute);">
-        <span style="display:flex;align-items:center;gap:6px;"><span class="dot" style="width:9px;height:9px;border-radius:50%;display:inline-block;background:#E0402F;"></span>Cajón 2 (agrupado)</span>
-        <span style="display:flex;align-items:center;gap:6px;"><span class="dot" style="width:9px;height:9px;border-radius:50%;display:inline-block;background:#0E9C8A;"></span>Cajón 1 (agrupado)</span>
-        <span style="display:flex;align-items:center;gap:6px;"><span class="dot" style="width:9px;height:9px;border-radius:50%;display:inline-block;background:#8E93A0;"></span>Resto de categorías (color normal)</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-head">
-        <div>
-          <p class="card-title">Apertura por cajón</p>
-          <p class="card-sub">Mismo equipo, distintos síntomas — clave para saber si es un problema puntual o el cajón está fallando en general</p>
-        </div>
-      </div>
-      <div class="equipo-grid">
-        <div class="equipo-box" style="border-left:4px solid var(--amber);">
-          <h3>Cajón 1</h3>
-          <p class="esub">3 eventos · 19 min · falló 2 de 5 días — subió de 1 a 3 síntomas vs. W30</p>
-          <div class="erow">
-            <div><div class="ename">Se pasó de largo</div><div class="edays">Viernes</div></div>
-            <div class="eright"><div class="efreq">1×</div><div class="emin">10 min</div></div>
-          </div>
-          <div class="erow">
-            <div><div class="ename">Sensor puerta lateral</div><div class="edays">Lunes</div></div>
-            <div class="eright"><div class="efreq">1×</div><div class="emin">5 min</div></div>
-          </div>
-          <div class="erow">
-            <div><div class="ename">Manguera del pistón</div><div class="edays">Martes</div></div>
-            <div class="eright"><div class="efreq">1×</div><div class="emin">4 min</div></div>
-          </div>
-        </div>
-        <div class="equipo-box" style="border-left:4px solid var(--red);">
-          <h3>Cajón 2</h3>
-          <p class="esub">5 eventos · 25 min · falló 4 de 5 días — bajó de 79 a 25 min vs. W30</p>
-          <div class="erow">
-            <div><div class="ename">Sensor</div><div class="edays">Lunes</div></div>
-            <div class="eright"><div class="efreq">1×</div><div class="emin">5 min</div></div>
-          </div>
-          <div class="erow">
-            <div><div class="ename">Sensor puerta lateral</div><div class="edays">Lunes</div></div>
-            <div class="eright"><div class="efreq">1×</div><div class="emin">5 min</div></div>
-          </div>
-          <div class="erow">
-            <div><div class="ename">Perno de puerta</div><div class="edays">Martes</div></div>
-            <div class="eright"><div class="efreq">1×</div><div class="emin">7 min</div></div>
-          </div>
-          <div class="erow">
-            <div><div class="ename">Manguera de aire</div><div class="edays">Jueves</div></div>
-            <div class="eright"><div class="efreq">1×</div><div class="emin">3 min</div></div>
-          </div>
-          <div class="erow">
-            <div><div class="ename">Puerta lateral</div><div class="edays">Viernes</div></div>
-            <div class="eright"><div class="efreq">1×</div><div class="emin">5 min</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="note">⚠ Cajón 2 sigue fallando casi todos los días (4 de 5), pero ahora con fallas chicas y repuestas rápido — nada como el "no funciona" de 60 min de W30. Cajón 1 en cambio subió de 1 a 3 síntomas distintos: es el que hay que empezar a vigilar más de cerca.</div>
-    </div>
-
   </div>
-  <!-- ===================== FIN TAB W31 ===================== -->
 
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Acumulado semanal — macro-categoría</p>
+        <p class="card-sub">469 minutos perdidos en la semana</p>
+      </div>
+    </div>
+    <div class="macro-num-grid">
+      <div class="macro-num" style="background:var(--blue-soft);">
+        <p class="mn-label" style="color:var(--blue);">Mantenimiento y equipos</p>
+        <p class="mn-val" style="color:var(--blue);">184</p>
+        <p class="mn-pct" style="color:var(--blue);">39% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--teal-soft);">
+        <p class="mn-label" style="color:var(--teal);">Descansos y pausas</p>
+        <p class="mn-val" style="color:var(--teal);">150</p>
+        <p class="mn-pct" style="color:var(--teal);">32% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--purple-soft);">
+        <p class="mn-label" style="color:var(--purple);">Rabino / degüello</p>
+        <p class="mn-val" style="color:var(--purple);">50</p>
+        <p class="mn-pct" style="color:var(--purple);">11% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--green-soft);">
+        <p class="mn-label" style="color:var(--green);">Manejo animal / ingreso</p>
+        <p class="mn-val" style="color:var(--green);">41</p>
+        <p class="mn-pct" style="color:var(--green);">9% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--amber-soft);">
+        <p class="mn-label" style="color:var(--amber);">Parada sin causa</p>
+        <p class="mn-val" style="color:var(--amber);">40</p>
+        <p class="mn-pct" style="color:var(--amber);">8% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--gray-soft);">
+        <p class="mn-label" style="color:#565A66;">Auditoría</p>
+        <p class="mn-val" style="color:#565A66;">4</p>
+        <p class="mn-pct" style="color:#565A66;">1% del total</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;max-width:520px;height:340px;margin:0 auto;">
+      <canvas id="donutChart30" role="img" aria-label="Gráfico de dona con el porcentaje y minutos de cada macro categoría en la semana 30: mantenimiento y equipos 184 minutos 39%, descansos y pausas 150 minutos 32%, rabino y degüello 50 minutos 11%, manejo animal e ingreso 41 minutos 9%, parada sin causa 40 minutos 8%, auditoría 4 minutos 1%.">Peso por categoría semanal, semana 30.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Ranking de frecuencia — todas las causas</p>
+        <p class="card-sub">Cuántas veces ocurrió cada problema en la semana (no importa cuántos minutos costó cada vez)</p>
+      </div>
+    </div>
+    <table class="freq">
+      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Prom./evento</th></tr></thead>
+      <tbody id="tableBody-w30"></tbody>
+    </table>
+    <div style="position:relative;width:100%;height:560px;margin-top:18px;">
+      <canvas id="freqChart30" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 30, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 30.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Minutos perdidos por problema, día a día</p>
+        <p class="card-sub">Valor real junto a cada barra. Color = macro-categoría.</p>
+      </div>
+    </div>
+    <div class="day-grid">
+      <div class="day-card">
+        <p class="dname">Lunes</p><p class="dsub">63 min totales</p>
+        <div class="prow"><span class="plabel">Descansos</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Faena en manga</span><div class="ptrack"><div class="pfill" style="width:33%;background:var(--green);"></div></div><span class="pval">13</span></div>
+        <div class="prow"><span class="plabel">Cajón 2</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Hoja de sierra</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Martes</p><p class="dsub">79 min totales</p>
+        <div class="prow"><span class="plabel">Animal escapado</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--purple);"></div></div><span class="pval">20</span></div>
+        <div class="prow"><span class="plabel">Fusible noria 2</span><div class="ptrack"><div class="pfill" style="width:80%;background:var(--blue);"></div></div><span class="pval">16</span></div>
+        <div class="prow"><span class="plabel">Sensor cajón 1</span><div class="ptrack"><div class="pfill" style="width:50%;background:var(--blue);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Charla jefe-rabino</span><div class="ptrack"><div class="pfill" style="width:50%;background:var(--purple);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Descanso</span><div class="ptrack"><div class="pfill" style="width:50%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Down puller</span><div class="ptrack"><div class="pfill" style="width:35%;background:var(--green);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Hoja de sierra</span><div class="ptrack"><div class="pfill" style="width:30%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Miércoles</p><p class="dsub">116 min totales</p>
+        <div class="prow"><span class="plabel">Cajón 2 (2 hs)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--blue);"></div></div><span class="pval">60</span></div>
+        <div class="prow"><span class="plabel">Rabino / aprieta nuca</span><div class="ptrack"><div class="pfill" style="width:33%;background:var(--purple);"></div></div><span class="pval">20</span></div>
+        <div class="prow"><span class="plabel">Hoja de sierra</span><div class="ptrack"><div class="pfill" style="width:18%;background:var(--blue);"></div></div><span class="pval">11</span></div>
+        <div class="prow"><span class="plabel">Descanso</span><div class="ptrack"><div class="pfill" style="width:17%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Animal levantado</span><div class="ptrack"><div class="pfill" style="width:17%;background:var(--green);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Puerta cajón 2</span><div class="ptrack"><div class="pfill" style="width:8%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Jueves</p><p class="dsub">114 min totales</p>
+        <div class="prow"><span class="plabel">Descanso</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">50</span></div>
+        <div class="prow"><span class="plabel">Parada sin causa</span><div class="ptrack"><div class="pfill" style="width:80%;background:var(--amber);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Down puller</span><div class="ptrack"><div class="pfill" style="width:14%;background:var(--green);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Hoja de sierra</span><div class="ptrack"><div class="pfill" style="width:10%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 empujador</span><div class="ptrack"><div class="pfill" style="width:8%;background:var(--blue);"></div></div><span class="pval">4</span></div>
+        <div class="prow"><span class="plabel">Auditoría BRC</span><div class="ptrack"><div class="pfill" style="width:8%;background:var(--gray);"></div></div><span class="pval">4</span></div>
+        <div class="prow"><span class="plabel">Ingreso animales</span><div class="ptrack"><div class="pfill" style="width:8%;background:var(--green);"></div></div><span class="pval">4</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Viernes</p><p class="dsub">97 min totales</p>
+        <div class="prow"><span class="plabel">Descanso</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Llave de aire</span><div class="ptrack"><div class="pfill" style="width:38%;background:var(--blue);"></div></div><span class="pval">15</span></div>
+        <div class="prow"><span class="plabel">Hoja de sierra</span><div class="ptrack"><div class="pfill" style="width:28%;background:var(--blue);"></div></div><span class="pval">11</span></div>
+        <div class="prow"><span class="plabel">Side puller</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--blue);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Calesita cámaras</span><div class="ptrack"><div class="pfill" style="width:15%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Ducha pulmones</span><div class="ptrack"><div class="pfill" style="width:15%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 empujador</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Baja manea</span><div class="ptrack"><div class="pfill" style="width:10%;background:var(--blue);"></div></div><span class="pval">4</span></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--blue)"></span>Mantenimiento y equipos</span>
+      <span><span class="dot" style="background:var(--teal)"></span>Descansos y pausas</span>
+      <span><span class="dot" style="background:var(--purple)"></span>Rabino / degüello</span>
+      <span><span class="dot" style="background:var(--green)"></span>Manejo de animales / ingreso</span>
+      <span><span class="dot" style="background:var(--amber)"></span>Parada sin causa especificada</span>
+      <span><span class="dot" style="background:var(--gray)"></span>Auditoría</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Detalle de mantenimiento — 184 min</p>
+        <p class="card-sub">Cajón 2 desglosado por tema exacto: no funciona (60), empujador (9), puerta lateral (5), no gira (5)</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:280px;margin-bottom:8px;">
+      <canvas id="mantChart30" role="img" aria-label="Ranking de minutos de mantenimiento por equipo semana 30, con cajón 2 desglosado por tema: no funciona 60 minutos, empujador 9 minutos, puerta lateral 5 minutos, no gira 5 minutos. Cambio de hoja de sierra 38 minutos. Fusible noria 2, 16 minutos. Llave de aire transferencia, 15 minutos. Cajón 1, 10 minutos. Side puller, 10 minutos. Calesita pasillo de cámaras, 6 minutos. Ducha mesa de pulmones, 6 minutos. Baja manea, 4 minutos.">Ranking de minutos de mantenimiento por equipo, con cajón 2 desglosado por tema.</canvas>
+    </div>
+    <div class="legend" style="margin-top:0;margin-bottom:22px;">
+      <span><span class="dot" style="background:#0B2C8A"></span>Cajón 2 · no funciona (60)</span>
+      <span><span class="dot" style="background:#9AB4F5"></span>Cajón 2 · empujador (9)</span>
+      <span><span class="dot" style="background:#5C82EE"></span>Cajón 2 · puerta lateral (5)</span>
+      <span><span class="dot" style="background:#3E6FE8"></span>Cajón 2 · no gira (5)</span>
+      <span><span class="dot" style="background:#C7D2F5"></span>Resto de equipos</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Apertura por cajón</p>
+        <p class="card-sub">Mismo equipo, distintos síntomas — clave para saber si es un problema puntual o el cajón está fallando en general</p>
+      </div>
+    </div>
+    <div class="equipo-grid">
+      <div class="equipo-box" style="border-left:4px solid var(--teal);">
+        <h3>Cajón 1</h3>
+        <p class="esub">2 eventos · 10 min · falló 1 de 5 días</p>
+        <div class="erow"><div><div class="ename">Sensor del techo</div><div class="edays">Martes</div></div><div class="eright"><div class="efreq">2×</div><div class="emin">10 min</div></div></div>
+      </div>
+      <div class="equipo-box" style="border-left:4px solid var(--red);">
+        <h3>Cajón 2</h3>
+        <p class="esub">6 eventos · 79 min · falló 4 de 5 días</p>
+        <div class="erow"><div><div class="ename">No funciona</div><div class="edays">Miércoles</div></div><div class="eright"><div class="efreq">2×</div><div class="emin">60 min</div></div></div>
+        <div class="erow"><div><div class="ename">Empujador</div><div class="edays">Jueves, Viernes</div></div><div class="eright"><div class="efreq">2×</div><div class="emin">9 min</div></div></div>
+        <div class="erow"><div><div class="ename">No gira</div><div class="edays">Lunes</div></div><div class="eright"><div class="efreq">1×</div><div class="emin">5 min</div></div></div>
+        <div class="erow"><div><div class="ename">Puerta lateral</div><div class="edays">Miércoles</div></div><div class="eright"><div class="efreq">1×</div><div class="emin">5 min</div></div></div>
+      </div>
+    </div>
+    <div class="note">⚠ Cajón 2 tuvo 4 síntomas distintos en 4 días distintos de la semana. Aunque el total (79 min) no es el mayor de la semana, la <b>recurrencia diaria en un solo equipo</b> es la señal más fuerte de que necesita revisión de fondo, no arreglos parche día a día.</div>
+  </div>
+
+  <div class="insight-grid">
+    <div class="insight" style="border-left:4px solid var(--blue);">
+      <span class="itag tag-blue">Prioridad 1</span>
+      <h4>Mantenimiento — 184 min (39%)</h4>
+      <p>Cajón 2 falló los 5 días. El miércoles solo, concentró 65 minutos en dos horas seguidas. Requiere intervención correctiva, no paliativa.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--teal);">
+      <span class="itag tag-blue">Prioridad 2</span>
+      <h4>Descansos — 150 min (32%)</h4>
+      <p>Jueves y viernes tuvieron los descansos más largos y aun así cumplieron el plan. El problema es dónde cae la pausa dentro de la hora, no su duración.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--amber);">
+      <span class="itag tag-amber">A monitorear</span>
+      <h4>Zona gris sin cuantificar</h4>
+      <p>Ingreso de animales y demoras de rabinos se repiten sin minutos asignados, sobre todo lunes y martes — los días de mayor déficit.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--green);">
+      <span class="itag tag-green">Dato a favor</span>
+      <h4>Jueves: pérdida alta, plan cumplido</h4>
+      <p>114 min perdidos (2do peor día) pero único con superávit (+38). Hay margen de recuperación si las paradas no coinciden con horas pico.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--red);">
+      <span class="itag tag-red">Prioridad 1 — recurrente</span>
+      <h4>Cambio de hoja de sierra — 7 veces</h4>
+      <p>Es la causa más frecuente después de descansos: apareció en 4 de los 5 días. Individualmente son 5-6 min, pero sumado son 38 min/semana. Si se repite en W31 y W32, conviene revisar afilado/stock de hojas antes que tratarlo como "normal".</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--gray);">
+      <span class="itag tag-blue">Sin patrón claro aún</span>
+      <h4>Resto de causas — eventos únicos</h4>
+      <p>18 de las 31 causas distintas ocurrieron una sola vez en la semana (rabino, ingreso de animales, degüello). Con una sola semana de datos no se puede saber si son ruido normal o el inicio de un patrón.</p>
+    </div>
+  </div>
 
 </div>
+</div>
+<!-- ============ FIN SEMANA 30 ============ -->
+
+<!-- ============ SEMANA 31 ============ -->
+<div class="tab-panel" id="w31">
+<div class="wrap">
+
+  <div class="kpis">
+    <div class="kpi">
+      <p class="label">Cumplimiento semanal</p>
+      <p class="value">98,5%</p>
+      <span class="delta delta-blue">3.969 / 4.030 cab.</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Déficit vs. plan</p>
+      <p class="value" style="color:var(--red);">-61</p>
+      <span class="delta delta-red">cabezas</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Minutos perdidos</p>
+      <p class="value" style="color:var(--amber);">512</p>
+      <span class="delta delta-amber">≈ 8,5 hs</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Principal causa</p>
+      <p class="value" style="font-size:24px;color:var(--teal);">Descansos</p>
+      <span class="delta delta-blue">230 min · 45%</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Cumplimiento por día — plan vs. real</p>
+        <p class="card-sub">Número grande = real. Debajo, plan y diferencia.</p>
+      </div>
+    </div>
+    <div class="compl-grid">
+      <div class="compl-card">
+        <p class="cday">Lunes</p><p class="creal">804</p><p class="cplan">plan 850</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:95%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-46</span>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Martes</p><p class="creal">840</p><p class="cplan">plan 850</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:99%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-10</span>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Miércoles</p><p class="creal">865</p><p class="cplan">plan 850</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">+15</span>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Jueves</p><p class="creal">732</p><p class="cplan">plan 730</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">+2</span>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Viernes</p><p class="creal">728</p><p class="cplan">plan 750</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:97%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-22</span>
+      </div>
+      <div class="compl-card total">
+        <p class="cday">Total semana</p><p class="creal">3.969</p><p class="cplan">plan 4.030</p>
+        <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:98%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red);color:#fff;">-61</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Acumulado semanal — macro-categoría</p>
+        <p class="card-sub">512 minutos perdidos en la semana</p>
+      </div>
+    </div>
+    <div class="macro-num-grid">
+      <div class="macro-num" style="background:var(--teal-soft);">
+        <p class="mn-label" style="color:var(--teal);">Descansos y pausas</p>
+        <p class="mn-val" style="color:var(--teal);">230</p>
+        <p class="mn-pct" style="color:var(--teal);">45% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--blue-soft);">
+        <p class="mn-label" style="color:var(--blue);">Mantenimiento y equipos</p>
+        <p class="mn-val" style="color:var(--blue);">193</p>
+        <p class="mn-pct" style="color:var(--blue);">38% del total</p>
+      </div>
+      <div class="macro-num" style="background:#FDF0FA;">
+        <p class="mn-label" style="color:#B0339A;">Cambio de hoja de sierra</p>
+        <p class="mn-val" style="color:#B0339A;">52</p>
+        <p class="mn-pct" style="color:#B0339A;">10% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--green-soft);">
+        <p class="mn-label" style="color:var(--green);">Manejo animal / ingreso</p>
+        <p class="mn-val" style="color:var(--green);">15</p>
+        <p class="mn-pct" style="color:var(--green);">3% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--purple-soft);">
+        <p class="mn-label" style="color:var(--purple);">Rabino / degüello</p>
+        <p class="mn-val" style="color:var(--purple);">12</p>
+        <p class="mn-pct" style="color:var(--purple);">2% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--pink-soft);">
+        <p class="mn-label" style="color:var(--pink);">Capacitación</p>
+        <p class="mn-val" style="color:var(--pink);">10</p>
+        <p class="mn-pct" style="color:var(--pink);">2% del total</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;max-width:520px;height:340px;margin:0 auto;">
+      <canvas id="donutChart31" role="img" aria-label="Gráfico de dona con el porcentaje y minutos de cada macro categoría en la semana 31: descansos 230 minutos 45%, mantenimiento 193 minutos 38%, cambio de hoja de sierra 52 minutos 10%, manejo animal 15 minutos 3%, rabino y degüello 12 minutos 2%, capacitación 10 minutos 2%.">Peso por categoría semanal, semana 31.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Ranking de frecuencia — todas las causas</p>
+        <p class="card-sub">Cuántas veces ocurrió cada problema en la semana (no importa cuántos minutos costó cada vez)</p>
+      </div>
+    </div>
+    <table class="freq">
+      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Prom./evento</th></tr></thead>
+      <tbody id="tableBody-w31"></tbody>
+    </table>
+    <div style="position:relative;width:100%;height:560px;margin-top:18px;">
+      <canvas id="freqChart31" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 31, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 31.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Minutos perdidos por problema, día a día</p>
+        <p class="card-sub">No disponible a nivel diario para esta semana</p>
+      </div>
+    </div>
+    <div class="note" style="margin-top:0;">⚠ Esta semana llegó cargada como frecuencia total por causa (cuántas veces y cuántos minutos en total), sin especificar en qué día ocurrió cada incidente — salvo los de Cajón 1 y Cajón 2, que sí están abiertos por día más abajo. Si me pasás los partes diarios originales de la W31, completo esta sección con el mismo formato que W30 y W32.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Detalle de mantenimiento — 193 min</p>
+        <p class="card-sub">Forzadores cámara 9 y retrainer 2 fueron los eventos puntuales más costosos; Cajón 2 bajó fuerte vs. W30</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:300px;">
+      <canvas id="mantChart31" role="img" aria-label="Ranking de minutos de mantenimiento por equipo o causa, semana 31: forzadores cámara 9, 53 minutos. Retrainer 2 fuera de servicio, 40 minutos. Fusible cinta de vísceras, 18 minutos. Cajón 2 agrupado, 25 minutos. Cajón 1 agrupado, 19 minutos. Noria 2 (dos fusibles), 12 minutos. Riel de sierra de pecho desoldado, 10 minutos. Corte de energía, 6 minutos. Estimulador down puller, 5 minutos. Pala de menudencias, 5 minutos.">Ranking de minutos de mantenimiento, semana 31.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Apertura por cajón</p>
+        <p class="card-sub">Mismo equipo, distintos síntomas — para saber si es un problema puntual o el cajón está fallando en general</p>
+      </div>
+    </div>
+    <div class="equipo-grid">
+      <div class="equipo-box" style="border-left:4px solid var(--amber);">
+        <h3>Cajón 1</h3>
+        <p class="esub">3 eventos · 19 min · falló 2 de 5 días — subió de 1 a 3 síntomas vs. W30</p>
+        <div class="erow"><div><div class="ename">Se pasó de largo</div><div class="edays">Viernes</div></div><div class="eright"><div class="efreq">1×</div><div class="emin">10 min</div></div></div>
+        <div class="erow"><div><div class="ename">Sensor puerta lateral</div><div class="edays">Lunes</div></div><div class="eright"><div class="efreq">1×</div><div class="emin">5 min</div></div></div>
+        <div class="erow"><div><div class="ename">Manguera del pistón</div><div class="edays">Martes</div></div><div class="eright"><div class="efreq">1×</div><div class="emin">4 min</div></div></div>
+      </div>
+      <div class="equipo-box" style="border-left:4px solid var(--red);">
+        <h3>Cajón 2</h3>
+        <p class="esub">5 eventos · 25 min · falló 4 de 5 días — bajó de 79 a 25 min vs. W30</p>
+        <div class="erow"><div><div class="ename">Sensor</div><div class="edays">Lunes</div></div><div class="eright"><div class="efreq">1×</div><div class="emin">5 min</div></div></div>
+        <div class="erow"><div><div class="ename">Sensor puerta lateral</div><div class="edays">Lunes</div></div><div class="eright"><div class="efreq">1×</div><div class="emin">5 min</div></div></div>
+        <div class="erow"><div><div class="ename">Perno de puerta</div><div class="edays">Martes</div></div><div class="eright"><div class="efreq">1×</div><div class="emin">7 min</div></div></div>
+        <div class="erow"><div><div class="ename">Manguera de aire</div><div class="edays">Jueves</div></div><div class="eright"><div class="efreq">1×</div><div class="emin">3 min</div></div></div>
+        <div class="erow"><div><div class="ename">Puerta lateral</div><div class="edays">Viernes</div></div><div class="eright"><div class="efreq">1×</div><div class="emin">5 min</div></div></div>
+      </div>
+    </div>
+    <div class="note">⚠ Cajón 2 sigue fallando casi todos los días (4 de 5), pero con fallas chicas y resueltas rápido — nada como el "no funciona" de 60 min de W30. Cajón 1 subió de 1 a 3 síntomas distintos: es el que hay que empezar a vigilar más de cerca.</div>
+  </div>
+
+  <div class="insight-grid">
+    <div class="insight" style="border-left:4px solid var(--red);">
+      <span class="itag tag-red">Confirmado — recurrente 2 semanas</span>
+      <h4>Cambio de hoja de sierra — 8 veces</h4>
+      <p>Subió de 7× (W30) a 8× esta semana, y ya suma 52 min. Con dos semanas seguidas mostrando el mismo patrón, dejó de ser casualidad — conviene revisar afilado o stock de hojas.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--amber);">
+      <span class="itag tag-amber">Empeora vs. semana pasada</span>
+      <h4>Cajón 1 — de 1 a 3 síntomas distintos</h4>
+      <p>En W30 solo tuvo problema de sensor. Esta semana aparecieron 3 fallas nuevas y distintas. Si sigue subiendo en W32, hay que tratarlo con la misma prioridad que Cajón 2.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--green);">
+      <span class="itag tag-green">Mejora real</span>
+      <h4>Cajón 2 — bajó de 79 a 25 minutos</h4>
+      <p>Sigue con casi la misma cantidad de eventos (6→5) pero ya no tiene fallas largas. Parece que se resolvió lo grave, aunque las fallas chicas siguen apareciendo casi todos los días.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--blue);">
+      <span class="itag tag-blue">Nuevo — evento puntual de alto impacto</span>
+      <h4>Forzadores cámara 9 — 53 min en un solo día</h4>
+      <p>Ocurrió 2 veces el jueves (8 + 45 min), nada que ver con lo visto en W30. Si no vuelve a aparecer en W32, fue un evento aislado — pero por el volumen de minutos vale la pena confirmarlo.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+<!-- ============ FIN SEMANA 31 ============ -->
+
+<!-- ============ SEMANA 32 (EN CURSO) ============ -->
+<div class="tab-panel" id="w32">
+<div class="wrap">
+
+  <div class="banner">⏳ Semana en curso: cargados lunes 03/08, martes 04/08 y miércoles 05/08. Faltan jueves 06/08 y viernes 07/08 — los totales de abajo son parciales y se actualizan cuando lleguen esos días.</div>
+
+  <div class="kpis">
+    <div class="kpi">
+      <p class="label">Cumplimiento acumulado</p>
+      <p class="value">91,2%</p>
+      <span class="delta delta-blue">2.097 / 2.300 cab. (3 días)</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Déficit acumulado</p>
+      <p class="value" style="color:var(--red);">-203</p>
+      <span class="delta delta-red">cabezas (3 días)</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Minutos perdidos</p>
+      <p class="value" style="color:var(--amber);">386</p>
+      <span class="delta delta-amber">≈ 6,4 hs (3 días)</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Principal causa</p>
+      <p class="value" style="font-size:24px;color:var(--blue);">Mantenim.</p>
+      <span class="delta delta-blue">238 min · 62%</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Cumplimiento por día — plan vs. real</p>
+        <p class="card-sub">Número grande = real. Debajo, plan y diferencia.</p>
+      </div>
+    </div>
+    <div class="compl-grid">
+      <div class="compl-card">
+        <p class="cday">Lunes 03/08</p><p class="creal">813</p><p class="cplan">plan 850</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:96%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-37</span>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Martes 04/08</p><p class="creal">687</p><p class="cplan">plan 750</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:92%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-63</span>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Miércoles 05/08</p><p class="creal">597</p><p class="cplan">plan 700</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:85%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-103</span>
+      </div>
+      <div class="compl-card pending">
+        <p class="cday">Jueves 06/08</p>
+        <div class="pend-icon">···</div>
+        <p class="pend-txt">Pendiente de carga</p>
+      </div>
+      <div class="compl-card pending">
+        <p class="cday">Viernes 07/08</p>
+        <div class="pend-icon">···</div>
+        <p class="pend-txt">Pendiente de carga</p>
+      </div>
+      <div class="compl-card total">
+        <p class="cday">Acumulado (3 días)</p><p class="creal">2.097</p><p class="cplan">plan 2.300</p>
+        <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:91%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red);color:#fff;">-203</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Acumulado a la fecha — macro-categoría</p>
+        <p class="card-sub">386 min perdidos en 3 días cargados (faltan jueves y viernes)</p>
+      </div>
+    </div>
+    <div class="macro-num-grid">
+      <div class="macro-num" style="background:var(--blue-soft);">
+        <p class="mn-label" style="color:var(--blue);">Mantenimiento y equipos</p>
+        <p class="mn-val" style="color:var(--blue);">238</p>
+        <p class="mn-pct" style="color:var(--blue);">62% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--teal-soft);">
+        <p class="mn-label" style="color:var(--teal);">Descansos y pausas</p>
+        <p class="mn-val" style="color:var(--teal);">119</p>
+        <p class="mn-pct" style="color:var(--teal);">31% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--red-soft);">
+        <p class="mn-label" style="color:var(--red);">Paro gremial / externo</p>
+        <p class="mn-val" style="color:var(--red);">15</p>
+        <p class="mn-pct" style="color:var(--red);">4% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--pink-soft);">
+        <p class="mn-label" style="color:var(--pink);">Capacitación</p>
+        <p class="mn-val" style="color:var(--pink);">7</p>
+        <p class="mn-pct" style="color:var(--pink);">2% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--green-soft);">
+        <p class="mn-label" style="color:var(--green);">Manejo animal / ingreso</p>
+        <p class="mn-val" style="color:var(--green);">7</p>
+        <p class="mn-pct" style="color:var(--green);">2% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--gray-soft);">
+        <p class="mn-label" style="color:#565A66;">Auditoría</p>
+        <p class="mn-val" style="color:#565A66;">s/d</p>
+        <p class="mn-pct" style="color:#565A66;">3 hs afectadas, sin minutos</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;max-width:520px;height:340px;margin:0 auto;">
+      <canvas id="donutChart32" role="img" aria-label="Gráfico de dona con el porcentaje y minutos de cada macro categoría en la semana 32 acumulado a la fecha: mantenimiento y equipos 238 minutos 62%, descansos y pausas 119 minutos 31%, paro gremial 15 minutos 4%, capacitación 7 minutos 2%, manejo animal 7 minutos 2%.">Peso por categoría semanal, semana 32.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Ranking de frecuencia — todas las causas</p>
+        <p class="card-sub">Cuántas veces ocurrió cada problema en los 3 días cargados (faltan jueves y viernes)</p>
+      </div>
+    </div>
+    <table class="freq">
+      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Prom./evento</th></tr></thead>
+      <tbody id="tableBody-w32"></tbody>
+    </table>
+    <div style="position:relative;width:100%;height:520px;margin-top:18px;">
+      <canvas id="freqChart32" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 32 acumulado a la fecha, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 32.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Minutos perdidos por problema, día a día</p>
+        <p class="card-sub">Valor real junto a cada barra. Color = macro-categoría.</p>
+      </div>
+    </div>
+    <div class="day-grid cols3">
+      <div class="day-card">
+        <p class="dname">Lunes 03/08</p><p class="dsub">121 min totales</p>
+        <div class="prow"><span class="plabel">Descanso (35')</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">35</span></div>
+        <div class="prow"><span class="plabel">Puerta lateral cajón 2</span><div class="ptrack"><div class="pfill" style="width:46%;background:var(--blue);"></div></div><span class="pval">16</span></div>
+        <div class="prow"><span class="plabel">Paro gremial</span><div class="ptrack"><div class="pfill" style="width:43%;background:var(--red);"></div></div><span class="pval">15</span></div>
+        <div class="prow"><span class="plabel">Descanso (10')</span><div class="ptrack"><div class="pfill" style="width:29%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Capacitación</span><div class="ptrack"><div class="pfill" style="width:20%;background:var(--pink);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Noria 2 trabada</span><div class="ptrack"><div class="pfill" style="width:20%;background:var(--blue);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Sierra de pecho (x2)</span><div class="ptrack"><div class="pfill" style="width:34%;background:var(--blue);"></div></div><span class="pval">12</span></div>
+        <div class="prow"><span class="plabel">Pistón up puller</span><div class="ptrack"><div class="pfill" style="width:17%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Descanso (5')</span><div class="ptrack"><div class="pfill" style="width:14%;background:var(--teal);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Fusible noria 2</span><div class="ptrack"><div class="pfill" style="width:14%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+      </div>
+
+      <div class="day-card">
+        <p class="dname">Martes 04/08</p><p class="dsub">140 min totales</p>
+        <div class="prow"><span class="plabel">Aprieta nuca / cajón 2 no funciona (2 hs)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--blue);"></div></div><span class="pval">85</span></div>
+        <div class="prow"><span class="plabel">Sensor + pata trabada cajón 1</span><div class="ptrack"><div class="pfill" style="width:24%;background:var(--blue);"></div></div><span class="pval">20</span></div>
+        <div class="prow"><span class="plabel">Descanso (19')</span><div class="ptrack"><div class="pfill" style="width:22%;background:var(--teal);"></div></div><span class="pval">19</span></div>
+        <div class="prow"><span class="plabel">Puerta lateral cajón 1</span><div class="ptrack"><div class="pfill" style="width:7%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Descanso (10')</span><div class="ptrack"><div class="pfill" style="width:12%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+      </div>
+
+      <div class="day-card">
+        <p class="dname">Miércoles 05/08</p><p class="dsub">125 min totales</p>
+        <div class="prow"><span class="plabel">Cajón 1 (2 hs seguidas)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--blue);"></div></div><span class="pval">52</span></div>
+        <div class="prow"><span class="plabel">Descanso</span><div class="ptrack"><div class="pfill" style="width:77%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Guillotina (teflón)</span><div class="ptrack"><div class="pfill" style="width:15%;background:var(--blue);"></div></div><span class="pval">8</span></div>
+        <div class="prow"><span class="plabel">Down puller</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--green);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Cambio hoja sierra</span><div class="ptrack"><div class="pfill" style="width:12%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Fresadora</span><div class="ptrack"><div class="pfill" style="width:10%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (numeración)</span><div class="ptrack"><div class="pfill" style="width:8%;background:var(--blue);"></div></div><span class="pval">4</span></div>
+        <div class="prow"><span class="plabel">Manguera pinchada</span><div class="ptrack"><div class="pfill" style="width:6%;background:var(--blue);"></div></div><span class="pval">3</span></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--blue)"></span>Mantenimiento y equipos</span>
+      <span><span class="dot" style="background:var(--teal)"></span>Descansos y pausas</span>
+      <span><span class="dot" style="background:var(--green)"></span>Manejo de animales / ingreso</span>
+      <span><span class="dot" style="background:var(--pink)"></span>Capacitación / actividades internas</span>
+      <span><span class="dot" style="background:var(--red)"></span>Paro gremial / externo</span>
+      <span><span class="dot" style="background:var(--gray)"></span>Auditoría (sin cuantificar aún)</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Detalle de mantenimiento — 238 min</p>
+        <p class="card-sub">Cajón 2 pasa a liderar (105 min) por la falla de "aprieta nuca" del martes; Cajón 1 sigue firme en segundo lugar (78 min)</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:280px;">
+      <canvas id="mantChart32" role="img" aria-label="Ranking de minutos de mantenimiento por equipo, semana 32 acumulado a la fecha: cajón 2, 105 minutos. Cajón 1, 78 minutos. Sierra de pecho, 15 minutos. Noria 2, 12 minutos. Guillotina, 8 minutos. Sierra dividir, 6 minutos. Pistón up puller, 6 minutos. Fresadora, 5 minutos. Manguera, 3 minutos.">Ranking de minutos de mantenimiento por equipo, semana 32.</canvas>
+    </div>
+  </div>
+
+  <div class="insight-grid">
+    <div class="insight" style="border-left:4px solid var(--blue);">
+      <span class="itag tag-blue">A seguir</span>
+      <h4>Mantenimiento sube a 62% del tiempo perdido</h4>
+      <p>238 de 386 min. El martes "aprieta nuca" dejó a cajón 2 sin funcionar 2 horas seguidas (85'), el evento más costoso de la semana hasta ahora. Sumado a los 78' de cajón 1, ambos cajones ya explican la mayoría del mantenimiento.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--red);">
+      <span class="itag tag-red">Evento puntual</span>
+      <h4>Paro gremial el lunes — 15 min</h4>
+      <p>Por reclamo de ruedas de carros y falta de ventiladores. Es un evento externo, no operativo — se registra aparte para no mezclarlo con fallas de mantenimiento interno.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--amber);">
+      <span class="itag tag-amber">Zona gris</span>
+      <h4>Auditoría sin cuantificar — miércoles 09-11h</h4>
+      <p>Tres horas seguidas afectadas por la auditoría sin minutos asignados. Coincide con horas de ingreso bajo (59, 38, 42) — probablemente hay costo oculto real ahí.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--gray);">
+      <span class="itag tag-blue">Pendiente</span>
+      <h4>Faltan jueves y viernes para cerrar la semana</h4>
+      <p>Los acumulados de esta vista son parciales (3 de 5 días) y el déficit ya llegó a -203 cabezas. En cuanto lleguen los últimos 2 días, se recalculan todos los totales, porcentajes y gráficos.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+<!-- ============ FIN SEMANA 32 ============ -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
@@ -470,72 +912,107 @@ Chart.defaults.font.family = "'Inter', sans-serif";
 Chart.defaults.color = '#6B7180';
 Chart.register(ChartDataLabels);
 
-const CAT_COLORS = {
-  'Mantenimiento':'#2F5FE0','Descanso':'#0E9C8A','Rabino/degüello':'#7B4FE0',
-  'Manejo animal':'#1E9E5A','Parada sin causa':'#E08A1E','Auditoria':'#8E93A0','Dotación/personal':'#8E93A0','Capacitacion':'#8E93A0','Operativo':'#B0339A'
-};
-const EQUIPO_COLORS = {'Cajón 2':'#E0402F', 'Cajón 1':'#0E9C8A'};
-function barColor(d){ return d.equipo ? EQUIPO_COLORS[d.equipo] : CAT_COLORS[d.cat]; }
-const catClassMap = {'Mantenimiento':'cat-mant','Descanso':'cat-desc','Rabino/degüello':'cat-rab','Manejo animal':'cat-man','Parada sin causa':'cat-par','Auditoria':'cat-aud','Dotación/personal':'cat-aud','Capacitacion':'cat-aud','Operativo':'cat-oper'};
+const C_MANT='#2F5FE0', C_DESC='#0E9C8A', C_RAB='#7B4FE0', C_MAN='#1E9E5A', C_PAR='#E08A1E', C_AUD='#8E93A0', C_GRE='#E0402F', C_CAP='#C24D7C';
 
-function buildDashboard(data, chartId, tbodyId, equipoOrder){
-  const sorted = [...data].sort((a,b)=>{
-    const ga = a.equipo ? equipoOrder[a.equipo] : 99;
-    const gb = b.equipo ? equipoOrder[b.equipo] : 99;
-    if(ga !== gb) return ga - gb;
-    if(ga === 99) return (b.freq - a.freq) || (b.min - a.min);
-    return b.min - a.min;
-  });
+const allCharts = [];
 
-  // Altura dinámica: ~26px por fila para que ninguna etiqueta se salte
-  const canvasEl = document.getElementById(chartId);
-  canvasEl.parentElement.style.height = Math.max(520, sorted.length * 26) + 'px';
+allCharts.push(new Chart(document.getElementById('mantChart30'), {
+  type:'bar',
+  data:{
+    labels:['Cajón 2','Cambio hoja de sierra','Fusible noria 2','Llave de aire transf.','Cajón 1 (sensor)','Side puller','Calesita cámaras','Ducha pulmones','Baja manea'],
+    datasets:[
+      {label:'No funciona', data:[60,0,0,0,0,0,0,0,0], backgroundColor:'#0B2C8A'},
+      {label:'Empujador', data:[9,0,0,0,0,0,0,0,0], backgroundColor:'#9AB4F5'},
+      {label:'Puerta lateral', data:[5,0,0,0,0,0,0,0,0], backgroundColor:'#5C82EE'},
+      {label:'No gira', data:[5,0,0,0,0,0,0,0,0], backgroundColor:'#3E6FE8'},
+      {label:'Resto de equipos', data:[0,38,16,15,10,10,6,6,4], backgroundColor:'#C7D2F5'}
+    ]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, datalabels:{ color:'#12141C', font:{weight:800, size:11}, formatter:(v)=> v>0 ? v : '' } },
+    scales:{
+      x:{stacked:true, grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}},
+      y:{stacked:true, grid:{display:false}, ticks:{font:{size:12,weight:600}, color:'#12141C'}}
+    }
+  }
+}));
 
-  new Chart(canvasEl, {
-    type:'bar',
-    data:{
-      labels: sorted.map(d=>d.causa),
-      datasets:[{ data: sorted.map(d=>d.freq), backgroundColor: sorted.map(barColor), borderRadius:4 }]
-    },
-    options:{
-      indexAxis:'y',
-      responsive:true, maintainAspectRatio:false,
-      plugins:{
-        legend:{display:false},
-        datalabels:{color:'#12141C', font:{weight:800,size:11}, anchor:'end', align:'right', formatter:v=>v+'×'}
-      },
-      scales:{
-        x:{grid:{color:'#EEEFF3'}, ticks:{stepSize:1}, title:{display:true,text:'Veces que ocurrió en la semana'}},
-        y:{grid:{display:false}, ticks:{font:{size:11}, autoSkip:false}}
+allCharts.push(new Chart(document.getElementById('donutChart30'), {
+  type:'doughnut',
+  data:{
+    labels:['Mantenimiento','Descansos','Rabino/degüello','Manejo animal','Parada sin causa','Auditoría'],
+    datasets:[{data:[184,150,50,41,40,4], backgroundColor:[C_MANT,C_DESC,C_RAB,C_MAN,C_PAR,C_AUD], borderWidth:3, borderColor:'#FFFFFF'}]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false, cutout:'58%',
+    plugins:{
+      legend:{display:false},
+      datalabels:{
+        color:'#fff', font:{weight:800, size:11.5}, textAlign:'center',
+        formatter:(v,ctx)=>{
+          const total = ctx.chart.data.datasets[0].data.reduce((a,b)=>a+b,0);
+          const pct = Math.round(v/total*100);
+          const label = ctx.chart.data.labels[ctx.dataIndex];
+          return label + '\n' + v + ' min · ' + pct + '%';
+        }
       }
     }
-  });
+  }
+}));
 
-  const tbody = document.getElementById(tbodyId);
-  sorted.forEach(d=>{
-    const catClass = catClassMap[d.cat];
-    const prom = d.freq>0 ? (d.min/d.freq).toFixed(1) : '0.0';
-    let badge = '';
-    if(d.freq>=3) badge = '<span class="badge badge-red">recurrente</span>';
-    else if(d.freq===2) badge = '<span class="badge badge-amber">repite</span>';
-    else badge = '<span class="badge badge-gray">único</span>';
-    const equipoTag = d.equipo
-      ? `<span class="badge" style="background:${d.equipo==='Cajón 2' ? 'var(--red-soft)' : 'var(--teal-soft)'};color:${d.equipo==='Cajón 2' ? 'var(--red)' : 'var(--teal)'};">${d.equipo}</span>`
-      : '<span style="color:var(--mute);">—</span>';
-    const rowStyle = d.equipo ? `style="background:${d.equipo==='Cajón 2' ? 'rgba(224,64,47,0.04)' : 'rgba(14,156,138,0.04)'};"` : '';
-    tbody.innerHTML += `<tr ${rowStyle}>
-      <td>${d.causa}</td>
-      <td>${equipoTag}</td>
-      <td><span class="tag-cat ${catClass}">${d.cat}</span></td>
-      <td>${d.freq}× ${badge}</td>
-      <td>${d.dias}</td>
-      <td>${d.min} min</td>
-      <td>${prom} min</td>
-    </tr>`;
-  });
-}
+allCharts.push(new Chart(document.getElementById('mantChart31'), {
+  type:'bar',
+  data:{
+    labels:['Forzadores cámara 9','Retrainer 2 fuera de servicio','Fusible cinta vísceras','Cajón 2 (agrupado)','Cajón 1 (agrupado)','Noria 2 (2 fusibles)','Riel sierra pecho desoldado','Corte de energía','Estimulador down puller','Pala de menudencias'],
+    datasets:[{
+      data:[53,40,18,25,19,12,10,6,5,5],
+      backgroundColor:['#2F5FE0','#2F5FE0','#2F5FE0','#E0402F','#0E9C8A','#2F5FE0','#2F5FE0','#2F5FE0','#2F5FE0','#2F5FE0'],
+      borderRadius:6, barThickness:18
+    }]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, datalabels:{ color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:11.5}, formatter:(v)=> v + ' min' } },
+    layout:{padding:{right:36}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}},
+      y:{grid:{display:false}, ticks:{font:{size:11.5,weight:600}, color:'#12141C'}}
+    }
+  }
+}));
 
-// ---------- DATA W30 ----------
+allCharts.push(new Chart(document.getElementById('donutChart31'), {
+  type:'doughnut',
+  data:{
+    labels:['Descansos','Mantenimiento','Hoja de sierra','Manejo animal','Rabino/degüello','Capacitación'],
+    datasets:[{data:[230,193,52,15,12,10], backgroundColor:[C_DESC,C_MANT,'#B0339A',C_MAN,C_RAB,C_CAP], borderWidth:3, borderColor:'#FFFFFF'}]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false, cutout:'58%',
+    plugins:{
+      legend:{display:false},
+      datalabels:{
+        color:'#fff', font:{weight:800, size:11.5}, textAlign:'center',
+        formatter:(v,ctx)=>{
+          const total = ctx.chart.data.datasets[0].data.reduce((a,b)=>a+b,0);
+          const pct = Math.round(v/total*100);
+          const label = ctx.chart.data.labels[ctx.dataIndex];
+          return label + '\n' + v + ' min · ' + pct + '%';
+        }
+      }
+    }
+  }
+}));
+
+const CAT_COLORS = {
+  'Mantenimiento':'#2F5FE0','Descanso':'#0E9C8A','Rabino/degüello':'#7B4FE0',
+  'Manejo animal':'#1E9E5A','Parada sin causa':'#E08A1E','Auditoria':'#8E93A0','Dotación/personal':'#8E93A0','Capacitacion':'#C24D7C','Operativo':'#B0339A','Paro gremial':'#E0402F'
+};
+const EQUIPO_COLORS = {'Cajón 2':'#E0402F', 'Cajón 1':'#0E9C8A'};
+function barColorFreq(d){ return d.equipo ? EQUIPO_COLORS[d.equipo] : CAT_COLORS[d.cat]; }
+const catClassMap = {'Mantenimiento':'cat-mant','Descanso':'cat-desc','Rabino/degüello':'cat-rab','Manejo animal':'cat-man','Parada sin causa':'cat-par','Auditoria':'cat-aud','Dotación/personal':'cat-aud','Capacitacion':'cat-cap','Operativo':'cat-oper','Paro gremial':'cat-gre'};
+
 const dataW30 = [
   {causa:'Descanso', cat:'Descanso', equipo:null, freq:8, dias:5, min:150},
   {causa:'Cambio de hoja de sierra', cat:'Operativo', equipo:null, freq:7, dias:5, min:38},
@@ -569,7 +1046,68 @@ const dataW30 = [
   {causa:'Problema ingreso (Hilton no querían)', cat:'Manejo animal', equipo:null, freq:1, dias:1, min:0},
 ];
 
-// ---------- DATA W31 ----------
+function buildFreqSection(data, chartId, tbodyId, order){
+  const sorted = [...data].sort((a,b)=>{
+    const ga = a.equipo ? order[a.equipo] : 99;
+    const gb = b.equipo ? order[b.equipo] : 99;
+    if(ga !== gb) return ga - gb;
+    if(ga === 99) return (b.freq - a.freq) || (b.min - a.min);
+    return b.min - a.min;
+  });
+  const canvasEl = document.getElementById(chartId);
+  canvasEl.parentElement.style.height = Math.max(560, sorted.length * 26) + 'px';
+  allCharts.push(new Chart(canvasEl, {
+    type:'bar',
+    data:{
+      labels: sorted.map(d=>d.causa),
+      datasets:[{ data: sorted.map(d=>d.freq), backgroundColor: sorted.map(barColorFreq), borderRadius:4 }]
+    },
+    options:{
+      indexAxis:'y', responsive:true, maintainAspectRatio:false,
+      plugins:{
+        legend:{display:false},
+        datalabels:{color:'#12141C', font:{weight:800,size:11}, anchor:'end', align:'right', formatter:v=>v+'×'}
+      },
+      scales:{
+        x:{grid:{color:'#EEEFF3'}, ticks:{stepSize:1}, title:{display:true,text:'Veces que ocurrió en la semana'}},
+        y:{grid:{display:false}, ticks:{font:{size:11}, autoSkip:false}}
+      }
+    }
+  }));
+  const tbody = document.getElementById(tbodyId);
+  sorted.forEach(d=>{
+    const catClass = catClassMap[d.cat];
+    const prom = d.freq>0 ? (d.min/d.freq).toFixed(1) : '0.0';
+    let badge = '';
+    if(d.freq>=3) badge = '<span class="badge badge-red">recurrente</span>';
+    else if(d.freq===2) badge = '<span class="badge badge-amber">repite</span>';
+    else badge = '<span class="badge badge-gray">único</span>';
+    const equipoTag = d.equipo
+      ? `<span class="badge" style="background:${d.equipo==='Cajón 2' ? 'var(--red-soft)' : 'var(--teal-soft)'};color:${d.equipo==='Cajón 2' ? 'var(--red)' : 'var(--teal)'};">${d.equipo}</span>`
+      : '<span style="color:var(--mute);">—</span>';
+    const rowStyle = d.equipo ? `style="background:${d.equipo==='Cajón 2' ? 'rgba(224,64,47,0.04)' : 'rgba(14,156,138,0.04)'};"` : '';
+    tbody.innerHTML += `<tr ${rowStyle}>
+      <td>${d.causa}</td>
+      <td>${equipoTag}</td>
+      <td><span class="tag-cat ${catClass}">${d.cat}</span></td>
+      <td>${d.freq}× ${badge}</td>
+      <td>${d.dias}</td>
+      <td>${d.min} min</td>
+      <td>${prom} min</td>
+    </tr>`;
+  });
+  const c2 = data.filter(d=>d.equipo==='Cajón 2').reduce((s,d)=>({freq:s.freq+d.freq, min:s.min+d.min}), {freq:0,min:0});
+  const c1 = data.filter(d=>d.equipo==='Cajón 1').reduce((s,d)=>({freq:s.freq+d.freq, min:s.min+d.min}), {freq:0,min:0});
+  const n2 = data.filter(d=>d.equipo==='Cajón 2').length;
+  const n1 = data.filter(d=>d.equipo==='Cajón 1').length;
+  tbody.insertAdjacentHTML('afterbegin',
+    `<tr style="background:var(--red-soft);font-weight:800;"><td colspan="3">Subtotal Cajón 2 (${n2} síntomas)</td><td>${c2.freq}×</td><td>${n2}</td><td>${c2.min} min</td><td>—</td></tr>
+     <tr style="background:var(--teal-soft);font-weight:800;"><td colspan="3">Subtotal Cajón 1 (${n1} síntomas)</td><td>${c1.freq}×</td><td>${n1}</td><td>${c1.min} min</td><td>—</td></tr>`
+  );
+}
+
+buildFreqSection(dataW30, 'freqChart30', 'tableBody-w30', {'Cajón 2':0, 'Cajón 1':1});
+
 const dataW31 = [
   {causa:'Descanso', cat:'Descanso', equipo:null, freq:11, dias:5, min:230},
   {causa:'Cambio de hoja sierra (dividir)', cat:'Operativo', equipo:null, freq:5, dias:4, min:29},
@@ -599,32 +1137,90 @@ const dataW31 = [
   {causa:'Se desoldó riel de sierra de pecho', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:10},
 ];
 
-buildDashboard(dataW30, 'freqChart-w30', 'tableBody-w30', {'Cajón 2':0, 'Cajón 1':1});
-buildDashboard(dataW31, 'freqChart-w31', 'tableBody-w31', {'Cajón 2':0, 'Cajón 1':1});
+buildFreqSection(dataW31, 'freqChart31', 'tableBody-w31', {'Cajón 2':0, 'Cajón 1':1});
 
-// Subtotales W30
-function addSubtotal(data, tbodyId, label2, label1){
-  const c2 = data.filter(d=>d.equipo==='Cajón 2').reduce((s,d)=>({freq:s.freq+d.freq, min:s.min+d.min}), {freq:0,min:0});
-  const c1 = data.filter(d=>d.equipo==='Cajón 1').reduce((s,d)=>({freq:s.freq+d.freq, min:s.min+d.min}), {freq:0,min:0});
-  const n2 = data.filter(d=>d.equipo==='Cajón 2').length;
-  const n1 = data.filter(d=>d.equipo==='Cajón 1').length;
-  document.getElementById(tbodyId).insertAdjacentHTML('afterbegin',
-    `<tr style="background:var(--red-soft);font-weight:800;"><td colspan="3">Subtotal Cajón 2 (${n2} síntomas)</td><td>${c2.freq}×</td><td>${n2}</td><td>${c2.min} min</td><td>—</td></tr>
-     <tr style="background:var(--teal-soft);font-weight:800;"><td colspan="3">Subtotal Cajón 1 (${n1} síntomas)</td><td>${c1.freq}×</td><td>${n1}</td><td>${c1.min} min</td><td>—</td></tr>`
-  );
+const dataW32 = [
+  {causa:'Descanso', cat:'Descanso', equipo:null, freq:6, dias:3, min:119},
+  {causa:'Cambio sierra de pecho', cat:'Operativo', equipo:null, freq:3, dias:1, min:15},
+  {causa:'Auditoría (acomodo sector / gancho por medio)', cat:'Auditoria', equipo:null, freq:3, dias:1, min:0},
+  {causa:'Cajón 2 · Aprieta nuca / no funciona (2 hs)', cat:'Mantenimiento', equipo:'Cajón 2', freq:2, dias:1, min:85},
+  {causa:'Cajón 1 · Techo/sensor (2 hs seguidas)', cat:'Mantenimiento', equipo:'Cajón 1', freq:2, dias:1, min:52},
+  {causa:'Cajón 1 · Sensor + pata trabada', cat:'Mantenimiento', equipo:'Cajón 1', freq:1, dias:1, min:20},
+  {causa:'Cajón 2 · Puerta lateral', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:16},
+  {causa:'Paro gremial (ruedas/ventiladores)', cat:'Paro gremial', equipo:null, freq:1, dias:1, min:15},
+  {causa:'Capacitación material de riesgo', cat:'Capacitacion', equipo:null, freq:1, dias:1, min:7},
+  {causa:'Noria 2 · Trabada', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:7},
+  {causa:'Guillotina (colocaron teflón)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:8},
+  {causa:'Down puller (animal, tendones cortados)', cat:'Manejo animal', equipo:null, freq:1, dias:1, min:7},
+  {causa:'Cajón 1 · Puerta lateral (de nuevo)', cat:'Mantenimiento', equipo:'Cajón 1', freq:1, dias:1, min:6},
+  {causa:'Pistón up puller', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:6},
+  {causa:'Cambio hoja sierra (dividir)', cat:'Operativo', equipo:null, freq:1, dias:1, min:6},
+  {causa:'Fresadora (canal médula)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:5},
+  {causa:'Noria 2 · Fusible', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:5},
+  {causa:'Cajón 2 · Numeración/tropa', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:4},
+  {causa:'Manguera de agua pinchada', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:3},
+];
+
+buildFreqSection(dataW32, 'freqChart32', 'tableBody-w32', {'Cajón 2':0, 'Cajón 1':1});
+
+allCharts.push(new Chart(document.getElementById('mantChart32'), {
+  type:'bar',
+  data:{
+    labels:['Cajón 2','Cajón 1','Sierra de pecho','Noria 2','Guillotina','Sierra dividir','Pistón up puller','Fresadora','Manguera'],
+    datasets:[{
+      data:[105,78,15,12,8,6,6,5,3],
+      backgroundColor:'#2F5FE0',
+      borderRadius:6, barThickness:20
+    }]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, datalabels:{ color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12}, formatter:(v)=> v + ' min' } },
+    layout:{padding:{right:36}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}},
+      y:{grid:{display:false}, ticks:{font:{size:12,weight:600}, color:'#12141C'}}
+    }
+  }
+}));
+
+allCharts.push(new Chart(document.getElementById('donutChart32'), {
+  type:'doughnut',
+  data:{
+    labels:['Mantenimiento','Descansos','Paro gremial','Capacitación','Manejo animal'],
+    datasets:[{data:[238,119,15,7,7], backgroundColor:[C_MANT,C_DESC,C_GRE,C_CAP,C_MAN], borderWidth:3, borderColor:'#FFFFFF'}]
+  },
+  options:{
+    responsive:true, maintainAspectRatio:false, cutout:'58%',
+    plugins:{
+      legend:{display:false},
+      datalabels:{
+        color:'#fff', font:{weight:800, size:11.5}, textAlign:'center',
+        formatter:(v,ctx)=>{
+          const total = ctx.chart.data.datasets[0].data.reduce((a,b)=>a+b,0);
+          const pct = Math.round(v/total*100);
+          const label = ctx.chart.data.labels[ctx.dataIndex];
+          return label + '\n' + v + ' min · ' + pct + '%';
+        }
+      }
+    }
+  }
+}));
+
+const periods = {
+  w30: 'Semana 30 · 20—24 jul<span>Meta: 100 cab/h</span>',
+  w31: 'Semana 31 · 27—31 jul<span>Meta: 100 cab/h</span>',
+  w32: 'Semana 32 · 03—07 ago (en curso)<span>Meta: 100 cab/h</span>'
+};
+
+function showTab(id){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('btn-'+id).classList.add('active');
+  document.getElementById('periodLabel').innerHTML = periods[id];
+  requestAnimationFrame(()=>{ allCharts.forEach(c=>c.resize()); });
 }
-addSubtotal(dataW30, 'tableBody-w30');
-addSubtotal(dataW31, 'tableBody-w31');
-
-// ---------- TABS ----------
-document.querySelectorAll('.tab-btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
-  });
-});
 </script>
 
 </body>
