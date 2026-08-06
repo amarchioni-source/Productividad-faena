@@ -163,20 +163,20 @@
       <p class="eyebrow">Devesa · Azul Natural Beef S.A. — Planta de faena</p>
       <h1>Dashboard ejecutivo de productividad</h1>
     </div>
-    <div class="period" id="periodLabel">Semana 30 · 20—24 jul<span>Meta: 100 cab/h</span></div>
+    <div class="period" id="periodLabel">Semana 32 · 03—07 ago (en curso)<span>Meta: 100 cab/h</span></div>
   </div>
 </header>
 
 <div class="wrap">
   <div class="tabs">
-    <button class="tab-btn active" id="btn-w30" onclick="showTab('w30')">Semana 30</button>
+    <button class="tab-btn" id="btn-w30" onclick="showTab('w30')">Semana 30</button>
     <button class="tab-btn" id="btn-w31" onclick="showTab('w31')">Semana 31</button>
-    <button class="tab-btn" id="btn-w32" onclick="showTab('w32')">Semana 32 <span class="pill">en curso</span></button>
+    <button class="tab-btn active" id="btn-w32" onclick="showTab('w32')">Semana 32 <span class="pill">en curso</span></button>
   </div>
 </div>
 
 <!-- ============ SEMANA 30 ============ -->
-<div class="tab-panel active" id="w30">
+<div class="tab-panel" id="w30">
 <div class="wrap">
 
   <div class="kpis">
@@ -679,7 +679,7 @@
 <!-- ============ FIN SEMANA 31 ============ -->
 
 <!-- ============ SEMANA 32 (EN CURSO) ============ -->
-<div class="tab-panel" id="w32">
+<div class="tab-panel active" id="w32">
 <div class="wrap">
 
   <div class="banner">⏳ Semana en curso: cargados lunes 03/08, martes 04/08 y miércoles 05/08. Faltan jueves 06/08 y viernes 07/08 — los totales de abajo son parciales y se actualizan cuando lleguen esos días.</div>
@@ -1220,6 +1220,13 @@ function showTab(id){
   document.getElementById('btn-'+id).classList.add('active');
   document.getElementById('periodLabel').innerHTML = periods[id];
   requestAnimationFrame(()=>{ allCharts.forEach(c=>c.resize()); });
+}
+
+// Siempre abrir la última solapa (la semana más reciente / en curso) por defecto
+const allTabBtns = document.querySelectorAll('.tab-btn');
+if (allTabBtns.length) {
+  const lastId = allTabBtns[allTabBtns.length - 1].id.replace('btn-', '');
+  showTab(lastId);
 }
 </script>
 
