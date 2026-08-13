@@ -50,7 +50,7 @@
 
   .banner{background:var(--amber-soft);border:1px solid #F0D9B5;color:#8A5A0E;border-radius:12px;padding:12px 18px;font-size:13.5px;font-weight:600;margin-bottom:24px;}
 
-  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;}
   .kpi{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 22px;}
   .kpi .label{font-size:13px;color:var(--mute);font-weight:500;margin:0 0 10px;}
   .kpi .value{font-size:34px;font-weight:800;letter-spacing:-0.02em;margin:0;line-height:1;}
@@ -201,14 +201,9 @@
       <span class="delta delta-red">cabezas</span>
     </div>
     <div class="kpi">
-      <p class="label">Minutos perdidos</p>
-      <p class="value" style="color:var(--amber);">469</p>
-      <span class="delta delta-amber">≈ 7,8 hs</span>
-    </div>
-    <div class="kpi">
-      <p class="label">Principal causa</p>
-      <p class="value" style="font-size:24px;color:var(--blue);">Mantenim.</p>
-      <span class="delta delta-blue">184 min · 39%</span>
+      <p class="label">Minutos perdidos (sin descansos)</p>
+      <p class="value" style="color:var(--amber);">319</p>
+      <span class="delta delta-amber">≈ 5,3 hs</span>
     </div>
   </div>
 
@@ -286,13 +281,18 @@
     <div class="macro-num-grid">
       <div class="macro-num" style="background:var(--blue-soft);">
         <p class="mn-label" style="color:var(--blue);">Mantenimiento y equipos</p>
-        <p class="mn-val" style="color:var(--blue);">184</p>
-        <p class="mn-pct" style="color:var(--blue);">39% del total</p>
+        <p class="mn-val" style="color:var(--blue);">146</p>
+        <p class="mn-pct" style="color:var(--blue);">31% del total</p>
       </div>
       <div class="macro-num" style="background:var(--teal-soft);">
         <p class="mn-label" style="color:var(--teal);">Descansos y pausas</p>
         <p class="mn-val" style="color:var(--teal);">150</p>
         <p class="mn-pct" style="color:var(--teal);">32% del total</p>
+      </div>
+      <div class="macro-num" style="background:#FDF0FA;">
+        <p class="mn-label" style="color:#B0339A;">Cambio de hoja de sierra</p>
+        <p class="mn-val" style="color:#B0339A;">38</p>
+        <p class="mn-pct" style="color:#B0339A;">8% del total</p>
       </div>
       <div class="macro-num" style="background:var(--purple-soft);">
         <p class="mn-label" style="color:var(--purple);">Rabino / degüello</p>
@@ -307,7 +307,7 @@
       <div class="macro-num" style="background:var(--amber-soft);">
         <p class="mn-label" style="color:var(--amber);">Parada sin causa</p>
         <p class="mn-val" style="color:var(--amber);">40</p>
-        <p class="mn-pct" style="color:var(--amber);">8% del total</p>
+        <p class="mn-pct" style="color:var(--amber);">9% del total</p>
       </div>
       <div class="macro-num" style="background:var(--gray-soft);">
         <p class="mn-label" style="color:#565A66;">Auditoría</p>
@@ -315,8 +315,8 @@
         <p class="mn-pct" style="color:#565A66;">1% del total</p>
       </div>
     </div>
-    <div style="position:relative;width:100%;height:280px;">
-      <canvas id="donutChart30" role="img" aria-label="Ranking de minutos por macro categoría en la semana 30: mantenimiento y equipos 184 minutos 39%, descansos y pausas 150 minutos 32%, rabino y degüello 50 minutos 11%, manejo animal e ingreso 41 minutos 9%, parada sin causa 40 minutos 8%, auditoría 4 minutos 1%.">Ranking de macro categorías, semana 30.</canvas>
+    <div style="position:relative;width:100%;height:300px;">
+      <canvas id="donutChart30" role="img" aria-label="Ranking de minutos por macro categoría en la semana 30: mantenimiento y equipos 146 minutos 31%, descansos y pausas 150 minutos 32%, cambio de hoja de sierra 38 minutos 8%, rabino y degüello 50 minutos 11%, manejo animal e ingreso 41 minutos 9%, parada sin causa 40 minutos 9%, auditoría 4 minutos 1%.">Ranking de macro categorías, semana 30.</canvas>
     </div>
   </div>
 
@@ -328,9 +328,12 @@
       </div>
     </div>
     <table class="freq">
-      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Prom./evento</th></tr></thead>
+      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Cab. equiv.</th><th>Prom./evento</th></tr></thead>
       <tbody id="tableBody-w30"></tbody>
     </table>
+    <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Es un costo teórico por incidente, no descuenta compensación en otras horas del día — no es sumable 1 a 1 contra el déficit real del día/semana. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).
+    </p>
     <div style="position:relative;width:100%;height:560px;margin-top:18px;">
       <canvas id="freqChart30" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 30, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 30.</canvas>
     </div>
@@ -499,14 +502,9 @@
       <span class="delta delta-red">cabezas</span>
     </div>
     <div class="kpi">
-      <p class="label">Minutos perdidos</p>
-      <p class="value" style="color:var(--amber);">512</p>
-      <span class="delta delta-amber">≈ 8,5 hs</span>
-    </div>
-    <div class="kpi">
-      <p class="label">Principal causa</p>
-      <p class="value" style="font-size:24px;color:var(--teal);">Descansos</p>
-      <span class="delta delta-blue">230 min · 45%</span>
+      <p class="label">Minutos perdidos (sin descansos)</p>
+      <p class="value" style="color:var(--amber);">282</p>
+      <span class="delta delta-amber">≈ 4,7 hs</span>
     </div>
   </div>
 
@@ -603,9 +601,12 @@
       </div>
     </div>
     <table class="freq">
-      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Prom./evento</th></tr></thead>
+      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Cab. equiv.</th><th>Prom./evento</th></tr></thead>
       <tbody id="tableBody-w31"></tbody>
     </table>
+    <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Es un costo teórico por incidente, no descuenta compensación en otras horas del día — no es sumable 1 a 1 contra el déficit real del día/semana. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).
+    </p>
     <div style="position:relative;width:100%;height:560px;margin-top:18px;">
       <canvas id="freqChart31" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 31, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 31.</canvas>
     </div>
@@ -704,14 +705,9 @@
       <span class="delta delta-red">cabezas</span>
     </div>
     <div class="kpi">
-      <p class="label">Minutos perdidos</p>
-      <p class="value" style="color:var(--amber);">601</p>
-      <span class="delta delta-amber">≈ 10,0 hs</span>
-    </div>
-    <div class="kpi">
-      <p class="label">Principal causa</p>
-      <p class="value" style="font-size:24px;color:var(--blue);">Mantenim.</p>
-      <span class="delta delta-blue">326 min · 54%</span>
+      <p class="label">Minutos perdidos (sin descansos)</p>
+      <p class="value" style="color:var(--amber);">402</p>
+      <span class="delta delta-amber">≈ 6,7 hs</span>
     </div>
   </div>
 
@@ -766,13 +762,18 @@
     <div class="macro-num-grid">
       <div class="macro-num" style="background:var(--blue-soft);">
         <p class="mn-label" style="color:var(--blue);">Mantenimiento y equipos</p>
-        <p class="mn-val" style="color:var(--blue);">326</p>
-        <p class="mn-pct" style="color:var(--blue);">54% del total</p>
+        <p class="mn-val" style="color:var(--blue);">300</p>
+        <p class="mn-pct" style="color:var(--blue);">50% del total</p>
       </div>
       <div class="macro-num" style="background:var(--teal-soft);">
         <p class="mn-label" style="color:var(--teal);">Descansos y pausas</p>
         <p class="mn-val" style="color:var(--teal);">199</p>
         <p class="mn-pct" style="color:var(--teal);">33% del total</p>
+      </div>
+      <div class="macro-num" style="background:#FDF0FA;">
+        <p class="mn-label" style="color:#B0339A;">Cambio de hoja de sierra</p>
+        <p class="mn-val" style="color:#B0339A;">26</p>
+        <p class="mn-pct" style="color:#B0339A;">4% del total</p>
       </div>
       <div class="macro-num" style="background:var(--red-soft);">
         <p class="mn-label" style="color:var(--red);">Paro gremial / externo</p>
@@ -805,8 +806,8 @@
         <p class="mn-pct" style="color:var(--green);">1% del total</p>
       </div>
     </div>
-    <div style="position:relative;width:100%;height:280px;">
-      <canvas id="donutChart32" role="img" aria-label="Ranking de minutos por macro categoría en la semana 32: mantenimiento y equipos 326 minutos 54%, descansos y pausas 199 minutos 33%, paro gremial 25 minutos 4%, producción 16 minutos 3%, rabino y degüello 11 minutos 2%, auditoría 10 minutos 2%, capacitación 7 minutos 1%, manejo animal 7 minutos 1%.">Ranking de macro categorías, semana 32.</canvas>
+    <div style="position:relative;width:100%;height:300px;">
+      <canvas id="donutChart32" role="img" aria-label="Ranking de minutos por macro categoría en la semana 32: mantenimiento y equipos 300 minutos 50%, descansos y pausas 199 minutos 33%, cambio de hoja de sierra 26 minutos 4%, paro gremial 25 minutos 4%, producción 16 minutos 3%, rabino y degüello 11 minutos 2%, auditoría 10 minutos 2%, capacitación 7 minutos 1%, manejo animal 7 minutos 1%.">Ranking de macro categorías, semana 32.</canvas>
     </div>
   </div>
 
@@ -818,9 +819,12 @@
       </div>
     </div>
     <table class="freq">
-      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Prom./evento</th></tr></thead>
+      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Cab. equiv.</th><th>Prom./evento</th></tr></thead>
       <tbody id="tableBody-w32"></tbody>
     </table>
+    <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Es un costo teórico por incidente, no descuenta compensación en otras horas del día — no es sumable 1 a 1 contra el déficit real del día/semana. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).
+    </p>
     <div style="position:relative;width:100%;height:520px;margin-top:18px;">
       <canvas id="freqChart32" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 32 acumulado a la fecha, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 32.</canvas>
     </div>
@@ -966,14 +970,9 @@
       <span class="delta delta-red">cabezas (vs. plan semanal completo)</span>
     </div>
     <div class="kpi">
-      <p class="label">Minutos perdidos</p>
-      <p class="value" style="color:var(--amber);">398</p>
-      <span class="delta delta-amber">≈ 6,6 hs (3 días)</span>
-    </div>
-    <div class="kpi">
-      <p class="label">Principal causa</p>
-      <p class="value" style="font-size:24px;color:var(--blue);">Mantenim.</p>
-      <span class="delta delta-blue">216 min · 54%</span>
+      <p class="label">Minutos perdidos (sin descansos)</p>
+      <p class="value" style="color:var(--amber);">248</p>
+      <span class="delta delta-amber">≈ 4,1 hs (3 días)</span>
     </div>
   </div>
 
@@ -1028,9 +1027,12 @@
       </div>
     </div>
     <table class="freq">
-      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Prom./evento</th></tr></thead>
+      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Cab. equiv.</th><th>Prom./evento</th></tr></thead>
       <tbody id="tableBody-w33"></tbody>
     </table>
+    <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Es un costo teórico por incidente, no descuenta compensación en otras horas del día — no es sumable 1 a 1 contra el déficit real del día/semana. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).
+    </p>
     <div style="position:relative;width:100%;height:300px;margin-top:18px;">
       <canvas id="freqChart33" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 33 acumulado a la fecha, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 33.</canvas>
     </div>
@@ -1118,13 +1120,18 @@
     <div class="macro-num-grid">
       <div class="macro-num" style="background:var(--blue-soft);">
         <p class="mn-label" style="color:var(--blue);">Mantenimiento y equipos</p>
-        <p class="mn-val" style="color:var(--blue);">216</p>
-        <p class="mn-pct" style="color:var(--blue);">54% del total</p>
+        <p class="mn-val" style="color:var(--blue);">195</p>
+        <p class="mn-pct" style="color:var(--blue);">49% del total</p>
       </div>
       <div class="macro-num" style="background:var(--teal-soft);">
         <p class="mn-label" style="color:var(--teal);">Descansos y pausas</p>
         <p class="mn-val" style="color:var(--teal);">150</p>
         <p class="mn-pct" style="color:var(--teal);">38% del total</p>
+      </div>
+      <div class="macro-num" style="background:#FDF0FA;">
+        <p class="mn-label" style="color:#B0339A;">Cambio de hoja de sierra</p>
+        <p class="mn-val" style="color:#B0339A;">21</p>
+        <p class="mn-pct" style="color:#B0339A;">5% del total</p>
       </div>
       <div class="macro-num" style="background:var(--green-soft);">
         <p class="mn-label" style="color:var(--green);">Manejo animal / ingreso</p>
@@ -1147,8 +1154,8 @@
         <p class="mn-pct" style="color:var(--red);">1% del total</p>
       </div>
     </div>
-    <div style="position:relative;width:100%;height:240px;">
-      <canvas id="donutChart33" role="img" aria-label="Ranking de minutos por macro categoría en la semana 33 acumulado a la fecha: mantenimiento y equipos 216 minutos 54%, descansos y pausas 150 minutos 38%, manejo animal 10 minutos 3%, rabino y degüello 10 minutos 3%, auditoría 7 minutos 2%, paro gremial 5 minutos 1%.">Ranking de macro categorías, semana 33.</canvas>
+    <div style="position:relative;width:100%;height:260px;">
+      <canvas id="donutChart33" role="img" aria-label="Ranking de minutos por macro categoría en la semana 33 acumulado a la fecha: mantenimiento y equipos 195 minutos 49%, descansos y pausas 150 minutos 38%, cambio de hoja de sierra 21 minutos 5%, manejo animal 10 minutos 3%, rabino y degüello 10 minutos 3%, auditoría 7 minutos 2%, paro gremial 5 minutos 1%.">Ranking de macro categorías, semana 33.</canvas>
     </div>
   </div>
 
@@ -1215,8 +1222,8 @@ allCharts.push(new Chart(document.getElementById('mantChart30'), {
 allCharts.push(new Chart(document.getElementById('donutChart30'), {
   type:'bar',
   data:{
-    labels:['Mantenimiento y equipos','Descansos y pausas','Rabino / degüello','Manejo animal / ingreso','Parada sin causa','Auditoría'],
-    datasets:[{data:[184,150,50,41,40,4], backgroundColor:[C_MANT,C_DESC,C_RAB,C_MAN,C_PAR,C_AUD], borderRadius:6, barThickness:22}]
+    labels:['Mantenimiento y equipos','Descansos y pausas','Rabino / degüello','Manejo animal / ingreso','Cambio de hoja de sierra','Parada sin causa','Auditoría'],
+    datasets:[{data:[146,150,50,41,38,40,4], backgroundColor:[C_MANT,C_DESC,C_RAB,C_MAN,'#B0339A',C_PAR,C_AUD], borderRadius:6, barThickness:22}]
   },
   options:{
     indexAxis:'y', responsive:true, maintainAspectRatio:false,
@@ -1360,6 +1367,8 @@ function buildFreqSection(data, chartId, tbodyId, order){
       ? `<span class="badge" style="background:${d.equipo==='Cajón 2' ? 'var(--red-soft)' : 'var(--teal-soft)'};color:${d.equipo==='Cajón 2' ? 'var(--red)' : 'var(--teal)'};">${d.equipo}</span>`
       : '<span style="color:var(--mute);">—</span>';
     const rowStyle = d.equipo ? `style="background:${d.equipo==='Cajón 2' ? 'rgba(224,64,47,0.04)' : 'rgba(14,156,138,0.04)'};"` : '';
+    const cabEquiv = d.cat === 'Descanso' ? null : Math.round(d.min * 100 / 60);
+    const cabCell = cabEquiv === null ? '<span style="color:var(--mute);">—</span>' : `<span style="font-weight:700;color:var(--red);">${cabEquiv} cab.</span>`;
     tbody.innerHTML += `<tr ${rowStyle}>
       <td>${d.causa}</td>
       <td>${equipoTag}</td>
@@ -1367,6 +1376,7 @@ function buildFreqSection(data, chartId, tbodyId, order){
       <td>${d.freq}× ${badge}</td>
       <td>${d.dias}</td>
       <td>${d.min} min</td>
+      <td>${cabCell}</td>
       <td>${prom} min</td>
     </tr>`;
   });
@@ -1374,9 +1384,11 @@ function buildFreqSection(data, chartId, tbodyId, order){
   const c1 = data.filter(d=>d.equipo==='Cajón 1').reduce((s,d)=>({freq:s.freq+d.freq, min:s.min+d.min}), {freq:0,min:0});
   const n2 = data.filter(d=>d.equipo==='Cajón 2').length;
   const n1 = data.filter(d=>d.equipo==='Cajón 1').length;
+  const c2cab = Math.round(c2.min * 100 / 60);
+  const c1cab = Math.round(c1.min * 100 / 60);
   tbody.insertAdjacentHTML('afterbegin',
-    `<tr style="background:var(--red-soft);font-weight:800;"><td colspan="3">Subtotal Cajón 2 (${n2} síntomas)</td><td>${c2.freq}×</td><td>${n2}</td><td>${c2.min} min</td><td>—</td></tr>
-     <tr style="background:var(--teal-soft);font-weight:800;"><td colspan="3">Subtotal Cajón 1 (${n1} síntomas)</td><td>${c1.freq}×</td><td>${n1}</td><td>${c1.min} min</td><td>—</td></tr>`
+    `<tr style="background:var(--red-soft);font-weight:800;"><td colspan="3">Subtotal Cajón 2 (${n2} síntomas)</td><td>${c2.freq}×</td><td>${n2}</td><td>${c2.min} min</td><td>${c2cab} cab.</td><td>—</td></tr>
+     <tr style="background:var(--teal-soft);font-weight:800;"><td colspan="3">Subtotal Cajón 1 (${n1} síntomas)</td><td>${c1.freq}×</td><td>${n1}</td><td>${c1.min} min</td><td>${c1cab} cab.</td><td>—</td></tr>`
   );
 }
 
@@ -1469,8 +1481,8 @@ allCharts.push(new Chart(document.getElementById('mantChart32'), {
 allCharts.push(new Chart(document.getElementById('donutChart32'), {
   type:'bar',
   data:{
-    labels:['Mantenimiento y equipos','Descansos y pausas','Paro gremial','Producción','Rabino / degüello','Auditoría','Capacitación','Manejo animal'],
-    datasets:[{data:[326,199,25,16,11,10,7,7], backgroundColor:[C_MANT,C_DESC,C_GRE,C_PROD,C_RAB,C_AUD,C_CAP,C_MAN], borderRadius:6, barThickness:22}]
+    labels:['Mantenimiento y equipos','Descansos y pausas','Cambio de hoja de sierra','Paro gremial','Producción','Rabino / degüello','Auditoría','Capacitación','Manejo animal'],
+    datasets:[{data:[300,199,26,25,16,11,10,7,7], backgroundColor:[C_MANT,C_DESC,'#B0339A',C_GRE,C_PROD,C_RAB,C_AUD,C_CAP,C_MAN], borderRadius:6, barThickness:22}]
   },
   options:{
     indexAxis:'y', responsive:true, maintainAspectRatio:false,
@@ -1492,7 +1504,7 @@ allCharts.push(new Chart(document.getElementById('donutChart32'), {
 const dataW33 = [
   {causa:'Descanso', cat:'Descanso', equipo:null, freq:7, dias:3, min:150},
   {causa:'Cinta de vísceras (cadena descarrilada, 2 hs)', cat:'Mantenimiento', equipo:null, freq:2, dias:1, min:65},
-  {causa:'Sierra dividir (se rompió y se cambió)', cat:'Operativo', equipo:null, freq:1, dias:1, min:35},
+  {causa:'Sierra dividir (se rompió y se cambió)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:35},
   {causa:'Cambio hoja sierra dividir', cat:'Operativo', equipo:null, freq:4, dias:1, min:21},
   {causa:'Cajón 2 · Pata trabada / sensor puerta lateral', cat:'Mantenimiento', equipo:'Cajón 2', freq:4, dias:3, min:18},
   {causa:'Noria 2 · Perno fusible cortado', cat:'Mantenimiento', equipo:null, freq:3, dias:2, min:17},
@@ -1537,8 +1549,8 @@ allCharts.push(new Chart(document.getElementById('mantChart33'), {
 allCharts.push(new Chart(document.getElementById('donutChart33'), {
   type:'bar',
   data:{
-    labels:['Mantenimiento y equipos','Descansos y pausas','Manejo animal','Rabino / degüello','Auditoría','Paro gremial'],
-    datasets:[{data:[216,150,10,10,7,5], backgroundColor:[C_MANT,C_DESC,C_MAN,C_RAB,C_AUD,C_GRE], borderRadius:6, barThickness:22}]
+    labels:['Mantenimiento y equipos','Descansos y pausas','Cambio de hoja de sierra','Manejo animal','Rabino / degüello','Auditoría','Paro gremial'],
+    datasets:[{data:[195,150,21,10,10,7,5], backgroundColor:[C_MANT,C_DESC,'#B0339A',C_MAN,C_RAB,C_AUD,C_GRE], borderRadius:6, barThickness:22}]
   },
   options:{
     indexAxis:'y', responsive:true, maintainAspectRatio:false,
