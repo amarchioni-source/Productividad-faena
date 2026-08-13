@@ -242,31 +242,37 @@
         <p class="cday">Lunes</p><p class="creal">715</p><p class="cplan">plan 800</p>
         <div class="cbar-track"><div class="cbar-fill" style="width:89%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red-soft);color:var(--red);">-85</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 833 cab.</p>
       </div>
       <div class="compl-card">
         <p class="cday">Martes</p><p class="creal">783</p><p class="cplan">plan 820</p>
         <div class="cbar-track"><div class="cbar-fill" style="width:95%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red-soft);color:var(--red);">-37</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 983 cab.</p>
       </div>
       <div class="compl-card">
         <p class="cday">Miércoles</p><p class="creal">767</p><p class="cplan">plan 820</p>
         <div class="cbar-track"><div class="cbar-fill" style="width:94%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red-soft);color:var(--red);">-53</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 983 cab.</p>
       </div>
       <div class="compl-card">
         <p class="cday">Jueves</p><p class="creal">768</p><p class="cplan">plan 730</p>
         <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
         <span class="cdif" style="background:var(--green-soft);color:var(--green);">+38</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 917 cab.</p>
       </div>
       <div class="compl-card">
         <p class="cday">Viernes</p><p class="creal">751</p><p class="cplan">plan 740</p>
         <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
         <span class="cdif" style="background:var(--green-soft);color:var(--green);">+11</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 933 cab.</p>
       </div>
       <div class="compl-card total">
         <p class="cday">Total semana</p><p class="creal">3.784</p><p class="cplan">plan 3.910</p>
         <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:97%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red);color:#fff;">-126</span>
+        <p style="font-size:10.5px;color:#8B90A0;margin:8px 0 0;line-height:1.4;">Capacidad teórica: <b style="color:#C7CAD3;">4.650 cab.</b> (46,5 hs productivas, sin descansos)</p>
       </div>
     </div>
   </div>
@@ -332,7 +338,8 @@
       <tbody id="tableBody-w30"></tbody>
     </table>
     <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
-      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Es un costo teórico por incidente, no descuenta compensación en otras horas del día — no es sumable 1 a 1 contra el déficit real del día/semana. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
     </p>
     <div style="position:relative;width:100%;height:560px;margin-top:18px;">
       <canvas id="freqChart30" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 30, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 30.</canvas>
@@ -545,6 +552,7 @@
         <p class="cday">Total semana</p><p class="creal">3.969</p><p class="cplan">plan 4.030</p>
         <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:98%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red);color:#fff;">-61</span>
+        <p style="font-size:10.5px;color:#8B90A0;margin:8px 0 0;line-height:1.4;">Capacidad teórica: s/d (esta semana no tiene datos horarios cargados)</p>
       </div>
     </div>
   </div>
@@ -605,7 +613,8 @@
       <tbody id="tableBody-w31"></tbody>
     </table>
     <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
-      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Es un costo teórico por incidente, no descuenta compensación en otras horas del día — no es sumable 1 a 1 contra el déficit real del día/semana. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
     </p>
     <div style="position:relative;width:100%;height:560px;margin-top:18px;">
       <canvas id="freqChart31" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 31, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 31.</canvas>
@@ -723,31 +732,37 @@
         <p class="cday">Lunes 03/08</p><p class="creal">813</p><p class="cplan">plan 850</p>
         <div class="cbar-track"><div class="cbar-fill" style="width:96%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red-soft);color:var(--red);">-37</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 917 cab.</p>
       </div>
       <div class="compl-card">
         <p class="cday">Martes 04/08</p><p class="creal">687</p><p class="cplan">plan 750</p>
         <div class="cbar-track"><div class="cbar-fill" style="width:92%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red-soft);color:var(--red);">-63</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 952 cab.</p>
       </div>
       <div class="compl-card">
         <p class="cday">Miércoles 05/08</p><p class="creal">597</p><p class="cplan">plan 700</p>
         <div class="cbar-track"><div class="cbar-fill" style="width:85%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red-soft);color:var(--red);">-103</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 933 cab.</p>
       </div>
       <div class="compl-card">
         <p class="cday">Jueves 06/08</p><p class="creal">677</p><p class="cplan">plan 830</p>
         <div class="cbar-track"><div class="cbar-fill" style="width:82%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red-soft);color:var(--red);">-153</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 933 cab.</p>
       </div>
       <div class="compl-card">
         <p class="cday">Viernes 07/08</p><p class="creal">760</p><p class="cplan">plan 750</p>
         <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
         <span class="cdif" style="background:var(--green-soft);color:var(--green);">+10</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 933 cab.</p>
       </div>
       <div class="compl-card total">
         <p class="cday">Total semana</p><p class="creal">3.534</p><p class="cplan">plan 3.880</p>
         <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:91%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red);color:#fff;">-346</span>
+        <p style="font-size:10.5px;color:#8B90A0;margin:8px 0 0;line-height:1.4;">Capacidad teórica: <b style="color:#C7CAD3;">4.668 cab.</b> (46,7 hs productivas, sin descansos)</p>
       </div>
     </div>
   </div>
@@ -823,7 +838,8 @@
       <tbody id="tableBody-w32"></tbody>
     </table>
     <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
-      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Es un costo teórico por incidente, no descuenta compensación en otras horas del día — no es sumable 1 a 1 contra el déficit real del día/semana. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
     </p>
     <div style="position:relative;width:100%;height:520px;margin-top:18px;">
       <canvas id="freqChart32" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 32 acumulado a la fecha, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 32.</canvas>
@@ -988,16 +1004,19 @@
         <p class="cday">Lunes 10/08</p><p class="creal">807</p><p class="cplan">plan 850</p>
         <div class="cbar-track"><div class="cbar-fill" style="width:95%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red-soft);color:var(--red);">-43</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 917 cab.</p>
       </div>
       <div class="compl-card">
         <p class="cday">Martes 11/08</p><p class="creal">800</p><p class="cplan">plan 850</p>
         <div class="cbar-track"><div class="cbar-fill" style="width:94%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red-soft);color:var(--red);">-50</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 917 cab.</p>
       </div>
       <div class="compl-card">
         <p class="cday">Miércoles 12/08</p><p class="creal">715</p><p class="cplan">plan 850</p>
         <div class="cbar-track"><div class="cbar-fill" style="width:84%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red-soft);color:var(--red);">-135</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 917 cab.</p>
       </div>
       <div class="compl-card pending">
         <p class="cday">Jueves 13/08</p>
@@ -1015,6 +1034,7 @@
         <p class="cday">Total semana</p><p class="creal">2.322</p><p class="cplan">plan 4.130</p>
         <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:56%;background:var(--red);"></div></div>
         <span class="cdif" style="background:var(--red);color:#fff;">-1.808</span>
+        <p style="font-size:10.5px;color:#8B90A0;margin:8px 0 0;line-height:1.4;">Capacidad teórica (3 días cargados): <b style="color:#C7CAD3;">2.750 cab.</b> (27,5 hs productivas, sin descansos)</p>
       </div>
     </div>
   </div>
@@ -1031,7 +1051,8 @@
       <tbody id="tableBody-w33"></tbody>
     </table>
     <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
-      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Es un costo teórico por incidente, no descuenta compensación en otras horas del día — no es sumable 1 a 1 contra el déficit real del día/semana. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
     </p>
     <div style="position:relative;width:100%;height:300px;margin-top:18px;">
       <canvas id="freqChart33" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 33 acumulado a la fecha, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 33.</canvas>
