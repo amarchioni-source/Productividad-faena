@@ -19,6 +19,7 @@
     --pink:#C24D7C; --pink-soft:#FBEAF0;
     --cyan:#0E8FA6; --cyan-soft:#E1F2F5;
     --indigo:#5B4FC7; --indigo-soft:#EDEAFB;
+    --brown:#8A5A3B; --brown-soft:#F2E9E3;
   }
   *{box-sizing:border-box;}
   body{
@@ -149,6 +150,7 @@
   .cat-gre{background:var(--red-soft);color:var(--red);}
   .cat-cap{background:var(--pink-soft);color:var(--pink);}
   .cat-prod{background:var(--cyan-soft);color:var(--cyan);}
+  .cat-limp{background:var(--brown-soft);color:var(--brown);}
   .cat-sist{background:var(--indigo-soft);color:var(--indigo);}
   @media print{
     .tabs{display:none !important;}
@@ -194,6 +196,10 @@
     <button class="tab-btn" id="btn-w34" onclick="showTab('w34')">Semana 34</button>
     <button class="tab-btn" id="btn-w35" onclick="showTab('w35')">Semana 35</button>
     <button class="tab-btn" id="btn-w36" onclick="showTab('w36')">Semana 36</button>
+    <button class="tab-btn" id="btn-w37" onclick="showTab('w37')">Semana 37</button>
+    <button class="tab-btn" id="btn-w38" onclick="showTab('w38')">Semana 38</button>
+    <button class="tab-btn" id="btn-w39" onclick="showTab('w39')">Semana 39</button>
+    <button class="tab-btn" id="btn-w40" onclick="showTab('w40')">Semana 40 <span class="pill">en curso</span></button>
   </div>
 </div>
 
@@ -516,7 +522,7 @@
       <tbody id="tableBody-w30"></tbody>
     </table>
     <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
-      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h) para causas que afectan a toda la línea. Para eventos de <b>un solo cajón</b> (Cajón 1 o Cajón 2 puntual), se usa minutos × 50/60, porque el otro cajón sigue produciendo — solo se pierde la mitad de la capacidad, no el 100%. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
       Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
     </p>
     <div style="position:relative;width:100%;height:560px;margin-top:18px;">
@@ -791,7 +797,7 @@
       <tbody id="tableBody-w31"></tbody>
     </table>
     <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
-      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h) para causas que afectan a toda la línea. Para eventos de <b>un solo cajón</b> (Cajón 1 o Cajón 2 puntual), se usa minutos × 50/60, porque el otro cajón sigue produciendo — solo se pierde la mitad de la capacidad, no el 100%. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
       Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
     </p>
     <div style="position:relative;width:100%;height:560px;margin-top:18px;">
@@ -1016,7 +1022,7 @@
       <tbody id="tableBody-w32"></tbody>
     </table>
     <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
-      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h) para causas que afectan a toda la línea. Para eventos de <b>un solo cajón</b> (Cajón 1 o Cajón 2 puntual), se usa minutos × 50/60, porque el otro cajón sigue produciendo — solo se pierde la mitad de la capacidad, no el 100%. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
       Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
     </p>
     <div style="position:relative;width:100%;height:520px;margin-top:18px;">
@@ -1227,7 +1233,7 @@
       <tbody id="tableBody-w33"></tbody>
     </table>
     <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
-      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h) para causas que afectan a toda la línea. Para eventos de <b>un solo cajón</b> (Cajón 1 o Cajón 2 puntual), se usa minutos × 50/60, porque el otro cajón sigue produciendo — solo se pierde la mitad de la capacidad, no el 100%. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
       Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
     </p>
     <div style="position:relative;width:100%;height:300px;margin-top:18px;">
@@ -1495,7 +1501,7 @@
       <tbody id="tableBody-w34"></tbody>
     </table>
     <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
-      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h) para causas que afectan a toda la línea. Para eventos de <b>un solo cajón</b> (Cajón 1 o Cajón 2 puntual), se usa minutos × 50/60, porque el otro cajón sigue produciendo — solo se pierde la mitad de la capacidad, no el 100%. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
       Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
     </p>
     <div style="position:relative;width:100%;height:340px;margin-top:18px;">
@@ -1764,7 +1770,7 @@
       <tbody id="tableBody-w35"></tbody>
     </table>
     <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
-      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h) para causas que afectan a toda la línea. Para eventos de <b>un solo cajón</b> (Cajón 1 o Cajón 2 puntual), se usa minutos × 50/60, porque el otro cajón sigue produciendo — solo se pierde la mitad de la capacidad, no el 100%. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
       Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
     </p>
     <div style="position:relative;width:100%;height:320px;margin-top:18px;">
@@ -2031,7 +2037,7 @@
       <tbody id="tableBody-w36"></tbody>
     </table>
     <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
-      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h). Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h) para causas que afectan a toda la línea. Para eventos de <b>un solo cajón</b> (Cajón 1 o Cajón 2 puntual), se usa minutos × 50/60, porque el otro cajón sigue produciendo — solo se pierde la mitad de la capacidad, no el 100%. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
       Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
     </p>
     <div style="position:relative;width:100%;height:340px;margin-top:18px;">
@@ -2222,6 +2228,976 @@
 </div>
 <!-- ============ FIN SEMANA 36 ============ -->
 
+<!-- ============ SEMANA 37 (EN CURSO) ============ -->
+<div class="tab-panel" id="w37">
+<div class="wrap">
+
+  <div class="kpis">
+    <div class="kpi">
+      <p class="label">Cumplimiento semanal</p>
+      <p class="value">98,9%</p>
+      <span class="delta delta-blue">3.836 / 3.880 cab.</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Déficit vs. plan</p>
+      <p class="value" style="color:var(--red);">-44</p>
+      <span class="delta delta-red">cabezas</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Minutos perdidos (sin descansos)</p>
+      <p class="value" style="color:var(--amber);">320</p>
+      <span class="delta delta-amber">≈ 5,3 hs</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Cumplimiento por día — plan vs. real <span style="color:var(--mute);font-weight:600;font-size:14px;">(Semana 37)</span></p>
+        <p class="card-sub">Número grande = real. Debajo, plan y diferencia.</p>
+      </div>
+    </div>
+    <div class="compl-grid">
+      <div class="compl-card">
+        <p class="cday">Lunes 07/09</p><p class="creal">769</p><p class="cplan">plan 770</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">-1</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 917 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Martes 08/09</p><p class="creal">679</p><p class="cplan">plan 700</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:97%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-21</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 933 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Miércoles 09/09</p><p class="creal">869</p><p class="cplan">plan 850</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">+19</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 917 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Jueves 10/09</p><p class="creal">839</p><p class="cplan">plan 850</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:99%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-11</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 833 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Viernes 11/09</p><p class="creal">680</p><p class="cplan">plan 710</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:96%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-30</span>
+        <p style="font-size:10px;color:var(--amber);font-weight:700;margin:6px 0 0;line-height:1.3;">Plan 710, 680 cab. en corrales.</p>
+        <p style="font-size:10px;color:var(--mute);margin:4px 0 0;">cap. teórica: 733 cab.</p>
+      </div>
+      <div class="compl-card total">
+        <p class="cday">Total semana</p><p class="creal">3.836</p><p class="cplan">plan 3.880</p>
+        <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:99%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--red);color:#fff;">-44</span>
+        <p style="font-size:10.5px;color:#8B90A0;margin:8px 0 0;line-height:1.4;">Capacidad teórica: <b style="color:#C7CAD3;">4.333 cab.</b> (43,3 hs productivas, sin descansos)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Ranking de frecuencia — todas las causas</p>
+        <p class="card-sub">Cuántas veces ocurrió cada problema en la semana (no importa cuántos minutos costó cada vez)</p>
+      </div>
+    </div>
+    <table class="freq">
+      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Cab. equiv.</th><th>Prom./evento</th></tr></thead>
+      <tbody id="tableBody-w37"></tbody>
+    </table>
+    <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h) para causas que afectan a toda la línea. Para eventos de <b>un solo cajón</b> (Cajón 1 o Cajón 2 puntual), se usa minutos × 50/60, porque el otro cajón sigue produciendo — solo se pierde la mitad de la capacidad, no el 100%. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
+    </p>
+    <div style="position:relative;width:100%;height:340px;margin-top:18px;">
+      <canvas id="freqChart37" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 37 acumulado a la fecha, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 37.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Minutos perdidos por problema, día a día</p>
+        <p class="card-sub">Valor real junto a cada barra. Color = macro-categoría.</p>
+      </div>
+    </div>
+    <div class="day-grid">
+      <div class="day-card">
+        <p class="dname">Lunes 07/09</p><p class="dsub">116 min totales</p>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Charla operarios (despansada, higiene y seguridad)</span><div class="ptrack"><div class="pfill" style="width:50%;background:var(--pink);"></div></div><span class="pval">20</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (problema en techo, se reinicia, x3)</span><div class="ptrack"><div class="pfill" style="width:48%;background:var(--indigo);"></div></div><span class="pval">19</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Cajón 1 (aprieta nuca, perno + no funciona)</span><div class="ptrack"><div class="pfill" style="width:23%;background:var(--blue);"></div></div><span class="pval">9</span></div>
+        <div class="prow"><span class="plabel">Palco despansada (cambio sierra de pecho)</span><div class="ptrack"><div class="pfill" style="width:15%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (empujador, se trabó)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Cinta de vísceras (perno fusible)</span><div class="ptrack"><div class="pfill" style="width:10%;background:var(--blue);"></div></div><span class="pval">4</span></div>
+        <div class="prow"><span class="plabel">Noria 1 (sapito faltante)</span><div class="ptrack"><div class="pfill" style="width:8%;background:var(--blue);"></div></div><span class="pval">3</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Martes 08/09</p><p class="dsub">118 min totales</p>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">30</span></div>
+        <div class="prow"><span class="plabel">Cinta de vísceras (perno fusible, x5)</span><div class="ptrack"><div class="pfill" style="width:83%;background:var(--blue);"></div></div><span class="pval">25</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (empujador, trabado, x3)</span><div class="ptrack"><div class="pfill" style="width:47%;background:var(--blue);"></div></div><span class="pval">14</span></div>
+        <div class="prow"><span class="plabel">Sierra de pecho (cambio de hoja)</span><div class="ptrack"><div class="pfill" style="width:30%;background:var(--blue);"></div></div><span class="pval">9</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (sensor de techo, cambio)</span><div class="ptrack"><div class="pfill" style="width:30%;background:var(--blue);"></div></div><span class="pval">9</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:33%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Sierra dividir (cambio de guía)</span><div class="ptrack"><div class="pfill" style="width:27%;background:var(--blue);"></div></div><span class="pval">8</span></div>
+        <div class="prow"><span class="plabel">SENASA (problemas ingresar al sistema)</span><div class="ptrack"><div class="pfill" style="width:23%;background:var(--gray);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (problema de sistema, se reinició)</span><div class="ptrack"><div class="pfill" style="width:20%;background:var(--indigo);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Modo auditoría SENASA, 3 hs (sin cuantificar)</span><div class="ptrack"><div class="pfill" style="width:10%;background:var(--gray);opacity:0.4;"></div></div><span class="pval">s/d</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Miércoles 09/09</p><p class="dsub">137 min totales</p>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (sensor, soporte soldado, 2 hs)</span><div class="ptrack"><div class="pfill" style="width:53%;background:var(--blue);"></div></div><span class="pval">21</span></div>
+        <div class="prow"><span class="plabel">Cinta de vísceras (perno fusible, x5)</span><div class="ptrack"><div class="pfill" style="width:50%;background:var(--blue);"></div></div><span class="pval">20</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Noria 2 (perno fusible)</span><div class="ptrack"><div class="pfill" style="width:20%;background:var(--blue);"></div></div><span class="pval">8</span></div>
+        <div class="prow"><span class="plabel">Guinche 1 (no subía, x2)</span><div class="ptrack"><div class="pfill" style="width:20%;background:var(--blue);"></div></div><span class="pval">8</span></div>
+        <div class="prow"><span class="plabel">Side puller (se rompió vaso de aire)</span><div class="ptrack"><div class="pfill" style="width:18%;background:var(--blue);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (ingresaron 2 animales juntos)</span><div class="ptrack"><div class="pfill" style="width:15%;background:var(--green);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (aprieta nuca, manguera)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Sierra dividir (problemas en el sensor)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (problema en techo, se reinicia)</span><div class="ptrack"><div class="pfill" style="width:10%;background:var(--indigo);"></div></div><span class="pval">4</span></div>
+        <div class="prow"><span class="plabel">Palco tipificación (no funcionan impresoras)</span><div class="ptrack"><div class="pfill" style="width:8%;background:var(--blue);"></div></div><span class="pval">3</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Jueves 10/09</p><p class="dsub">83 min totales · corte de faena 5 min más tarde</p>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">30</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (empujador, cable)</span><div class="ptrack"><div class="pfill" style="width:50%;background:var(--blue);"></div></div><span class="pval">15</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:33%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Down puller (se calló un animal)</span><div class="ptrack"><div class="pfill" style="width:23%;background:var(--green);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Sierra de bife (problemas acople de aire)</span><div class="ptrack"><div class="pfill" style="width:20%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Guinche 1 (no funciona)</span><div class="ptrack"><div class="pfill" style="width:17%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Retrainer 2 (se trabó un animal)</span><div class="ptrack"><div class="pfill" style="width:17%;background:var(--green);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (manguera de guillotina)</span><div class="ptrack"><div class="pfill" style="width:17%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Viernes 11/09</p><p class="dsub">86 min totales · plan 710, 680 cab. en corrales</p>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">30</span></div>
+        <div class="prow"><span class="plabel">Capacitación (viernes)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--pink);"></div></div><span class="pval">30</span></div>
+        <div class="prow"><span class="plabel">Cajón 1 (aprieta nuca, desoldado)</span><div class="ptrack"><div class="pfill" style="width:27%;background:var(--blue);"></div></div><span class="pval">8</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:33%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (sensor puerta lateral)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">4</span></div>
+        <div class="prow"><span class="plabel">Noria 2 (perno fusible)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">4</span></div>
+        <div class="prow"><span class="plabel">Tropas Wagyu (sin cuantificar)</span><div class="ptrack"><div class="pfill" style="width:5%;background:var(--green);opacity:0.4;"></div></div><span class="pval">s/d</span></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--blue)"></span>Mantenimiento y equipos</span>
+      <span><span class="dot" style="background:var(--teal)"></span>Descansos y pausas</span>
+      <span><span class="dot" style="background:var(--green)"></span>Manejo de animales / ingreso</span>
+      <span><span class="dot" style="background:var(--indigo)"></span>Sistemas</span>
+      <span><span class="dot" style="background:var(--pink)"></span>Capacitación</span>
+      <span><span class="dot" style="background:var(--gray)"></span>Auditoría / visitas</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Detalle de mantenimiento — 216 min</p>
+        <p class="card-sub">Cajón 2 cierra como líder de la semana (78 min); Cinta de vísceras segunda (49 min)</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:300px;">
+      <canvas id="mantChart37" role="img" aria-label="Ranking de minutos de mantenimiento por equipo, semana 37: cajón 2, 78 minutos. Cinta de vísceras, 49 minutos. Cajón 1, 17 minutos. Sierra de pecho, 15 minutos. Guinche 1, 13 minutos. Noria 2, 12 minutos. Sierra dividir, 8 minutos. Side puller, 7 minutos. Sierra de bife, 6 minutos. Sierra dividir sensor, 5 minutos. Noria 1, 3 minutos. Palco tipificación, 3 minutos.">Ranking de minutos de mantenimiento por equipo, semana 37.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Acumulado semanal — macro-categoría</p>
+        <p class="card-sub">540 minutos perdidos en la semana</p>
+      </div>
+    </div>
+    <div class="macro-num-grid">
+      <div class="macro-num" style="background:var(--teal-soft);">
+        <p class="mn-label" style="color:var(--teal);">Descansos y pausas</p>
+        <p class="mn-val" style="color:var(--teal);">220</p>
+        <p class="mn-pct" style="color:var(--teal);">41% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--blue-soft);">
+        <p class="mn-label" style="color:var(--blue);">Mantenimiento y equipos</p>
+        <p class="mn-val" style="color:var(--blue);">193</p>
+        <p class="mn-pct" style="color:var(--blue);">36% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--pink-soft);">
+        <p class="mn-label" style="color:var(--pink);">Capacitación</p>
+        <p class="mn-val" style="color:var(--pink);">50</p>
+        <p class="mn-pct" style="color:var(--pink);">9% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--indigo-soft);">
+        <p class="mn-label" style="color:var(--indigo);">Sistemas</p>
+        <p class="mn-val" style="color:var(--indigo);">36</p>
+        <p class="mn-pct" style="color:var(--indigo);">7% del total</p>
+      </div>
+      <div class="macro-num" style="background:#FDF0FA;">
+        <p class="mn-label" style="color:#B0339A;">Cambio de hoja de sierra</p>
+        <p class="mn-val" style="color:#B0339A;">23</p>
+        <p class="mn-pct" style="color:#B0339A;">4% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--green-soft);">
+        <p class="mn-label" style="color:var(--green);">Manejo animal / ingreso</p>
+        <p class="mn-val" style="color:var(--green);">18</p>
+        <p class="mn-pct" style="color:var(--green);">3% del total</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:220px;">
+      <canvas id="donutChart37" role="img" aria-label="Ranking de minutos por macro categoría en la semana 37: descansos y pausas 220 minutos 41%, mantenimiento y equipos 193 minutos 36%, capacitación 50 minutos 9%, sistemas 36 minutos 7%, cambio de hoja de sierra 23 minutos 4%, manejo animal 18 minutos 3%.">Ranking de macro categorías, semana 37.</canvas>
+    </div>
+  </div>
+
+  <div class="insight-grid">
+    <div class="insight" style="border-left:4px solid var(--red);">
+      <span class="itag tag-red">Prioridad 1</span>
+      <h4>Cajón 2 cierra como líder de la semana — 78 min, sin un solo día limpio</h4>
+      <p>Sensor con soporte soldado (21'), empujador con problema de cable (15'), manguera de guillotina que se salió (5'), sensor de puerta lateral (4'), más el resto de síntomas de la semana. 5 de 5 días con fallas — el equipo más costoso por lejos.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--blue);">
+      <span class="itag tag-red">Se confirma</span>
+      <h4>Cinta de vísceras cierra segunda — 49 min, 11 pernos fusibles cortados</h4>
+      <p>Todo concentrado en los primeros 3 días, sin nuevos eventos jueves ni viernes. A esta altura es un problema de fondo del perno fusible de esa cinta (quizás mal calibrado o de menor resistencia de la necesaria), no una mala racha.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--green);">
+      <span class="itag tag-green">A seguir</span>
+      <h4>Manejo animal cierra con 18 min, 2 equipos nuevos</h4>
+      <p>Retrainer 2 (animal trabado) y Down puller (animal caído) — ninguno había aparecido en manejo animal esta semana. Vale confirmar si es casualidad o si hay que revisar el ritmo de ingreso en esas estaciones.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--teal);">
+      <span class="itag tag-green">Cierre de semana</span>
+      <h4>Semana completa: 3.836 / 3.880 (98,9%), déficit -44</h4>
+      <p>La mejor semana de cumplimiento hasta ahora, por lejos. Viernes: plan 710, 680 cab. en corrales.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+<!-- ============ FIN SEMANA 37 ============ -->
+
+<!-- ============ SEMANA 38 (EN CURSO) ============ -->
+<div class="tab-panel" id="w38">
+<div class="wrap">
+
+  <div class="kpis">
+    <div class="kpi">
+      <p class="label">Cumplimiento semanal</p>
+      <p class="value">99,7%</p>
+      <span class="delta delta-blue">3.996 / 4.010 cab.</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Déficit vs. plan</p>
+      <p class="value" style="color:var(--red);">-14</p>
+      <span class="delta delta-red">cabezas</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Minutos perdidos (sin descansos)</p>
+      <p class="value" style="color:var(--amber);">179</p>
+      <span class="delta delta-amber">≈ 3,0 hs</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Cumplimiento por día — plan vs. real <span style="color:var(--mute);font-weight:600;font-size:14px;">(Semana 38)</span></p>
+        <p class="card-sub">Número grande = real. Debajo, plan y diferencia.</p>
+      </div>
+    </div>
+    <div class="compl-grid">
+      <div class="compl-card">
+        <p class="cday">Lunes 14/09</p><p class="creal">799</p><p class="cplan">plan 800</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:99%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-1</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 858 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Martes 15/09</p><p class="creal">869</p><p class="cplan">plan 820</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">+49</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 917 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Miércoles 16/09</p><p class="creal">836</p><p class="cplan">plan 820</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">+16</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 867 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Jueves 17/09</p><p class="creal">753</p><p class="cplan">plan 820</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:92%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-67</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 833 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Viernes 18/09</p><p class="creal">739</p><p class="cplan">plan 750</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:99%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-11</span>
+        <p style="font-size:10px;color:var(--amber);font-weight:700;margin:4px 0 0;line-height:1.3;">Quedaron 2 tropas W en corrales (60 cab.) por falta de lugar en cámara.</p>
+        <p style="font-size:10px;color:var(--mute);margin:4px 0 0;">cap. teórica: 833 cab.</p>
+      </div>
+      <div class="compl-card total">
+        <p class="cday">Total semana</p><p class="creal">3.996</p><p class="cplan">plan 4.010</p>
+        <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--red);color:#fff;">-14</span>
+        <p style="font-size:10.5px;color:#8B90A0;margin:8px 0 0;line-height:1.4;">Capacidad teórica: <b style="color:#C7CAD3;">4.308 cab.</b> (43,1 hs productivas, sin descansos)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Ranking de frecuencia — todas las causas</p>
+        <p class="card-sub">Cuántas veces ocurrió cada problema en la semana (no importa cuántos minutos costó cada vez)</p>
+      </div>
+    </div>
+    <table class="freq">
+      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Cab. equiv.</th><th>Prom./evento</th></tr></thead>
+      <tbody id="tableBody-w38"></tbody>
+    </table>
+    <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h) para causas que afectan a toda la línea. Para eventos de <b>un solo cajón</b> (Cajón 1 o Cajón 2 puntual), se usa minutos × 50/60, porque el otro cajón sigue produciendo — solo se pierde la mitad de la capacidad, no el 100%. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
+    </p>
+    <div style="position:relative;width:100%;height:280px;margin-top:18px;">
+      <canvas id="freqChart38" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 38 acumulado a la fecha, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 38.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Minutos perdidos por problema, día a día</p>
+        <p class="card-sub">Valor real junto a cada barra. Color = macro-categoría.</p>
+      </div>
+    </div>
+    <div class="day-grid">
+      <div class="day-card">
+        <p class="dname">Lunes 14/09</p><p class="dsub">134 min totales (+ tramo sin cuantificar 15h)</p>
+        <div class="prow"><span class="plabel">Descanso (2do, 2 partes)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">65</span></div>
+        <div class="prow"><span class="plabel">Cajón 1 (manguera hidráulica, 2 partes)</span><div class="ptrack"><div class="pfill" style="width:28%;background:var(--blue);"></div></div><span class="pval">18</span></div>
+        <div class="prow"><span class="plabel">Cajón 1 y 2 (amarres, no quieren faenar, x2)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--red);"></div></div><span class="pval">16</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:31%;background:var(--teal);"></div></div><span class="pval">20</span></div>
+        <div class="prow"><span class="plabel">Sierra dividir (cambio de hoja)</span><div class="ptrack"><div class="pfill" style="width:9%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (manguera de aire, aprieta nuca)</span><div class="ptrack"><div class="pfill" style="width:9%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Guinche 2 (no funciona)</span><div class="ptrack"><div class="pfill" style="width:5%;background:var(--blue);"></div></div><span class="pval">3</span></div>
+        <div class="prow"><span class="plabel">Cajón 1 y 2 (amarres, sin cuantificar, 15h)</span><div class="ptrack"><div class="pfill" style="width:5%;background:var(--red);opacity:0.4;"></div></div><span class="pval">s/d</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Martes 15/09</p><p class="dsub">79 min totales</p>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (2 animales ingresados, retraso)</span><div class="ptrack"><div class="pfill" style="width:20%;background:var(--green);"></div></div><span class="pval">8</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Guinche 2 (no levanta)</span><div class="ptrack"><div class="pfill" style="width:15%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Retrainer (se trabó pata del animal)</span><div class="ptrack"><div class="pfill" style="width:15%;background:var(--green);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Transferencia 1 (se calló un animal)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--green);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Down puller (se calló un animal)</span><div class="ptrack"><div class="pfill" style="width:10%;background:var(--green);"></div></div><span class="pval">4</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Miércoles 16/09</p><p class="dsub">92 min totales · terminó la faena 30 min antes</p>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Cierre anticipado de jornada (sin causa especificada)</span><div class="ptrack"><div class="pfill" style="width:75%;background:var(--amber);"></div></div><span class="pval">30</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Sierra dividir (cambio de hoja)</span><div class="ptrack"><div class="pfill" style="width:15%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Retrainer (se trabó pata del animal)</span><div class="ptrack"><div class="pfill" style="width:15%;background:var(--green);"></div></div><span class="pval">6</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Jueves 17/09</p><p class="dsub">67 min totales</p>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">30</span></div>
+        <div class="prow"><span class="plabel">Noria 2 (perno fusible)</span><div class="ptrack"><div class="pfill" style="width:23%;background:var(--blue);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:33%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Capacitación (jueves)</span><div class="ptrack"><div class="pfill" style="width:33%;background:var(--pink);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (aprieta nuca, no funciona)</span><div class="ptrack"><div class="pfill" style="width:17%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (soldar amarre)</span><div class="ptrack"><div class="pfill" style="width:17%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Visita SENASA (noria a velocidad 90, sin cuantificar)</span><div class="ptrack"><div class="pfill" style="width:5%;background:var(--gray);opacity:0.4;"></div></div><span class="pval">s/d</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Viernes 18/09</p><p class="dsub">72 min totales · 60 cab. quedaron en corrales (cámara)</p>
+        <div class="prow"><span class="plabel">PCC 1 (cambio de lugar)</span><div class="ptrack"><div class="pfill" style="width:50%;background:var(--blue);"></div></div><span class="pval">15</span></div>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">30</span></div>
+        <div class="prow"><span class="plabel">Dentición (no funciona el sistema)</span><div class="ptrack"><div class="pfill" style="width:33%;background:var(--indigo);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:33%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Guinche 1 (no funciona)</span><div class="ptrack"><div class="pfill" style="width:23%;background:var(--blue);"></div></div><span class="pval">7</span></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--blue)"></span>Mantenimiento y equipos</span>
+      <span><span class="dot" style="background:var(--teal)"></span>Descansos y pausas</span>
+      <span><span class="dot" style="background:var(--green)"></span>Manejo de animales / ingreso</span>
+      <span><span class="dot" style="background:var(--red)"></span>Paro gremial / externo</span>
+      <span><span class="dot" style="background:var(--amber)"></span>Parada sin causa</span>
+      <span><span class="dot" style="background:var(--pink)"></span>Capacitación</span>
+      <span><span class="dot" style="background:var(--indigo)"></span>Sistemas</span>
+      <span><span class="dot" style="background:var(--gray)"></span>Auditoría / visitas</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Detalle de mantenimiento — 84 min</p>
+        <p class="card-sub">Cajón 1 cierra como líder (18 min); Cajón 2 escala a segundo lugar (16 min) por 2 síntomas nuevos el jueves</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:220px;">
+      <canvas id="mantChart38" role="img" aria-label="Ranking de minutos de mantenimiento por equipo, semana 38: cajón 1, 18 minutos. Cajón 2, 16 minutos. PCC 1, 15 minutos. Sierra dividir, 12 minutos. Guinche 2, 9 minutos. Noria 2, 7 minutos. Guinche 1, 7 minutos.">Ranking de minutos de mantenimiento por equipo, semana 38.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Acumulado semanal — macro-categoría</p>
+        <p class="card-sub">444 minutos perdidos en la semana</p>
+      </div>
+    </div>
+    <div class="macro-num-grid">
+      <div class="macro-num" style="background:var(--teal-soft);">
+        <p class="mn-label" style="color:var(--teal);">Descansos y pausas</p>
+        <p class="mn-val" style="color:var(--teal);">265</p>
+        <p class="mn-pct" style="color:var(--teal);">60% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--blue-soft);">
+        <p class="mn-label" style="color:var(--blue);">Mantenimiento y equipos</p>
+        <p class="mn-val" style="color:var(--blue);">57</p>
+        <p class="mn-pct" style="color:var(--blue);">13% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--green-soft);">
+        <p class="mn-label" style="color:var(--green);">Manejo animal / ingreso</p>
+        <p class="mn-val" style="color:var(--green);">29</p>
+        <p class="mn-pct" style="color:var(--green);">7% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--amber-soft);">
+        <p class="mn-label" style="color:var(--amber);">Parada sin causa</p>
+        <p class="mn-val" style="color:var(--amber);">30</p>
+        <p class="mn-pct" style="color:var(--amber);">7% del total</p>
+      </div>
+      <div class="macro-num" style="background:#FDF0FA;">
+        <p class="mn-label" style="color:#B0339A;">Cambio de hoja de sierra</p>
+        <p class="mn-val" style="color:#B0339A;">27</p>
+        <p class="mn-pct" style="color:#B0339A;">6% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--red-soft);">
+        <p class="mn-label" style="color:var(--red);">Paro gremial / externo</p>
+        <p class="mn-val" style="color:var(--red);">16</p>
+        <p class="mn-pct" style="color:var(--red);">4% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--pink-soft);">
+        <p class="mn-label" style="color:var(--pink);">Capacitación</p>
+        <p class="mn-val" style="color:var(--pink);">10</p>
+        <p class="mn-pct" style="color:var(--pink);">2% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--indigo-soft);">
+        <p class="mn-label" style="color:var(--indigo);">Sistemas</p>
+        <p class="mn-val" style="color:var(--indigo);">10</p>
+        <p class="mn-pct" style="color:var(--indigo);">2% del total</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:260px;">
+      <canvas id="donutChart38" role="img" aria-label="Ranking de minutos por macro categoría en la semana 38: descansos y pausas 265 minutos 60%, mantenimiento y equipos 57 minutos 13%, manejo animal 29 minutos 7%, parada sin causa 30 minutos 7%, cambio de hoja de sierra 27 minutos 6%, paro gremial 16 minutos 4%, capacitación 10 minutos 2%, sistemas 10 minutos 2%.">Ranking de macro categorías, semana 38.</canvas>
+    </div>
+  </div>
+
+  <div class="insight-grid">
+    <div class="insight" style="border-left:4px solid var(--red);">
+      <span class="itag tag-red">A confirmar con Angie</span>
+      <h4>Amarres — 16 min cuantificados + tramo sin cuantificar (solo el lunes)</h4>
+      <p>"No quieren faenar el equipo de USA" (12h) y "los judíos no quieren faenar" (14h y 15h). Categorizado como Paro gremial por tratarse de una negativa de trabajadores, no una falla de equipo — a confirmar si el criterio es correcto. No volvió a repetirse en el resto de la semana.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--blue);">
+      <span class="itag tag-blue">Prioridad 1</span>
+      <h4>Cajón 1 cierra como líder de la semana — 18 min</h4>
+      <p>Todo concentrado el lunes (manguera hidráulica, 2 tramos). Sin nuevos eventos el resto de la semana — vale confirmar que quedó bien resuelto.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--amber);">
+      <span class="itag" style="background:var(--amber-soft);color:var(--amber);">Sin causa — a confirmar</span>
+      <h4>Miércoles terminó la faena 30 minutos antes, sin causa especificada</h4>
+      <p>La planilla no indica equipo ni motivo — solo que se cortó la jornada. Vale confirmar con planta qué lo generó para no dejarlo como "sin causa" de forma permanente.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--teal);">
+      <span class="itag tag-green">Cierre de semana</span>
+      <h4>Semana completa: 3.996 / 4.010 (99,7%), déficit -14</h4>
+      <p>La mejor semana de cumplimiento hasta ahora, superando incluso a la Semana 37. Viernes cerró con 60 cabezas (2 tropas) sin faenar por falta de lugar en cámara — no fue un problema de productividad, y aun así el déficit total de la semana fue mínimo.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+<!-- ============ FIN SEMANA 38 ============ -->
+
+<!-- ============ SEMANA 39 (EN CURSO) ============ -->
+<div class="tab-panel" id="w39">
+<div class="wrap">
+
+  <div class="kpis">
+    <div class="kpi">
+      <p class="label">Cumplimiento semanal</p>
+      <p class="value">98,7%</p>
+      <span class="delta delta-blue">4.038 / 4.090 cab.</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Déficit vs. plan</p>
+      <p class="value" style="color:var(--red);">-52</p>
+      <span class="delta delta-red">cabezas (1,3% del plan)</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Minutos perdidos (sin descansos)</p>
+      <p class="value" style="color:var(--amber);">241</p>
+      <span class="delta delta-amber">≈ 4,0 hs</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Cumplimiento por día — plan vs. real <span style="color:var(--mute);font-weight:600;font-size:14px;">(Semana 39)</span></p>
+        <p class="card-sub">Número grande = real. Debajo, plan y diferencia.</p>
+      </div>
+    </div>
+    <div class="compl-grid">
+      <div class="compl-card">
+        <p class="cday">Lunes 21/09</p><p class="creal">833</p><p class="cplan">plan 820</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">+13</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 758 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Martes 22/09</p><p class="creal">853</p><p class="cplan">plan 850</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">+3</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 800 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Miércoles 23/09</p><p class="creal">857</p><p class="cplan">plan 850</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">+7</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 783 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Jueves 24/09</p><p class="creal">774</p><p class="cplan">plan 820</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:94%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-46</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 733 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Viernes 25/09</p><p class="creal">721</p><p class="cplan">plan 750</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:96%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-29</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 633 cab.</p>
+      </div>
+      <div class="compl-card total">
+        <p class="cday">Total semana</p><p class="creal">4.038</p><p class="cplan">plan 4.090</p>
+        <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:99%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--red);color:#fff;">-52 (1,3%)</span>
+        <p style="font-size:10.5px;color:#8B90A0;margin:8px 0 0;line-height:1.4;">Capacidad teórica: <b style="color:#C7CAD3;">3.707 cab.</b> (37,1 hs productivas, sin descansos)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Ranking de frecuencia — todas las causas</p>
+        <p class="card-sub">Cuántas veces ocurrió cada problema en la semana (no importa cuántos minutos costó cada vez)</p>
+      </div>
+    </div>
+    <table class="freq">
+      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Cab. equiv.</th><th>Prom./evento</th></tr></thead>
+      <tbody id="tableBody-w39"></tbody>
+    </table>
+    <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h) para causas que afectan a toda la línea. Para eventos de <b>un solo cajón</b> (Cajón 1 o Cajón 2 puntual), se usa minutos × 50/60, porque el otro cajón sigue produciendo — solo se pierde la mitad de la capacidad, no el 100%. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
+    </p>
+    <div style="position:relative;width:100%;height:220px;margin-top:18px;">
+      <canvas id="freqChart39" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 39 acumulado a la fecha, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 39.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Minutos perdidos por problema, día a día</p>
+        <p class="card-sub">Valor real junto a cada barra. Color = macro-categoría.</p>
+      </div>
+    </div>
+    <div class="day-grid">
+      <div class="day-card">
+        <p class="dname">Lunes 21/09</p><p class="dsub">101 min totales · faena terminó a las 15:25hs</p>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Up Puller (no funcionaba botonera)</span><div class="ptrack"><div class="pfill" style="width:63%;background:var(--blue);"></div></div><span class="pval">25</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (se pasó de largo)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--blue);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Entrada cajón 2 (se empacó un animal)</span><div class="ptrack"><div class="pfill" style="width:18%;background:var(--green);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Calesita de cámaras (roldana descarrilada)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (empujador no bajaba)</span><div class="ptrack"><div class="pfill" style="width:10%;background:var(--blue);"></div></div><span class="pval">4</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Martes 22/09</p><p class="dsub">122 min totales · faena terminó a las 15:50hs</p>
+        <div class="prow"><span class="plabel">Guinche 2 (amarre cajón 1 roto, quedó sin funcionar, corte de faena)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--blue);"></div></div><span class="pval">50</span></div>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:80%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Guinche 2 (se cortó eje)</span><div class="ptrack"><div class="pfill" style="width:20%;background:var(--blue);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:20%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Noria 2 (pernos fusible cortados)</span><div class="ptrack"><div class="pfill" style="width:12%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Cambio en noria (se cayó una media res)</span><div class="ptrack"><div class="pfill" style="width:12%;background:var(--cyan);"></div></div><span class="pval">6</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Miércoles 23/09</p><p class="dsub">84 min totales · faena terminó a las 15:40hs</p>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (entraron 2 animales)</span><div class="ptrack"><div class="pfill" style="width:18%;background:var(--green);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Manea (se trabó en comienzo de noria)</span><div class="ptrack"><div class="pfill" style="width:18%;background:var(--blue);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Dentición (error en numeración de animales)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--indigo);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Guinche 2 (no funcionaba)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Cinta de vísceras (pernos fusibles)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Jueves 24/09</p><p class="dsub">49 min totales</p>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">30</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:33%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Noria 2 (pernos fusible)</span><div class="ptrack"><div class="pfill" style="width:17%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Manga de ingreso (animal empacado)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--green);"></div></div><span class="pval">4</span></div>
+        <div class="prow"><span class="plabel">Auditoría (noria a velocidad reducida, sin cuantificar)</span><div class="ptrack"><div class="pfill" style="width:5%;background:var(--gray);opacity:0.4;"></div></div><span class="pval">s/d</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Viernes 25/09</p><p class="dsub">115 min totales</p>
+        <div class="prow"><span class="plabel">Cajón 2 (puerta de ingreso al cajón)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--blue);"></div></div><span class="pval">45</span></div>
+        <div class="prow"><span class="plabel">Cajón 1 (se desoldó amarre del cajón)</span><div class="ptrack"><div class="pfill" style="width:67%;background:var(--blue);"></div></div><span class="pval">30</span></div>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:67%;background:var(--teal);"></div></div><span class="pval">30</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:22%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--blue)"></span>Mantenimiento y equipos</span>
+      <span><span class="dot" style="background:var(--teal)"></span>Descansos y pausas</span>
+      <span><span class="dot" style="background:var(--green)"></span>Manejo de animales / ingreso</span>
+      <span><span class="dot" style="background:var(--cyan)"></span>Producción</span>
+      <span><span class="dot" style="background:var(--indigo)"></span>Sistemas</span>
+      <span><span class="dot" style="background:var(--gray)"></span>Auditoría / visitas</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Detalle de mantenimiento — 207 min</p>
+        <p class="card-sub">Guinche 2 cierra como líder (65 min); Cajón 2 escala fuerte el viernes (59 min) con la puerta de ingreso</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:280px;">
+      <canvas id="mantChart39" role="img" aria-label="Ranking de minutos de mantenimiento por equipo, semana 39: guinche 2, 65 minutos. Cajón 2, 59 minutos. Cajón 1, 30 minutos. Up puller, 25 minutos. Noria 2, 11 minutos. Manea, 7 minutos. Cinta de vísceras, 5 minutos. Calesita de cámaras, 5 minutos.">Ranking de minutos de mantenimiento por equipo, semana 39.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Acumulado semanal — macro-categoría</p>
+        <p class="card-sub">471 minutos perdidos en la semana</p>
+      </div>
+    </div>
+    <div class="macro-num-grid">
+      <div class="macro-num" style="background:var(--teal-soft);">
+        <p class="mn-label" style="color:var(--teal);">Descansos y pausas</p>
+        <p class="mn-val" style="color:var(--teal);">230</p>
+        <p class="mn-pct" style="color:var(--teal);">49% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--blue-soft);">
+        <p class="mn-label" style="color:var(--blue);">Mantenimiento y equipos</p>
+        <p class="mn-val" style="color:var(--blue);">207</p>
+        <p class="mn-pct" style="color:var(--blue);">44% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--green-soft);">
+        <p class="mn-label" style="color:var(--green);">Manejo animal / ingreso</p>
+        <p class="mn-val" style="color:var(--green);">18</p>
+        <p class="mn-pct" style="color:var(--green);">4% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--indigo-soft);">
+        <p class="mn-label" style="color:var(--indigo);">Sistemas</p>
+        <p class="mn-val" style="color:var(--indigo);">10</p>
+        <p class="mn-pct" style="color:var(--indigo);">2% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--cyan-soft);">
+        <p class="mn-label" style="color:var(--cyan);">Producción</p>
+        <p class="mn-val" style="color:var(--cyan);">6</p>
+        <p class="mn-pct" style="color:var(--cyan);">1% del total</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:200px;">
+      <canvas id="donutChart39" role="img" aria-label="Ranking de minutos por macro categoría en la semana 39: descansos y pausas 230 minutos 49%, mantenimiento y equipos 207 minutos 44%, manejo animal 18 minutos 4%, sistemas 10 minutos 2%, producción 6 minutos 1%.">Ranking de macro categorías, semana 39.</canvas>
+    </div>
+  </div>
+
+  <div class="insight-grid">
+    <div class="insight" style="border-left:4px solid var(--red);">
+      <span class="itag tag-red">Prioridad 1</span>
+      <h4>Guinche 2 cierra como líder — 65 min, con corte de faena incluido</h4>
+      <p>Martes: se cortó el eje (10') y se rompió el amarre de cajón 1, quedando sin funcionar (50') — obligó a terminar la faena antes de lo previsto. Miércoles: "no funcionaba" otra vez (5'). Sin nuevos eventos el resto de la semana — es el equipo más costoso por lejos.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--red);">
+      <span class="itag tag-red">Cierra fuerte</span>
+      <h4>Cajón 2 escala a segundo lugar — 59 min, casi todo el viernes</h4>
+      <p>La puerta de ingreso al cajón dio 45 min de una sola vez el viernes, sumado al resto de síntomas de la semana. Cajón 1 también apareció por primera vez (30 min, amarre desoldado) — vale seguir de cerca ambos cajones la semana que viene.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--blue);">
+      <span class="itag tag-blue">A seguir</span>
+      <h4>Up Puller — 25 min, primera aparición en el dashboard</h4>
+      <p>"No funcionaba botonera" paró la línea 25 minutos de una sola vez el lunes. Sin nuevos eventos en toda la semana — parece haber quedado resuelto.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--teal);">
+      <span class="itag tag-green">Cierre de semana</span>
+      <h4>Semana completa: 4.038 / 4.090 (98,7%), déficit -52</h4>
+      <p>Muy buena semana: viernes cerró en 721 cab. (-29 vs. plan), y el déficit total de la semana terminó siendo mínimo.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+<!-- ============ FIN SEMANA 39 ============ -->
+
+<!-- ============ SEMANA 40 (EN CURSO) ============ -->
+<div class="tab-panel" id="w40">
+<div class="wrap">
+
+  <div class="banner">⏳ Semana en curso: cargados lunes 28/09, martes 29/09, miércoles 30/09 y jueves 01/10. Falta viernes 02/10 — los totales de abajo son parciales.</div>
+
+  <div class="kpis">
+    <div class="kpi">
+      <p class="label">Cumplimiento acumulado</p>
+      <p class="value">78,0%</p>
+      <span class="delta delta-blue">3.020 / 3.870 cab. (semana completa)</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Déficit acumulado</p>
+      <p class="value" style="color:var(--red);">-850</p>
+      <span class="delta delta-red">cabezas (22,0% del plan)</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Minutos perdidos (sin descansos)</p>
+      <p class="value" style="color:var(--amber);">229</p>
+      <span class="delta delta-amber">≈ 3,8 hs (4 días)</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Cumplimiento por día — plan vs. real <span style="color:var(--mute);font-weight:600;font-size:14px;">(Semana 40)</span></p>
+        <p class="card-sub">Número grande = real. Debajo, plan y diferencia.</p>
+      </div>
+    </div>
+    <div class="compl-grid">
+      <div class="compl-card">
+        <p class="cday">Lunes 28/09</p><p class="creal">634</p><p class="cplan">plan 600</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">+34</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 908 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Martes 29/09</p><p class="creal">839</p><p class="cplan">plan 800</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">+39</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 917 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Miércoles 30/09</p><p class="creal">813</p><p class="cplan">plan 850</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:96%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-37</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 917 cab.</p>
+      </div>
+      <div class="compl-card">
+        <p class="cday">Jueves 01/10</p><p class="creal">734</p><p class="cplan">plan 820</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:90%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red-soft);color:var(--red);">-86</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 833 cab.</p>
+      </div>
+      <div class="compl-card pending">
+        <p class="cday">Viernes 02/10</p>
+        <div class="pend-icon">···</div>
+        <p class="pend-txt">Pendiente de carga</p>
+        <p class="cplan" style="margin-top:6px;">plan 800</p>
+      </div>
+      <div class="compl-card total">
+        <p class="cday">Total semana</p><p class="creal">3.020</p><p class="cplan">plan 3.870</p>
+        <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:78%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red);color:#fff;">-850 (22,0%)</span>
+        <p style="font-size:10.5px;color:#8B90A0;margin:8px 0 0;line-height:1.4;">Capacidad teórica (4 días cargados): <b style="color:#C7CAD3;">3.575 cab.</b> (35,8 hs productivas, sin descansos)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Ranking de frecuencia — todas las causas</p>
+        <p class="card-sub">Cuántas veces ocurrió cada problema en los 4 días cargados (falta viernes)</p>
+      </div>
+    </div>
+    <table class="freq">
+      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Cab. equiv.</th><th>Prom./evento</th></tr></thead>
+      <tbody id="tableBody-w40"></tbody>
+    </table>
+    <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h) para causas que afectan a toda la línea. Para eventos de <b>un solo cajón</b> (Cajón 1 o Cajón 2 puntual), se usa minutos × 50/60, porque el otro cajón sigue produciendo — solo se pierde la mitad de la capacidad, no el 100%. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      Tené en cuenta que en el dashboard convive con <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
+    </p>
+    <div style="position:relative;width:100%;height:220px;margin-top:18px;">
+      <canvas id="freqChart40" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 40 acumulado a la fecha, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 40.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Minutos perdidos por problema, día a día</p>
+        <p class="card-sub">Valor real junto a cada barra. Color = macro-categoría.</p>
+      </div>
+    </div>
+    <div class="day-grid">
+      <div class="day-card">
+        <p class="dname">Lunes 28/09</p><p class="dsub">108 min totales</p>
+        <div class="prow"><span class="plabel">Descanso (2do, 2 partes)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Down puller (caño de agua roto)</span><div class="ptrack"><div class="pfill" style="width:45%;background:var(--blue);"></div></div><span class="pval">18</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (manguera puerta lateral)</span><div class="ptrack"><div class="pfill" style="width:38%;background:var(--blue);"></div></div><span class="pval">15</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:38%;background:var(--teal);"></div></div><span class="pval">15</span></div>
+        <div class="prow"><span class="plabel">Zona sucia (charla de seguridad)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--pink);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (empujador trabado, x2)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--blue);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Auditoría (noria gancho por medio, sin cuantificar)</span><div class="ptrack"><div class="pfill" style="width:5%;background:var(--gray);opacity:0.4;"></div></div><span class="pval">s/d</span></div>
+        <div class="prow"><span class="plabel">Amarre — judíos no quieren faenar (sin cuantificar)</span><div class="ptrack"><div class="pfill" style="width:5%;background:var(--red);opacity:0.4;"></div></div><span class="pval">s/d</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Martes 29/09</p><p class="dsub">74 min totales</p>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Noria 2 (perno fusible)</span><div class="ptrack"><div class="pfill" style="width:18%;background:var(--blue);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (soldar amarre)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--blue);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Cajón 1 (sensor puerta lateral)</span><div class="ptrack"><div class="pfill" style="width:18%;background:var(--blue);"></div></div><span class="pval">7</span></div>
+        <div class="prow"><span class="plabel">Problemas operativos (sin cuantificar)</span><div class="ptrack"><div class="pfill" style="width:5%;background:var(--amber);opacity:0.4;"></div></div><span class="pval">s/d</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Miércoles 30/09</p><p class="dsub">129 min totales</p>
+        <div class="prow"><span class="plabel">Noria 1 (se cayó parte del riel, soldaron, x2)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--blue);"></div></div><span class="pval">60</span></div>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:67%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Cajón 1 (se levantó un animal)</span><div class="ptrack"><div class="pfill" style="width:17%;background:var(--green);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:17%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Ingreso cajón 2 (animal no quería ingresar)</span><div class="ptrack"><div class="pfill" style="width:8%;background:var(--green);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Ingreso cajón 1 (animal no quería ingresar)</span><div class="ptrack"><div class="pfill" style="width:7%;background:var(--green);"></div></div><span class="pval">4</span></div>
+      </div>
+      <div class="day-card">
+        <p class="dname">Jueves 01/10</p><p class="dsub">113 min totales · corte de faena 5 min más tarde</p>
+        <div class="prow"><span class="plabel">Sierra de pecho (no funciona, sin repuesto, x2)</span><div class="ptrack"><div class="pfill" style="width:67%;background:var(--blue);"></div></div><span class="pval">20</span></div>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">30</span></div>
+        <div class="prow"><span class="plabel">Retrainer 2 (se descarriló, x2)</span><div class="ptrack"><div class="pfill" style="width:60%;background:var(--blue);"></div></div><span class="pval">18</span></div>
+        <div class="prow"><span class="plabel">Triperia (desagüe tapado, panzas llenas)</span><div class="ptrack"><div class="pfill" style="width:50%;background:var(--brown);"></div></div><span class="pval">15</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:33%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (puerta lateral, sensor)</span><div class="ptrack"><div class="pfill" style="width:17%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (empacó animal, cambio de tropa)</span><div class="ptrack"><div class="pfill" style="width:17%;background:var(--green);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Sierra dividir (cambio de hoja)</span><div class="ptrack"><div class="pfill" style="width:20%;background:var(--blue);"></div></div><span class="pval">6</span></div>
+        <div class="prow"><span class="plabel">Grasa (whizzard no tira vapor, solo agua)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">4</span></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--blue)"></span>Mantenimiento y equipos</span>
+      <span><span class="dot" style="background:var(--teal)"></span>Descansos y pausas</span>
+      <span><span class="dot" style="background:var(--green)"></span>Manejo de animales / ingreso</span>
+      <span><span class="dot" style="background:var(--pink)"></span>Capacitación</span>
+      <span><span class="dot" style="background:var(--gray)"></span>Auditoría / visitas</span>
+      <span><span class="dot" style="background:var(--red)"></span>Paro gremial / externo</span>
+      <span><span class="dot" style="background:var(--amber)"></span>Parada sin causa</span>
+      <span><span class="dot" style="background:var(--brown)"></span>Limpieza</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Detalle de mantenimiento — 180 min</p>
+        <p class="card-sub">Noria 1 sigue líder (60 min); Cajón 2 escala a 40 min; Sierra de pecho aparece grave (20 min, sin repuesto disponible)</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:260px;">
+      <canvas id="mantChart40" role="img" aria-label="Ranking de minutos de mantenimiento por equipo, semana 40 acumulado a la fecha: noria 1, 60 minutos. Cajón 2, 40 minutos. Sierra de pecho, 20 minutos. Down puller, 18 minutos. Retrainer 2, 18 minutos. Noria 2, 7 minutos. Cajón 1, 7 minutos. Sierra dividir, 6 minutos. Grasa, 4 minutos.">Ranking de minutos de mantenimiento por equipo, semana 40.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Acumulado a la fecha — macro-categoría</p>
+        <p class="card-sub">424 min perdidos en 4 días cargados (falta viernes)</p>
+      </div>
+    </div>
+    <div class="macro-num-grid">
+      <div class="macro-num" style="background:var(--teal-soft);">
+        <p class="mn-label" style="color:var(--teal);">Descansos y pausas</p>
+        <p class="mn-val" style="color:var(--teal);">195</p>
+        <p class="mn-pct" style="color:var(--teal);">46% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--blue-soft);">
+        <p class="mn-label" style="color:var(--blue);">Mantenimiento y equipos</p>
+        <p class="mn-val" style="color:var(--blue);">174</p>
+        <p class="mn-pct" style="color:var(--blue);">41% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--green-soft);">
+        <p class="mn-label" style="color:var(--green);">Manejo animal / ingreso</p>
+        <p class="mn-val" style="color:var(--green);">24</p>
+        <p class="mn-pct" style="color:var(--green);">6% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--brown-soft);">
+        <p class="mn-label" style="color:var(--brown);">Limpieza</p>
+        <p class="mn-val" style="color:var(--brown);">15</p>
+        <p class="mn-pct" style="color:var(--brown);">4% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--pink-soft);">
+        <p class="mn-label" style="color:var(--pink);">Capacitación</p>
+        <p class="mn-val" style="color:var(--pink);">10</p>
+        <p class="mn-pct" style="color:var(--pink);">2% del total</p>
+      </div>
+      <div class="macro-num" style="background:#FDF0FA;">
+        <p class="mn-label" style="color:#B0339A;">Cambio de hoja de sierra</p>
+        <p class="mn-val" style="color:#B0339A;">6</p>
+        <p class="mn-pct" style="color:#B0339A;">1% del total</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:220px;">
+      <canvas id="donutChart40" role="img" aria-label="Ranking de minutos por macro categoría en la semana 40 acumulado a la fecha: descansos y pausas 195 minutos 46%, mantenimiento y equipos 174 minutos 41%, manejo animal 24 minutos 6%, limpieza 15 minutos 4%, capacitación 10 minutos 2%, cambio de hoja de sierra 6 minutos 1%.">Ranking de macro categorías, semana 40.</canvas>
+    </div>
+  </div>
+
+  <div class="insight-grid">
+    <div class="insight" style="border-left:4px solid var(--red);">
+      <span class="itag tag-red">Prioridad 1</span>
+      <h4>Noria 1 sigue líder — 60 min, sin nuevos eventos hoy</h4>
+      <p>"Se cayó parte del riel" y hubo que soldarlo, en dos tramos seguidos el miércoles. Sin novedades el jueves — vale confirmar que la soldadura quede firme.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--red);">
+      <span class="itag tag-red">Escala fuerte</span>
+      <h4>Cajón 2 llega a 40 min — nuevo síntoma: puerta lateral</h4>
+      <p>Manguera de puerta lateral (15'), empujador trabado 2 veces (10'), amarre soldado (10') y ahora un sensor de puerta lateral (5'). Ya acumula 4 síntomas distintos en la semana.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--brown);">
+      <span class="itag" style="background:var(--brown-soft);color:var(--brown);">Nuevo — Limpieza</span>
+      <h4>Triperia — desagüe tapado por panzas llenas, 15 min</h4>
+      <p>Categorizado como Limpieza (no Mantenimiento) porque es acumulación de residuo, no falla de equipo. Primera vez que se usa esta categoría en el dashboard.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--gray);">
+      <span class="itag tag-blue">Pendiente</span>
+      <h4>Falta viernes para cerrar la semana</h4>
+      <p>Esta vista es parcial (4 de 5 días) y el déficit ya llegó a -850 cabezas (22,0% del plan semanal completo de 3.870). Con el último día por cargar, el cierre de semana está cerca.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+<!-- ============ FIN SEMANA 40 ============ -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
 <script>
@@ -2229,7 +3205,7 @@ Chart.defaults.font.family = "'Inter', sans-serif";
 Chart.defaults.color = '#6B7180';
 Chart.register(ChartDataLabels);
 
-const C_MANT='#2F5FE0', C_DESC='#0E9C8A', C_RAB='#7B4FE0', C_MAN='#1E9E5A', C_PAR='#E08A1E', C_AUD='#8E93A0', C_GRE='#E0402F', C_CAP='#C24D7C', C_PROD='#0E8FA6', C_SIST='#5B4FC7';
+const C_MANT='#2F5FE0', C_DESC='#0E9C8A', C_RAB='#7B4FE0', C_MAN='#1E9E5A', C_PAR='#E08A1E', C_AUD='#8E93A0', C_GRE='#E0402F', C_CAP='#C24D7C', C_PROD='#0E8FA6', C_SIST='#5B4FC7', C_LIMP='#8A5A3B';
 
 const allCharts = [];
 
@@ -2328,7 +3304,7 @@ const CAT_COLORS = {
 };
 const EQUIPO_COLORS = {'Cajón 2':'#E0402F', 'Cajón 1':'#0E9C8A'};
 function barColorFreq(d){ return d.equipo ? EQUIPO_COLORS[d.equipo] : CAT_COLORS[d.cat]; }
-const catClassMap = {'Mantenimiento':'cat-mant','Descanso':'cat-desc','Rabino/degüello':'cat-rab','Manejo animal':'cat-man','Parada sin causa':'cat-par','Auditoria':'cat-aud','Dotación/personal':'cat-aud','Capacitacion':'cat-cap','Operativo':'cat-oper','Paro gremial':'cat-gre','Producción':'cat-prod','Sistemas':'cat-sist'};
+const catClassMap = {'Mantenimiento':'cat-mant','Descanso':'cat-desc','Rabino/degüello':'cat-rab','Manejo animal':'cat-man','Parada sin causa':'cat-par','Auditoria':'cat-aud','Dotación/personal':'cat-aud','Capacitacion':'cat-cap','Operativo':'cat-oper','Paro gremial':'cat-gre','Producción':'cat-prod','Sistemas':'cat-sist','Limpieza':'cat-limp'};
 
 const dataW30 = [
   {causa:'Descanso', cat:'Descanso', equipo:null, freq:8, dias:5, min:150},
@@ -2403,7 +3379,8 @@ function buildFreqSection(data, chartId, tbodyId, order){
       ? `<span class="badge" style="background:${d.equipo==='Cajón 2' ? 'var(--red-soft)' : 'var(--teal-soft)'};color:${d.equipo==='Cajón 2' ? 'var(--red)' : 'var(--teal)'};">${d.equipo}</span>`
       : '<span style="color:var(--mute);">—</span>';
     const rowStyle = d.equipo ? `style="background:${d.equipo==='Cajón 2' ? 'rgba(224,64,47,0.04)' : 'rgba(14,156,138,0.04)'};"` : '';
-    const cabEquiv = d.cat === 'Descanso' ? null : Math.round(d.min * 100 / 60);
+    const cabRate = (d.equipo === 'Cajón 1' || d.equipo === 'Cajón 2') ? 50 : 100;
+    const cabEquiv = d.cat === 'Descanso' ? null : Math.round(d.min * cabRate / 60);
     const cabCell = cabEquiv === null ? '<span style="color:var(--mute);">—</span>' : `<span style="font-weight:700;color:var(--red);">${cabEquiv} cab.</span>`;
     tbody.innerHTML += `<tr ${rowStyle}>
       <td>${d.causa}</td>
@@ -2420,8 +3397,8 @@ function buildFreqSection(data, chartId, tbodyId, order){
   const c1 = data.filter(d=>d.equipo==='Cajón 1').reduce((s,d)=>({freq:s.freq+d.freq, min:s.min+d.min}), {freq:0,min:0});
   const n2 = data.filter(d=>d.equipo==='Cajón 2').length;
   const n1 = data.filter(d=>d.equipo==='Cajón 1').length;
-  const c2cab = Math.round(c2.min * 100 / 60);
-  const c1cab = Math.round(c1.min * 100 / 60);
+  const c2cab = Math.round(c2.min * 50 / 60);
+  const c1cab = Math.round(c1.min * 50 / 60);
   tbody.insertAdjacentHTML('afterbegin',
     `<tr style="background:var(--red-soft);font-weight:800;"><td colspan="3">Subtotal Cajón 2 (${n2} síntomas)</td><td>${c2.freq}×</td><td>${n2}</td><td>${c2.min} min</td><td>${c2cab} cab.</td><td>—</td></tr>
      <tr style="background:var(--teal-soft);font-weight:800;"><td colspan="3">Subtotal Cajón 1 (${n1} síntomas)</td><td>${c1.freq}×</td><td>${n1}</td><td>${c1.min} min</td><td>${c1cab} cab.</td><td>—</td></tr>`
@@ -2995,6 +3972,288 @@ allCharts.push(new Chart(document.getElementById('donutChart36'), {
   }
 }));
 
+const dataW37 = [
+  {causa:'Descanso', cat:'Descanso', equipo:null, freq:10, dias:5, min:220},
+  {causa:'Cinta de vísceras (perno fusible cortado)', cat:'Mantenimiento', equipo:null, freq:11, dias:3, min:49},
+  {causa:'Cajón 2 · Sensor (soporte soldado, 2 hs)', cat:'Mantenimiento', equipo:'Cajón 2', freq:2, dias:1, min:21},
+  {causa:'Cajón 2 · Sistema (problema techo/general, se reinicia)', cat:'Sistemas', equipo:'Cajón 2', freq:5, dias:3, min:29},
+  {causa:'Cajón 2 · Empujador (trabado / cable)', cat:'Mantenimiento', equipo:'Cajón 2', freq:5, dias:3, min:34},
+  {causa:'Sierra de pecho (cambio de hoja)', cat:'Operativo', equipo:null, freq:2, dias:2, min:15},
+  {causa:'Guinche 1 (no subía / no funciona)', cat:'Mantenimiento', equipo:null, freq:3, dias:2, min:13},
+  {causa:'Cajón 1 · Aprieta nuca (perno, no funciona, desoldado)', cat:'Mantenimiento', equipo:'Cajón 1', freq:3, dias:2, min:17},
+  {causa:'Cajón 2 · Sensor de techo (cambio)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:9},
+  {causa:'Down puller (se calló un animal)', cat:'Manejo animal', equipo:null, freq:1, dias:1, min:7},
+  {causa:'Noria 2 (perno fusible cortado)', cat:'Mantenimiento', equipo:null, freq:2, dias:2, min:12},
+  {causa:'Sierra dividir (cambio de guía)', cat:'Operativo', equipo:null, freq:1, dias:1, min:8},
+  {causa:'SENASA (problemas ingresar al sistema)', cat:'Sistemas', equipo:null, freq:1, dias:1, min:7},
+  {causa:'Side puller (se rompió vaso de aire)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:7},
+  {causa:'Cajón 2 · Sensor puerta lateral', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:4},
+  {causa:'Cajón 2 (ingresaron 2 animales juntos)', cat:'Manejo animal', equipo:null, freq:1, dias:1, min:6},
+  {causa:'Retrainer 2 (se trabó un animal)', cat:'Manejo animal', equipo:null, freq:1, dias:1, min:5},
+  {causa:'Sierra de bife (problemas acople de aire)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:6},
+  {causa:'Cajón 2 · Aprieta nuca (manguera)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:5},
+  {causa:'Cajón 2 (manguera de guillotina)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:5},
+  {causa:'Sierra dividir (problemas en el sensor)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:5},
+  {causa:'Noria 1 (sapito faltante)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:3},
+  {causa:'Palco tipificación (no funcionan impresoras)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:3},
+  {causa:'Charla operarios (despansada, higiene y seguridad)', cat:'Capacitacion', equipo:null, freq:1, dias:1, min:20},
+  {causa:'Capacitación (viernes, sin detalle adicional)', cat:'Capacitacion', equipo:null, freq:1, dias:1, min:30},
+  {causa:'Tropas Wagyu (sin cuantificar)', cat:'Manejo animal', equipo:null, freq:1, dias:1, min:0},
+  {causa:'Modo auditoría SENASA, 3 hs (sin cuantificar)', cat:'Auditoria', equipo:null, freq:3, dias:1, min:0},
+];
+
+buildFreqSection(dataW37, 'freqChart37', 'tableBody-w37', {'Cajón 2':0, 'Cajón 1':1});
+
+allCharts.push(new Chart(document.getElementById('mantChart37'), {
+  type:'bar',
+  data:{
+    labels:['Cajón 2','Cinta de vísceras','Cajón 1','Sierra de pecho','Guinche 1','Noria 2','Sierra dividir','Side puller','Sierra de bife','Sierra dividir (sensor)','Noria 1','Palco tipificación'],
+    datasets:[{
+      data:[78,49,17,15,13,12,8,7,6,5,3,3],
+      backgroundColor:'#2F5FE0',
+      borderRadius:6, barThickness:16
+    }]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, datalabels:{ color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12}, formatter:(v)=> v + ' min' } },
+    layout:{padding:{right:36}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}, suggestedMax:87},
+      y:{grid:{display:false}, ticks:{font:{size:11,weight:600}, color:'#12141C'}}
+    }
+  }
+}));
+
+allCharts.push(new Chart(document.getElementById('donutChart37'), {
+  type:'bar',
+  data:{
+    labels:['Descansos y pausas','Mantenimiento y equipos','Capacitación','Sistemas','Cambio de hoja de sierra','Manejo animal'],
+    datasets:[{data:[220,193,50,36,23,18], backgroundColor:[C_DESC,C_MANT,C_CAP,C_SIST,'#B0339A',C_MAN], borderRadius:6, barThickness:22}]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      datalabels:{
+        color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12},
+        formatter:(v)=>{ const total=540; return v+' min · '+Math.round(v/total*100)+'%'; }
+      }
+    },
+    layout:{padding:{right:70}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}, suggestedMax:250},
+      y:{grid:{display:false}, ticks:{font:{size:12,weight:600}, color:'#12141C'}}
+    }
+  }
+}));
+
+const dataW38 = [
+  {causa:'Descanso', cat:'Descanso', equipo:null, freq:9, dias:5, min:265},
+  {causa:'Cajón 1 (manguera hidráulica, 2 partes)', cat:'Mantenimiento', equipo:'Cajón 1', freq:2, dias:1, min:18},
+  {causa:'Cajón 1 y 2 (amarres, no quieren faenar)', cat:'Paro gremial', equipo:null, freq:2, dias:1, min:16},
+  {causa:'Cierre anticipado de jornada (sin causa especificada)', cat:'Parada sin causa', equipo:null, freq:1, dias:1, min:30},
+  {causa:'Cajón 2 (2 animales ingresados, retraso)', cat:'Manejo animal', equipo:null, freq:1, dias:1, min:8},
+  {causa:'Sierra dividir (cambio de hoja)', cat:'Operativo', equipo:null, freq:2, dias:2, min:12},
+  {causa:'PCC 1 (cambio de lugar)', cat:'Operativo', equipo:null, freq:1, dias:1, min:15},
+  {causa:'Guinche 2 (no funciona / no levanta)', cat:'Mantenimiento', equipo:null, freq:2, dias:2, min:9},
+  {causa:'Cajón 2 (manguera de aire, aprieta nuca)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:6},
+  {causa:'Cajón 2 (aprieta nuca, no funciona)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:5},
+  {causa:'Cajón 2 (soldar amarre)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:5},
+  {causa:'Noria 2 (perno fusible)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:7},
+  {causa:'Guinche 1 (no funciona)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:7},
+  {causa:'Retrainer (se trabó pata del animal)', cat:'Manejo animal', equipo:null, freq:2, dias:2, min:12},
+  {causa:'Transferencia 1 (se calló un animal)', cat:'Manejo animal', equipo:null, freq:1, dias:1, min:5},
+  {causa:'Down puller (se calló un animal)', cat:'Manejo animal', equipo:null, freq:1, dias:1, min:4},
+  {causa:'Capacitación (jueves)', cat:'Capacitacion', equipo:null, freq:1, dias:1, min:10},
+  {causa:'Dentición (no funciona el sistema)', cat:'Sistemas', equipo:null, freq:1, dias:1, min:10},
+  {causa:'Cajón 1 y 2 (amarres, sin cuantificar)', cat:'Paro gremial', equipo:null, freq:1, dias:1, min:0},
+  {causa:'Visita SENASA (noria a velocidad 90, sin cuantificar)', cat:'Auditoria', equipo:null, freq:1, dias:1, min:0},
+];
+
+buildFreqSection(dataW38, 'freqChart38', 'tableBody-w38', {'Cajón 2':0, 'Cajón 1':1});
+
+allCharts.push(new Chart(document.getElementById('mantChart38'), {
+  type:'bar',
+  data:{
+    labels:['Cajón 1','Cajón 2','PCC 1','Sierra dividir','Guinche 2','Noria 2','Guinche 1'],
+    datasets:[{
+      data:[18,16,15,12,9,7,7],
+      backgroundColor:'#2F5FE0',
+      borderRadius:6, barThickness:22
+    }]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, datalabels:{ color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12}, formatter:(v)=> v + ' min' } },
+    layout:{padding:{right:36}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}, suggestedMax:21},
+      y:{grid:{display:false}, ticks:{font:{size:12,weight:600}, color:'#12141C'}}
+    }
+  }
+}));
+
+allCharts.push(new Chart(document.getElementById('donutChart38'), {
+  type:'bar',
+  data:{
+    labels:['Descansos y pausas','Mantenimiento y equipos','Manejo animal','Parada sin causa','Cambio de hoja de sierra','Paro gremial / externo','Capacitación','Sistemas'],
+    datasets:[{data:[265,57,29,30,27,16,10,10], backgroundColor:[C_DESC,C_MANT,C_MAN,C_PAR,'#B0339A',C_GRE,C_CAP,C_SIST], borderRadius:6, barThickness:20}]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      datalabels:{
+        color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12},
+        formatter:(v)=>{ const total=444; return v+' min · '+Math.round(v/total*100)+'%'; }
+      }
+    },
+    layout:{padding:{right:70}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}, suggestedMax:310},
+      y:{grid:{display:false}, ticks:{font:{size:12,weight:600}, color:'#12141C'}}
+    }
+  }
+}));
+
+const dataW39 = [
+  {causa:'Descanso', cat:'Descanso', equipo:null, freq:10, dias:5, min:230},
+  {causa:'Cajón 2 (puerta de ingreso al cajón)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:45},
+  {causa:'Guinche 2 (amarre cajón 1 roto, quedó sin funcionar, corte de faena)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:50},
+  {causa:'Up Puller (no funcionaba botonera)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:25},
+  {causa:'Cajón 1 (se desoldó amarre del cajón)', cat:'Mantenimiento', equipo:'Cajón 1', freq:1, dias:1, min:30},
+  {causa:'Cajón 2 (se pasó de largo)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:10},
+  {causa:'Guinche 2 (se cortó eje)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:10},
+  {causa:'Dentición (error en numeración de animales)', cat:'Sistemas', equipo:null, freq:1, dias:1, min:10},
+  {causa:'Entrada cajón 2 (se empacó / entraron 2 animales)', cat:'Manejo animal', equipo:null, freq:2, dias:2, min:14},
+  {causa:'Manea (se trabó en comienzo de noria)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:7},
+  {causa:'Noria 2 (pernos fusible cortados)', cat:'Mantenimiento', equipo:null, freq:2, dias:2, min:11},
+  {causa:'Cambio en noria (se cayó una media res)', cat:'Producción', equipo:null, freq:1, dias:1, min:6},
+  {causa:'Guinche 2 (no funcionaba)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:5},
+  {causa:'Cinta de vísceras (pernos fusibles)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:5},
+  {causa:'Calesita de cámaras (roldana descarrilada)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:5},
+  {causa:'Cajón 2 (empujador no bajaba)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:4},
+  {causa:'Manga de ingreso (animal empacado, cajón 2)', cat:'Manejo animal', equipo:null, freq:1, dias:1, min:4},
+  {causa:'Auditoría (noria a velocidad reducida, sin cuantificar)', cat:'Auditoria', equipo:null, freq:1, dias:1, min:0},
+];
+
+buildFreqSection(dataW39, 'freqChart39', 'tableBody-w39', {'Cajón 2':0, 'Cajón 1':1});
+
+allCharts.push(new Chart(document.getElementById('mantChart39'), {
+  type:'bar',
+  data:{
+    labels:['Guinche 2','Cajón 2','Cajón 1','Up Puller','Noria 2','Manea','Cinta de vísceras','Calesita de cámaras'],
+    datasets:[{
+      data:[65,59,30,25,11,7,5,5],
+      backgroundColor:'#2F5FE0',
+      borderRadius:6, barThickness:18
+    }]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, datalabels:{ color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12}, formatter:(v)=> v + ' min' } },
+    layout:{padding:{right:36}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}, suggestedMax:73},
+      y:{grid:{display:false}, ticks:{font:{size:12,weight:600}, color:'#12141C'}}
+    }
+  }
+}));
+
+allCharts.push(new Chart(document.getElementById('donutChart39'), {
+  type:'bar',
+  data:{
+    labels:['Descansos y pausas','Mantenimiento y equipos','Manejo animal','Sistemas','Producción'],
+    datasets:[{data:[230,207,18,10,6], backgroundColor:[C_DESC,C_MANT,C_MAN,C_SIST,C_PROD], borderRadius:6, barThickness:24}]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      datalabels:{
+        color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12},
+        formatter:(v)=>{ const total=471; return v+' min · '+Math.round(v/total*100)+'%'; }
+      }
+    },
+    layout:{padding:{right:70}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}, suggestedMax:270},
+      y:{grid:{display:false}, ticks:{font:{size:12,weight:600}, color:'#12141C'}}
+    }
+  }
+}));
+
+const dataW40 = [
+  {causa:'Descanso', cat:'Descanso', equipo:null, freq:8, dias:4, min:195},
+  {causa:'Noria 1 (se cayó parte del riel, soldaron)', cat:'Mantenimiento', equipo:null, freq:2, dias:1, min:60},
+  {causa:'Cajón 2 (manguera puerta lateral)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:15},
+  {causa:'Cajón 2 (puerta lateral, sensor)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:5},
+  {causa:'Sierra de pecho (no funciona, sin repuesto)', cat:'Mantenimiento', equipo:null, freq:2, dias:1, min:20},
+  {causa:'Down puller (caño de agua roto)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:18},
+  {causa:'Retrainer 2 (se descarriló)', cat:'Mantenimiento', equipo:null, freq:2, dias:1, min:18},
+  {causa:'Zona sucia (charla de seguridad)', cat:'Capacitacion', equipo:null, freq:1, dias:1, min:10},
+  {causa:'Cajón 2 (empujador trabado)', cat:'Mantenimiento', equipo:'Cajón 2', freq:2, dias:1, min:10},
+  {causa:'Cajón 2 (soldar amarre)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:10},
+  {causa:'Cajón 1 (se levantó un animal)', cat:'Manejo animal', equipo:null, freq:1, dias:1, min:10},
+  {causa:'Triperia (desagüe tapado, panzas llenas)', cat:'Limpieza', equipo:null, freq:1, dias:1, min:15},
+  {causa:'Noria 2 (perno fusible cortado)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:7},
+  {causa:'Cajón 1 (sensor de puerta lateral)', cat:'Mantenimiento', equipo:'Cajón 1', freq:1, dias:1, min:7},
+  {causa:'Sierra dividir (cambio de hoja)', cat:'Operativo', equipo:null, freq:1, dias:1, min:6},
+  {causa:'Ingreso cajón 2 (animal no quería ingresar, cambio de tropa)', cat:'Manejo animal', equipo:null, freq:2, dias:2, min:10},
+  {causa:'Ingreso cajón 1 (animal no quería ingresar)', cat:'Manejo animal', equipo:null, freq:1, dias:1, min:4},
+  {causa:'Grasa (whizzard no tira vapor, solo agua)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:4},
+  {causa:'Auditoría (noria gancho por medio, sin cuantificar)', cat:'Auditoria', equipo:null, freq:1, dias:1, min:0},
+  {causa:'Amarre — judíos no quieren faenar (sin cuantificar)', cat:'Paro gremial', equipo:null, freq:1, dias:1, min:0},
+  {causa:'Problemas operativos (sin cuantificar)', cat:'Parada sin causa', equipo:null, freq:1, dias:1, min:0},
+];
+
+buildFreqSection(dataW40, 'freqChart40', 'tableBody-w40', {'Cajón 2':0, 'Cajón 1':1});
+
+allCharts.push(new Chart(document.getElementById('mantChart40'), {
+  type:'bar',
+  data:{
+    labels:['Noria 1','Cajón 2','Sierra de pecho','Down puller','Retrainer 2','Noria 2','Cajón 1','Sierra dividir','Grasa'],
+    datasets:[{
+      data:[60,40,20,18,18,7,7,6,4],
+      backgroundColor:'#2F5FE0',
+      borderRadius:6, barThickness:18
+    }]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, datalabels:{ color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12}, formatter:(v)=> v + ' min' } },
+    layout:{padding:{right:36}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}, suggestedMax:68},
+      y:{grid:{display:false}, ticks:{font:{size:11.5,weight:600}, color:'#12141C'}}
+    }
+  }
+}));
+
+allCharts.push(new Chart(document.getElementById('donutChart40'), {
+  type:'bar',
+  data:{
+    labels:['Descansos y pausas','Mantenimiento y equipos','Manejo animal','Limpieza','Capacitación','Cambio de hoja de sierra'],
+    datasets:[{data:[195,174,24,15,10,6], backgroundColor:[C_DESC,C_MANT,C_MAN,C_LIMP,C_CAP,'#B0339A'], borderRadius:6, barThickness:20}]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      datalabels:{
+        color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12},
+        formatter:(v)=>{ const total=424; return v+' min · '+Math.round(v/total*100)+'%'; }
+      }
+    },
+    layout:{padding:{right:70}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}, suggestedMax:245},
+      y:{grid:{display:false}, ticks:{font:{size:12,weight:600}, color:'#12141C'}}
+    }
+  }
+}));
+
 const periods = {
   resumen: 'Resumen general<span>Todas las semanas cargadas</span>',
   w30: 'Semana 30 · 20—24 jul<span>Meta: 100 cab/h</span>',
@@ -3003,7 +4262,11 @@ const periods = {
   w33: 'Semana 33 · 10—14 ago<span>Meta: 100 cab/h</span>',
   w34: 'Semana 34 · 17—21 ago<span>Meta: 100 cab/h</span>',
   w35: 'Semana 35 · 24—28 ago<span>Meta: 100 cab/h</span>',
-  w36: 'Semana 36 · 31 ago—04 sep<span>Meta: 100 cab/h</span>'
+  w36: 'Semana 36 · 31 ago—04 sep<span>Meta: 100 cab/h</span>',
+  w37: 'Semana 37 · 07—11 sep<span>Meta: 100 cab/h</span>',
+  w38: 'Semana 38 · 14—18 sep<span>Meta: 100 cab/h</span>',
+  w39: 'Semana 39 · 21—25 sep<span>Meta: 100 cab/h</span>',
+  w40: 'Semana 40 · 28 sep—02 oct (en curso)<span>Meta: 100 cab/h</span>'
 };
 
 function showTab(id){
