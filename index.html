@@ -203,6 +203,7 @@
     <button class="tab-btn" id="btn-w43" onclick="showTab('w43')">Semana 43</button>
     <button class="tab-btn" id="btn-w44" onclick="showTab('w44')">Semana 44</button>
     <button class="tab-btn" id="btn-w45" onclick="showTab('w45')">Semana 45</button>
+    <button class="tab-btn" id="btn-w46" onclick="showTab('w46')">Semana 46 <span class="pill">en curso</span></button>
   </div>
 </div>
 
@@ -3955,6 +3956,198 @@
 </div>
 <!-- ============ FIN SEMANA 45 ============ -->
 
+<!-- ============ SEMANA 46 (EN CURSO) ============ -->
+<div class="tab-panel" id="w46">
+<div class="wrap">
+
+  <div class="banner">⏳ Semana en curso: cargado lunes 09/11. Faltan martes 10/11, miércoles 11/11, jueves 12/11 y viernes 13/11 — los totales de abajo son parciales.</div>
+
+  <div class="kpis">
+    <div class="kpi">
+      <p class="label">Cumplimiento acumulado</p>
+      <p class="value">22,3%</p>
+      <span class="delta delta-blue">859 / 3.850 cab. (semana completa)</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Déficit acumulado</p>
+      <p class="value" style="color:var(--red);">-2.991</p>
+      <span class="delta delta-red">cabezas (77,7% del plan)</span>
+    </div>
+    <div class="kpi">
+      <p class="label">Minutos perdidos (sin descansos)</p>
+      <p class="value" style="color:var(--amber);">33</p>
+      <span class="delta delta-amber">≈ 0,6 hs (1 día)</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Cumplimiento por día — plan vs. real <span style="color:var(--mute);font-weight:600;font-size:14px;">(Semana 46)</span></p>
+        <p class="card-sub">Número grande = real. Debajo, plan y diferencia.</p>
+      </div>
+    </div>
+    <div class="compl-grid">
+      <div class="compl-card">
+        <p class="cday">Lunes 09/11</p><p class="creal">859</p><p class="cplan">plan 850</p>
+        <div class="cbar-track"><div class="cbar-fill" style="width:100%;background:var(--green);"></div></div>
+        <span class="cdif" style="background:var(--green-soft);color:var(--green);">+9</span>
+        <p style="font-size:10px;color:var(--mute);margin:6px 0 0;">cap. teórica: 900 cab.</p>
+      </div>
+      <div class="compl-card pending">
+        <p class="cday">Martes 10/11</p>
+        <div class="pend-icon">···</div>
+        <p class="pend-txt">Pendiente de carga</p>
+        <p class="cplan" style="margin-top:6px;">plan 850</p>
+      </div>
+      <div class="compl-card pending">
+        <p class="cday">Miércoles 11/11</p>
+        <div class="pend-icon">···</div>
+        <p class="pend-txt">Pendiente de carga</p>
+        <p class="cplan" style="margin-top:6px;">plan 700</p>
+      </div>
+      <div class="compl-card pending">
+        <p class="cday">Jueves 12/11</p>
+        <div class="pend-icon">···</div>
+        <p class="pend-txt">Pendiente de carga</p>
+        <p class="cplan" style="margin-top:6px;">plan 700</p>
+      </div>
+      <div class="compl-card pending">
+        <p class="cday">Viernes 13/11</p>
+        <div class="pend-icon">···</div>
+        <p class="pend-txt">Pendiente de carga</p>
+        <p class="cplan" style="margin-top:6px;">plan 750</p>
+      </div>
+      <div class="compl-card total">
+        <p class="cday">Total semana</p><p class="creal">859</p><p class="cplan">plan 3.850</p>
+        <div class="cbar-track" style="background:#3A3D48;"><div class="cbar-fill" style="width:22%;background:var(--red);"></div></div>
+        <span class="cdif" style="background:var(--red);color:#fff;">-2.991 (77,7%)</span>
+        <p style="font-size:10.5px;color:#8B90A0;margin:8px 0 0;line-height:1.4;">Capacidad teórica (1 día cargado): <b style="color:#C7CAD3;">900 cab.</b> (9,0 hs productivas, sin descansos)</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Ranking de frecuencia — todas las causas</p>
+        <p class="card-sub">Cuántas veces ocurrió cada problema en el 1 día cargado (faltan martes a viernes)</p>
+      </div>
+    </div>
+    <table class="freq">
+      <thead><tr><th>Causa</th><th>Equipo</th><th>Categoría</th><th>Frecuencia</th><th>Días</th><th>Minutos</th><th>Cab. equiv.</th><th>Prom./evento</th></tr></thead>
+      <tbody id="tableBody-w46"></tbody>
+    </table>
+    <p style="font-size:11.5px;color:var(--mute);margin:8px 0 0;line-height:1.5;">
+      <b>Cab. equiv.</b> = minutos × 100/60 (referencia: meta de 100 cab/h) para causas que afectan a toda la línea. Para eventos de <b>un solo cajón</b> (Cajón 1 o Cajón 2 puntual), se usa minutos × 50/60, porque el otro cajón sigue produciendo — solo se pierde la mitad de la capacidad, no el 100%. Los descansos no se convierten a cabezas (no se computan como pérdida evitable).<br>
+      Cabe aclarar que en el dashboard conviven <b>tres</b> números que responden preguntas distintas y <b>no son sumables entre sí</b>: el <b>plan</b> (lo que la gerencia esperaba, ya rebajado por dotación y ritmo real), la <b>capacidad teórica</b> (horas productivas × 100, el máximo absoluto si no hubiera ningún freno) y la <b>Cab. equiv.</b> de esta tabla (el costo puntual de cada incidente, sin capturar la recuperación de ritmo en otras horas). Sirven para comparar problemas entre sí y priorizar, no para reconstruir el déficit real sumándolos.
+    </p>
+    <div style="position:relative;width:100%;height:220px;margin-top:18px;">
+      <canvas id="freqChart46" role="img" aria-label="Ranking de frecuencia de causas de pérdida de tiempo en la semana 46 acumulado a la fecha, ordenado de mayor a menor cantidad de veces que ocurrió cada una.">Ranking de frecuencia de causas, semana 46.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Minutos perdidos por problema, día a día</p>
+        <p class="card-sub">Valor real junto a cada barra. Color = macro-categoría.</p>
+      </div>
+    </div>
+    <div class="day-grid">
+      <div class="day-card">
+        <p class="dname">Lunes 09/11</p><p class="dsub">83 min totales · faena terminó 10 min antes</p>
+        <div class="prow"><span class="plabel">Descanso (2do)</span><div class="ptrack"><div class="pfill" style="width:100%;background:var(--teal);"></div></div><span class="pval">40</span></div>
+        <div class="prow"><span class="plabel">Cajón 2 (se cortaron los tornillos de la puerta)</span><div class="ptrack"><div class="pfill" style="width:38%;background:var(--blue);"></div></div><span class="pval">15</span></div>
+        <div class="prow"><span class="plabel">Descanso (1ro)</span><div class="ptrack"><div class="pfill" style="width:25%;background:var(--teal);"></div></div><span class="pval">10</span></div>
+        <div class="prow"><span class="plabel">Desolladoras (no cortan las máquinas)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Menudencias (corte de luz)</span><div class="ptrack"><div class="pfill" style="width:13%;background:var(--blue);"></div></div><span class="pval">5</span></div>
+        <div class="prow"><span class="plabel">Sierra de dividir (cambio de hoja)</span><div class="ptrack"><div class="pfill" style="width:10%;background:#B0339A;"></div></div><span class="pval">4</span></div>
+        <div class="prow"><span class="plabel">Rabinos (llegaron tarde a la mesa de pulmones)</span><div class="ptrack"><div class="pfill" style="width:10%;background:var(--purple);"></div></div><span class="pval">4</span></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--blue)"></span>Mantenimiento y equipos</span>
+      <span><span class="dot" style="background:var(--teal)"></span>Descansos y pausas</span>
+      <span><span class="dot" style="background:var(--purple)"></span>Rabino / degüello</span>
+      <span><span class="dot" style="background:#B0339A"></span>Cambio de hoja de sierra</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Detalle de mantenimiento — 29 min</p>
+        <p class="card-sub">Cajón 2 arranca como líder (15 min), por los tornillos de la puerta que se cortaron</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:170px;">
+      <canvas id="mantChart46" role="img" aria-label="Ranking de minutos de mantenimiento por equipo, semana 46 acumulado a la fecha: cajón 2, 15 minutos. Desolladoras, 5 minutos. Menudencias, 5 minutos. Sierra de dividir, 4 minutos.">Ranking de minutos de mantenimiento por equipo, semana 46.</canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div>
+        <p class="card-title">Acumulado a la fecha — macro-categoría</p>
+        <p class="card-sub">83 min perdidos en 1 día cargado (faltan martes a viernes)</p>
+      </div>
+    </div>
+    <div class="macro-num-grid">
+      <div class="macro-num" style="background:var(--teal-soft);">
+        <p class="mn-label" style="color:var(--teal);">Descansos y pausas</p>
+        <p class="mn-val" style="color:var(--teal);">50</p>
+        <p class="mn-pct" style="color:var(--teal);">60% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--blue-soft);">
+        <p class="mn-label" style="color:var(--blue);">Mantenimiento y equipos</p>
+        <p class="mn-val" style="color:var(--blue);">25</p>
+        <p class="mn-pct" style="color:var(--blue);">30% del total</p>
+      </div>
+      <div class="macro-num" style="background:#FDF0FA;">
+        <p class="mn-label" style="color:#B0339A;">Cambio de hoja de sierra</p>
+        <p class="mn-val" style="color:#B0339A;">4</p>
+        <p class="mn-pct" style="color:#B0339A;">5% del total</p>
+      </div>
+      <div class="macro-num" style="background:var(--purple-soft);">
+        <p class="mn-label" style="color:var(--purple);">Rabino / degüello</p>
+        <p class="mn-val" style="color:var(--purple);">4</p>
+        <p class="mn-pct" style="color:var(--purple);">5% del total</p>
+      </div>
+    </div>
+    <div style="position:relative;width:100%;height:170px;">
+      <canvas id="donutChart46" role="img" aria-label="Ranking de minutos por macro categoría en la semana 46 acumulado a la fecha: descansos y pausas 50 minutos 60%, mantenimiento y equipos 25 minutos 30%, cambio de hoja de sierra 4 minutos 5%, rabino y degüello 4 minutos 5%.">Ranking de macro categorías, semana 46.</canvas>
+    </div>
+  </div>
+
+  <div class="insight-grid">
+    <div class="insight" style="border-left:4px solid var(--red);">
+      <span class="itag tag-red">A seguir</span>
+      <h4>Cajón 2 arranca con 15 min — se cortaron los tornillos de la puerta</h4>
+      <p>Ocurrió a las 11h. Cajón 2 cerró la Semana 45 como líder de mantenimiento (178 min), con varias fallas de puerta y sensores; vale confirmar que la reparación haya quedado firme.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--blue);">
+      <span class="itag tag-blue">A confirmar</span>
+      <h4>Corte de luz en menudencias — 5 min</h4>
+      <p>Lo categoricé como Mantenimiento por tratarse de una falla eléctrica. Si fue un corte externo de la red, conviene registrarlo con otra categoría.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--green);">
+      <span class="itag tag-green">Día liviano</span>
+      <h4>Lunes: 83 min, 50 de ellos descansos</h4>
+      <p>Solo 33 min de pérdidas evitables, repartidas en eventos cortos. La faena terminó 10 min antes.</p>
+    </div>
+    <div class="insight" style="border-left:4px solid var(--gray);">
+      <span class="itag tag-blue">Pendiente</span>
+      <h4>Faltan martes a viernes para cerrar la semana</h4>
+      <p>Vista parcial (1 de 5 días): el déficit de -2.991 cabezas (77,7% del plan semanal completo de 3.850) es el esperable al inicio de semana.</p>
+    </div>
+  </div>
+
+</div>
+</div>
+<!-- ============ FIN SEMANA 46 ============ -->
+
+
 
 
 
@@ -5219,6 +5412,57 @@ allCharts.push(new Chart(document.getElementById('donutChart45'), {
   }
 }));
 
+const dataW46 = [
+  {causa:'Descanso', cat:'Descanso', equipo:null, freq:2, dias:1, min:50},
+  {causa:'Cajón 2 (se cortaron los tornillos de la puerta)', cat:'Mantenimiento', equipo:'Cajón 2', freq:1, dias:1, min:15},
+  {causa:'Desolladoras (no cortan las máquinas)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:5},
+  {causa:'Menudencias (corte de luz)', cat:'Mantenimiento', equipo:null, freq:1, dias:1, min:5},
+  {causa:'Sierra de dividir (cambio de hoja)', cat:'Operativo', equipo:null, freq:1, dias:1, min:4},
+  {causa:'Rabinos (llegaron tarde a la mesa de pulmones)', cat:'Rabino/degüello', equipo:null, freq:1, dias:1, min:4},
+];
+
+buildFreqSection(dataW46, 'freqChart46', 'tableBody-w46', {'Cajón 2':0, 'Cajón 1':1});
+
+allCharts.push(new Chart(document.getElementById('mantChart46'), {
+  type:'bar',
+  data:{
+    labels:['Cajón 2','Desolladoras','Menudencias (corte de luz)','Sierra de dividir'],
+    datasets:[{ data:[15,5,5,4], backgroundColor:'#2F5FE0', borderRadius:6, barThickness:26 }]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{ legend:{display:false}, datalabels:{ color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12}, formatter:(v)=> v + ' min' } },
+    layout:{padding:{right:40}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}, suggestedMax:18},
+      y:{grid:{display:false}, ticks:{font:{size:12,weight:600}, color:'#12141C'}}
+    }
+  }
+}));
+
+allCharts.push(new Chart(document.getElementById('donutChart46'), {
+  type:'bar',
+  data:{
+    labels:['Descansos y pausas','Mantenimiento y equipos','Cambio de hoja de sierra','Rabino / degüello'],
+    datasets:[{data:[50,25,4,4], backgroundColor:[C_DESC,C_MANT,'#B0339A',C_RAB], borderRadius:6, barThickness:26}]
+  },
+  options:{
+    indexAxis:'y', responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      datalabels:{
+        color:'#12141C', anchor:'end', align:'right', font:{weight:800, size:12},
+        formatter:(v)=>{ const total=83; return v+' min · '+Math.round(v/total*100)+'%'; }
+      }
+    },
+    layout:{padding:{right:70}},
+    scales:{
+      x:{grid:{color:'#EEEFF3'}, ticks:{font:{size:11}}, suggestedMax:60},
+      y:{grid:{display:false}, ticks:{font:{size:12,weight:600}, color:'#12141C'}}
+    }
+  }
+}));
+
 const periods = {
   resumen: 'Resumen general<span>Todas las semanas cargadas</span>',
   w30: 'Semana 30 · 20—24 jul<span>Meta: 100 cab/h</span>',
@@ -5234,7 +5478,8 @@ const periods = {
   w40: 'Semana 40 · 28 sep—02 oct<span>Meta: 100 cab/h</span>',
   w43: 'Semana 43 · 19—23 oct<span>Meta: 100 cab/h</span>',
   w44: 'Semana 44 · 26—30 oct<span>Meta: 100 cab/h</span>',
-  w45: 'Semana 45 · 02—06 nov<span>Meta: 100 cab/h</span>'
+  w45: 'Semana 45 · 02—06 nov<span>Meta: 100 cab/h</span>',
+  w46: 'Semana 46 · 09—13 nov (en curso)<span>Meta: 100 cab/h</span>'
 };
 
 function showTab(id){
